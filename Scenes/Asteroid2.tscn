@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Meteor/Meteor2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Meteor/Meteor1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Meteor/Meteor3.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 11.8325
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 15.75, 15.75 )
+scale = Vector2( 1.49219, 1.49219 )
+frames = SubResource( 1 )
+animation = "Default"
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+position = Vector2( 0.670157, -8.04189 )
+shape = SubResource( 2 )
