@@ -4,7 +4,7 @@ export (int) var speed = 1200
 export (int) var jump_speed = -1800
 export (int) var gravity = 4000
 
-var velocity = Vector2.ZERO
+export var velocity = Vector2.ZERO
 var is_jumping = false
 var planets: Array
 var current_planet: Node
@@ -16,6 +16,7 @@ func _ready():
 	current_planet = planets[0]
 	_get_closest_planet(current_planet)
 	_start_closest_planet_timer()
+	print(velocity)
 
 
 func get_input():

@@ -8,7 +8,7 @@ var planets: Array
 var current_planet: Node
 var time_delta = 0
 
-export var whichPlanet = 2
+export var whichPlanet = 0
 
 func _ready():
 	planets = get_node("/root/MainLevel/Planets").get_children()
@@ -58,3 +58,7 @@ func _start_closest_planet_timer():
 	timer.connect("timeout", self, "_get_closest_planet", [current_planet])
 	add_child(timer)
 	timer.start()
+
+func _on_Area2D_body_entered(body):
+	if body.name == "PlanetStaticBody2D":
+		queue_free()
