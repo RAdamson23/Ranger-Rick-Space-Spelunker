@@ -1,8 +1,8 @@
 extends Node
 
 var asteroid_scene = load("res://Scenes/Asteroid.tscn")
-var offset = 500
-var slide = 500
+var offset = 500 #How far away they spawn
+var slide = 700 #Variation in left or right positioning.
 onready var player = get_node("/root/Level").get_node("Player")
 
 func _set_asteroid_position(asteroid):

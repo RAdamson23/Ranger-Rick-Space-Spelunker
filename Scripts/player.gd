@@ -23,14 +23,22 @@ func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("walk_right"):
 		velocity.x += speed
-		$AnimatedSprite.play()
-		$AnimatedSprite.flip_h = false
+		$AnimationPlayer.play("Run")
+		$PlayerSprite.flip_h = false
 	elif Input.is_action_pressed("walk_left"):
 		velocity.x -= speed
-		$AnimatedSprite.play()
-		$AnimatedSprite.flip_h = true
+		$AnimationPlayer.play("Run")
+		$PlayerSprite.flip_h = true
+	elif Input.is_action_pressed("Attack"):
+		if get_global_mouse_position().x > $PlayerSprite.global_position.x:
+			$AnimationPlayer.play("Attack")
+			$PlayerSprite.flip_h = false
+		elif get_global_mouse_position().x < $PlayerSprite.global_position.x:
+			$AnimationPlayer.play("Attack")
+			$PlayerSprite.flip_h = true
 	else:
-		$AnimatedSprite.playing = false
+		if !$AnimationPlayer.current_animation == "Attack":
+			$AnimationPlayer.play("Idle")
 
 
 func _physics_process(delta):
