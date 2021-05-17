@@ -18,11 +18,11 @@ position = Vector2( 27.2292, -930.582 )
 position = Vector2( 4.21021, -95.4031 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -1232.33, 1402.69 )
+position = Vector2( -1064.52, 983.164 )
 texture = ExtResource( 5 )
 
 [node name="Planet3" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -386.372, 3007.93 )
+position = Vector2( -386.372, 2408.61 )
 texture = ExtResource( 4 )
 
 [node name="AsteroidSpawner" parent="." instance=ExtResource( 3 )]
