@@ -26,21 +26,19 @@ radius = 23.1433
 height = 35.6163
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 373.719, -147.15 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -54 )
 frames = SubResource( 3 )
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.906616, 12.6926 )
+position = Vector2( 0, -40 )
 shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -55 )
 z_index = -4
 current = true
 limit_smoothed = true

@@ -12,7 +12,7 @@ var time_delta = 0
 
 
 func _ready():
-	planets = get_node("/root/MainLevel/Planets/").get_children()
+	planets = get_node("/root/Level/Planets/").get_children()
 	current_planet = planets[0]
 	_get_closest_planet(current_planet)
 	_start_closest_planet_timer()

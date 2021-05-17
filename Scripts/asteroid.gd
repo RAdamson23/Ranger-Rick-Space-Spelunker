@@ -1,64 +1,29 @@
 extends KinematicBody2D
 
-export (int) var gravity = 4000
-
+export (int) var speed = 50
 var velocity = Vector2.ZERO
-var is_jumping = false
-var planets: Array
-var current_planet: Node
-var time_delta = 0
-
-export var whichPlanet = 0
 
 func _ready():
-	planets = get_node("/root/MainLevel/Planets").get_children()
-	current_planet = planets[whichPlanet]
-	_get_closest_planet(current_planet)
-	_start_closest_planet_timer()
-
+	var gravity_dir = _get_closest_planet().global_transform.origin - global_transform.origin
+	rotation = gravity_dir.angle() - PI/2
 
 func _physics_process(delta):
-	
-	time_delta += delta
-
-	var gravity_dir = current_planet.global_transform.origin - global_transform.origin
-	rotation = gravity_dir.angle() - PI/2
-	
-	velocity.y += gravity * delta
-	var snap = transform.y * 128 if !is_jumping else Vector2.ZERO
-	velocity = move_and_slide_with_snap(velocity.rotated(rotation), snap, -transform.y, true, 2, PI/3)
-	velocity = velocity.rotated(-rotation)
-
-
-
-func _get_closest_planet(smallest):
-	var new_smallest = smallest
-	var did_change = false
-	
-	if !is_jumping:
-		return
-	
-	for planet in planets:
-		if !new_smallest:
-			new_smallest = planet
-
-		if global_position.distance_to(planet.global_position) < global_position.distance_to(new_smallest.global_position):
-			new_smallest = planet
-
-	if new_smallest != current_planet:
-		is_jumping = false
-		velocity.y = 1200
-		
-	current_planet = new_smallest
-
-
-func _start_closest_planet_timer():
-	var timer = Timer.new()
-	timer.wait_time = 0.1
-	timer.connect("timeout", self, "_get_closest_planet", [current_planet])
-	add_child(timer)
-	timer.start()
+	velocity.y += speed
+	move_and_slide(velocity.rotated(rotation))
 
 func _on_Area2D_body_entered(body):
 	if body.name == "PlanetStaticBody2D":
 		queue_free()
+	if body.name == "Player":
+		pass
+		#TODO: kill player???
+
+func _get_closest_planet():
+	var planets = get_node("/root/Level/Planets").get_children()
+	var smallest_planet = planets[0]
+	
+	for planet in planets:
+		if global_position.distance_to(planet.global_position) < global_position.distance_to(smallest_planet.global_position):
+			smallest_planet = planet
+			
+	return smallest_planet
