@@ -29,7 +29,7 @@ position = Vector2( -0.286211, 14.8591 )
 scale = Vector2( 1.49219, 1.49219 )
 frames = SubResource( 1 )
 animation = "Default"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,6 +43,5 @@ position = Vector2( -0.44545, 5.78181 )
 shape = SubResource( 3 )
 
 [node name="Fire" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3.28203, 5.64716 )
-
+position = Vector2( 0, 0 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
