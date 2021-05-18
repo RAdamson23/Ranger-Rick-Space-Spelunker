@@ -10,7 +10,7 @@ func _ready():
 func Explode():
 	$Timer.start()
 	$CollisionShape2D.call_deferred("set_disabled", true)
-	$Fireball.play("Explode")
+	$Laser.play("Explode")
 	
 
 func _on_VisibilityNotifier2D_screen_exited():

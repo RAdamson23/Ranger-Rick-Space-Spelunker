@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chest_cave_gold_&_silver_opening_00.png-f46316e52d831f659b7d88e59031c06a.stex"
+path="res://.import/chest_cave_gold___silver_opening_00.png-426395906a8a9f586ed399b716f2a86f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/01_Cave/Chest/chest_cave_gold_&_silver_opening_00.png"
-dest_files=[ "res://.import/chest_cave_gold_&_silver_opening_00.png-f46316e52d831f659b7d88e59031c06a.stex" ]
+source_file="res://Art/01_Cave/Chest/chest_cave_gold___silver_opening_00.png"
+dest_files=[ "res://.import/chest_cave_gold___silver_opening_00.png-426395906a8a9f586ed399b716f2a86f.stex" ]
 
 [params]
 

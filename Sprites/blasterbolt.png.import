@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dripstone_down_01.png-c9cd8d389fd4d638c8fc2eaedaf7205e.stex"
+path="res://.import/blasterbolt.png-ce03b800dd0ddb88f2d69ea1bb189a86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/01_Cave/Rocks___crystals/dripstones/dripstone_down/dripstone_down_01.png"
-dest_files=[ "res://.import/dripstone_down_01.png-c9cd8d389fd4d638c8fc2eaedaf7205e.stex" ]
+source_file="res://Sprites/blasterbolt.png"
+dest_files=[ "res://.import/blasterbolt.png-ce03b800dd0ddb88f2d69ea1bb189a86.stex" ]
 
 [params]
 

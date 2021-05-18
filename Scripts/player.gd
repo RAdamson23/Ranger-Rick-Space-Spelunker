@@ -11,6 +11,12 @@ var current_planet: Node
 var time_delta = 0
 
 
+#Attack variables
+var laserPreload := preload("res://Scenes/LaserBolt.tscn")
+export var can_fire = true
+var shooting = false
+var rate_of_fire = 0.7
+
 func _ready():
 	planets = get_node("/root/Level/Planets/").get_children()
 	current_planet = planets[0]
@@ -29,13 +35,16 @@ func get_input():
 		velocity.x -= speed
 		$AnimationPlayer.play("Run")
 		$PlayerSprite.flip_h = true
-	elif Input.is_action_pressed("Attack"):
+	elif Input.is_action_pressed("Attack") && can_fire:
 		if get_global_mouse_position().x > $PlayerSprite.global_position.x:
 			$AnimationPlayer.play("Attack")
 			$PlayerSprite.flip_h = false
+			$TurnAxis.position.x = 1
 		elif get_global_mouse_position().x < $PlayerSprite.global_position.x:
 			$AnimationPlayer.play("Attack")
 			$PlayerSprite.flip_h = true
+			$TurnAxis.position.x = -1
+		shoot()
 	else:
 		if !$AnimationPlayer.current_animation == "Attack":
 			$AnimationPlayer.play("Idle")
@@ -89,3 +98,15 @@ func _start_closest_planet_timer():
 	add_child(timer)
 	timer.start()
 	
+	
+func shoot():
+		can_fire = false
+		#stamina.current_stamina -= 1
+		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
+		var laser_instance = laserPreload.instance()
+		laser_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+		laser_instance.rotation = get_angle_to(get_global_mouse_position())
+		get_parent().add_child(laser_instance)
+		yield(get_tree().create_timer(rate_of_fire),"timeout")
+		can_fire = true
+

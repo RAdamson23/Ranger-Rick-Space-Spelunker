@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dripstone_down_01.png-c9cd8d389fd4d638c8fc2eaedaf7205e.stex"
+path="res://.import/Fireball0.png-4ab102cff4fe8bd6e508c4e38a2e8b45.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/01_Cave/Rocks___crystals/dripstones/dripstone_down/dripstone_down_01.png"
-dest_files=[ "res://.import/dripstone_down_01.png-c9cd8d389fd4d638c8fc2eaedaf7205e.stex" ]
+source_file="res://Sprites/Fireball/Fireball0.png"
+dest_files=[ "res://.import/Fireball0.png-4ab102cff4fe8bd6e508c4e38a2e8b45.stex" ]
 
 [params]
 

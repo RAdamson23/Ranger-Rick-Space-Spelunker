@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dripstone_top_06.png-0671006686a34c2fe23d170b594ababe.stex"
+path="res://.import/dripstone_top_06.png-a25841018d0572fd69bf951e7a87a4ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/01_Cave/Rocks_&_crystals/dripstones/dripstone_top/dripstone_top_06.png"
-dest_files=[ "res://.import/dripstone_top_06.png-0671006686a34c2fe23d170b594ababe.stex" ]
+source_file="res://Art/01_Cave/Rocks___crystals/dripstones/dripstone_top/dripstone_top_06.png"
+dest_files=[ "res://.import/dripstone_top_06.png-a25841018d0572fd69bf951e7a87a4ca.stex" ]
 
 [params]
 
