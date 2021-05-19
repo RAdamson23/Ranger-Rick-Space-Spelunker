@@ -325,18 +325,20 @@ __meta__ = {
 ] instance=ExtResource( 2 )]
 
 [node name="PieCounter" type="Label" parent="CanvasLayer/Control"]
+visible = false
 margin_left = 369.997
 margin_top = 26.0089
 margin_right = 492.997
 margin_bottom = 62.0089
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
-text = "Pies: 0 / 3"
+text = "Treasure: 0 / 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MainCollectableCounter" type="Label" parent="CanvasLayer/Control"]
+visible = false
 margin_left = 540.702
 margin_top = 25.3866
 margin_right = 715.702
@@ -349,6 +351,7 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="CanvasLayer/Control"]
+visible = false
 margin_left = 371.0
 margin_top = 99.0
 margin_right = 521.0
@@ -397,6 +400,7 @@ anims/PieCounterTextFlash = SubResource( 15 )
 anims/Rest = SubResource( 16 )
 anims/StaminaBarFlash = SubResource( 17 )
 anims/StaminaBarRest = SubResource( 18 )
+
 [connection signal="changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_value"]
 [connection signal="max_changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_max"]
 [connection signal="changed" from="CanvasLayer/Control/Health_Bar_Script" to="CanvasLayer/Control/Health_Bar" method="set_value"]

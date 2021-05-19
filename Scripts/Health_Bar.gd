@@ -16,13 +16,13 @@ var canBeDamaged = true
 var timeInvulnerable = 1
 
 func _ready():
-	if get_node("/root/Cave") != null:
+	if get_node("/root/Level") != null:
 		global_vars = get_node("/root/Globals")
 		max_amount = global_vars.maxHealth
 		current_health = global_vars.health
-		player = get_node("/root/Cave").get_node("Player")
-		playerEffects = get_node("/root/Cave").get_node("Player").get_node("PlayerEffects")
-		HUDAnimationPlayer = get_node("/root/Cave/MainHUD/HealthBar")
+		player = get_node("/root/Level").get_node("Player")
+		playerEffects = get_node("/root/Level").get_node("Player").get_node("PlayerEffects")
+		HUDAnimationPlayer = get_node("/root/Level/MainHUD/HealthBar")
 	_intialize()
 	
 
@@ -73,6 +73,6 @@ func damage():
 		canBeDamaged = true
 		if playerEffects != null:
 			playerEffects.play("Rest")
-	if get_node("/root/Cave") != null:
-		player = get_node("/root/Cave").get_node("Player")
-		playerEffects = get_node("/root/Cave").get_node("Player").get_node("PlayerEffects")
+	if get_node("/root/Level") != null:
+		player = get_node("/root/Level").get_node("Player")
+		playerEffects = get_node("/root/Level").get_node("Player").get_node("PlayerEffects")

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var playerHealth = get_node("/root/Cave/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
-onready var player = get_node("/root/Cave/Player")
+onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
+onready var player = get_node("/root/Level/Player")
 onready var global_vars = get_node("/root/Globals")
 # Declare member variables here. Examples:
 # var a = 2
@@ -68,7 +68,6 @@ func switchPos():
 	$Hitbox/CollisionShape2D.position.x *= -1
 
 func _process(delta):
-	
 	if !is_dead && sees_player():
 		hasSeenPlayer = true
 		if !playerDetectorExited:
@@ -185,7 +184,7 @@ func onHit():
 func dead():
 	$Death.play()
 	is_dead = true
-	global_vars.enemiesDefeated+=1
+#	global_vars.enemiesDefeated+=1
 	velocity = Vector2(0,0)
 	changeAnimation("DEAD")
 	$CollisionShape2D.call_deferred("set_disabled", true)
@@ -217,6 +216,7 @@ func _on_PlayerDetector_body_entered(body):
 func _on_AttackDetector_body_entered(body):
 	if body.name == "Player":
 		playerHealth.current_health-=damage
+	pass
 
 
 func _on_PlayerDetector_body_exited(body):

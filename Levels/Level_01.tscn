@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,16 @@
 [ext_resource path="res://Art/Heliotropos_norings.png" type="Texture" id=4]
 [ext_resource path="res://Art/Hellion_norings.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Level_01_Exterior.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Portal.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 103.686, 18.6005 )
 
 [node name="Level" type="Node2D"]
 position = Vector2( -0.906494, 0 )
+script = ExtResource( 8 )
 
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
 
@@ -33,3 +40,18 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 
 [node name="AsteroidSpawner" parent="." instance=ExtResource( 3 )]
+
+[node name="MainHUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( -4968.73, 2072.97 )
+rotation = 2.16595
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
