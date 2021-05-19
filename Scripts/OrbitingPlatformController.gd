@@ -1,7 +1,7 @@
 tool
 extends Node2D
 
-export var radius = Vector2.ONE * 128 # Distance on the x and y axis to orbit around the controller
+export var radius = Vector2.ONE * 256 # Distance on the x and y axis to orbit around the controller
 export var rotation_duration := 4.0 # How many seconds it takes for one platform to complete one rotation
 
 var platforms = [] # References to the platforms that will orbit controller

@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Crystals.gd" type="Script" id=1]
-[ext_resource path="res://Art/01_Cave/Rocks_&_crystals/crystals/crystal_blue_00.png" type="Texture" id=2]
+[ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_blue_00.png" type="Texture" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.1481, 18.0284 )

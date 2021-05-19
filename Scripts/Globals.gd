@@ -1,6 +1,5 @@
 extends Node
 
-var isInPlanet = true setget set_isInPlanet, get_isInPlanet
 onready var isDead
 onready var health = 6 setget set_health, get_health
 onready var maxHealth = 6 setget set_maxHealth, get_maxHealth
@@ -14,14 +13,6 @@ onready var stamina = 5 setget set_stamina, get_stamina
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-func set_isInPlanet(value):
-	isInPlanet = value
-	pass
-
-func get_isInPlanet():
-	return isInPlanet
-	pass
 
 func set_health(value):
 	health = value
