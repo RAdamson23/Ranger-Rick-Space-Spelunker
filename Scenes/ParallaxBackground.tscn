@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-stars.png" type="Texture" id=1]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-ring-planet.png" type="Texture" id=2]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-big-planet.png" type="Texture" id=3]
+[ext_resource path="res://Art/ParalaxBackground/preview.png" type="Texture" id=4]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-far-planets.png" type="Texture" id=5]
+
+[node name="ParallaxBackground" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+follow_viewport_scale = 0.001
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 66.8258, 132.897 )
+scale = Vector2( 5, 5 )
+z_index = -2
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+scale = Vector2( 15, 15 )
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0.112091, -0.112244 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1301.34, 194.968 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 205.055, 155.045 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 620.813, 457.006 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+centered = false

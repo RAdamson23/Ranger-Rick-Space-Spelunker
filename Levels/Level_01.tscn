@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/Hellion_norings.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Portal.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -51,5 +52,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 shape = SubResource( 1 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
