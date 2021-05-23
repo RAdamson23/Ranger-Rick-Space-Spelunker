@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/random_selection.png-27e41ec24d14b779db755761ff0e6839.stex"
+path="res://.import/scifi_platformTiles_32x32.png-5e0921162a98b2c0c2631450727de0e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/random_selection.png"
-dest_files=[ "res://.import/random_selection.png-27e41ec24d14b779db755761ff0e6839.stex" ]
+source_file="res://Sprites/scifi_platformTiles_32x32.png"
+dest_files=[ "res://.import/scifi_platformTiles_32x32.png-5e0921162a98b2c0c2631450727de0e0.stex" ]
 
 [params]
 

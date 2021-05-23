@@ -1,0 +1,257 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TileSets/miscellaneousCollision.tres" type="TileSet" id=1]
+[ext_resource path="res://TileSets/32by32TileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://TileSets/48by48NoCollisionBlocks.tres" type="TileSet" id=3]
+[ext_resource path="res://TileSets/16by16TileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://TileSets/48by48CollisionBlock.tres" type="TileSet" id=5]
+[ext_resource path="res://TileSets/miscellaneous.tres" type="TileSet" id=6]
+[ext_resource path="res://TileSets/16by16NoCollision.tres" type="TileSet" id=7]
+[ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 9 )
+
+[node name="TileMaps" type="Node"]
+
+[node name="32by32 Blocks" type="TileMap" parent="."]
+position = Vector2( 203.417, 1970.6 )
+z_index = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+
+[node name="16by16 Blocks" type="TileMap" parent="."]
+position = Vector2( 95.1508, 2736.6 )
+z_index = 2
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+
+[node name="48by48 NoCollision Blocks" type="TileMap" parent="."]
+modulate = Color( 0.364706, 0.364706, 0.364706, 1 )
+position = Vector2( 228.328, 2445.01 )
+z_index = -5
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+
+[node name="48by48 Collision Block" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( -2293457, 536870915, 0 )
+
+[node name="miscellaneous" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+
+[node name="miscellaneous Collision" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( -2948827, 536870915, 0, -2817757, 536870915, 0, 2687296, 536870925, 0, 2818374, 536870912, 0 )
+
+[node name="16by16 NoCollisions" type="TileMap" parent="."]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="MovingPlatforms"]
+position = Vector2( 1804.25, -135.891 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/KinematicBody2D"]
+
+[node name="ModuleLabels" type="Node" parent="."]
+
+[node name="AirLock" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 94.0
+margin_top = 288.0
+margin_right = 400.0
+margin_bottom = 328.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/AirLock"]
+visible = false
+margin_left = 25.7205
+margin_top = 10.3693
+margin_right = 103.721
+margin_bottom = 29.3693
+custom_fonts/font = SubResource( 2 )
+text = "Collect 3 pies to advance"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Storage" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 1186.1
+margin_top = 785.899
+margin_right = 1318.1
+margin_bottom = 825.899
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Storage"]
+margin_left = 25.7205
+margin_top = 10.3693
+margin_right = 103.721
+margin_bottom = 29.3693
+custom_fonts/font = SubResource( 2 )
+text = "STORAGE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control Module" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 2160.7
+margin_top = -129.578
+margin_right = 2355.7
+margin_bottom = -89.5778
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Control Module"]
+visible = false
+margin_left = 18.3045
+margin_top = 9.83952
+margin_right = 171.304
+margin_bottom = 28.8395
+custom_fonts/font = SubResource( 2 )
+text = "CONTROL MODULE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Laboratory" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 4673.24
+margin_top = -112.563
+margin_right = 4831.24
+margin_bottom = -72.563
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Laboratory"]
+visible = false
+margin_left = 18.3045
+margin_top = 9.83952
+margin_right = 171.304
+margin_bottom = 28.8395
+custom_fonts/font = SubResource( 2 )
+text = "Laboratory"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Astronaut Module" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 1180.37
+margin_top = 69.6683
+margin_right = 1415.37
+margin_bottom = 109.668
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Astronaut Module"]
+visible = false
+margin_left = 25.7205
+margin_top = 10.3693
+margin_right = 103.721
+margin_bottom = 29.3693
+custom_fonts/font = SubResource( 2 )
+text = "Astronaut Module"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Astronaut Module2" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 2102.06
+margin_top = 932.762
+margin_right = 2305.06
+margin_bottom = 993.762
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Astronaut Module2"]
+visible = false
+margin_left = 25.7205
+margin_top = 10.3693
+margin_right = 103.721
+margin_bottom = 29.3693
+custom_fonts/font = SubResource( 2 )
+text = "E.T. CONTAINMENT 
+       FACILITY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Observatory" type="Panel" parent="ModuleLabels"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 3463.9
+margin_top = 59.5999
+margin_right = 3642.9
+margin_bottom = 99.5999
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ModuleLabels/Observatory"]
+visible = false
+margin_left = 25.7205
+margin_top = 10.3693
+margin_right = 103.721
+margin_bottom = 29.3693
+custom_fonts/font = SubResource( 2 )
+text = "Observatory"
+__meta__ = {
+"_edit_use_anchors_": false
+}

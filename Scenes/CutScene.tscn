@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Art/CutSceneArtWork/random_selection.png" type="Texture" id=1]
 [ext_resource path="res://Art/CutSceneArtWork/stary_background.jpg" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/CutSceneArtWork/grey_button04.png" type="Texture" id=7]
 [ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Animation/ScenesZoomInStars.tres" type="Animation" id=9]
+[ext_resource path="res://Music/CutsceneMusic/Greatness-AShamaluevMusic.ogg" type="AudioStream" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -121,5 +122,9 @@ text = "PRESS ENTER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
 
 [connection signal="tween_completed" from="Panel/Tween" to="Panel" method="_on_Tween_tween_completed"]

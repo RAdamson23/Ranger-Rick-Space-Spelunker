@@ -21,8 +21,8 @@ func load_dialog():
 			$IntroDialogueScript, "percent_visible", 0,1,1, Tween.TRANS_LINEAR,Tween.EASE_IN_OUT
 		)
 		$Tween.start()
-	else:
-		get_tree().change_scene("res://Scene/Level1.tscn")
+	#else:
+		#get_tree().change_scene("res://Scene/Level1.tscn")
 	dialog_index += 1
 
 

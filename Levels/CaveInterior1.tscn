@@ -135,19 +135,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -127.329, 495.915 )
+position = Vector2( 486.941, 158.217 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -510.99, 32.1485 )
+position = Vector2( -8.38896e-06, 512 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -188.48, -476.046 )
+position = Vector2( -486.941, 158.217 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 394.503, -326.361 )
+position = Vector2( -300.946, -414.217 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 432.296, 274.344 )
+position = Vector2( 300.946, -414.217 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 

@@ -29,12 +29,12 @@ position = Vector2( -538.234, -451.383 )
 scale = Vector2( 4, 4 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -4228.97, 1008.06 )
+position = Vector2( -4343.26, 538.189 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 
 [node name="Planet3" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -1691.17, 1978.6 )
+position = Vector2( -1767.36, 2156.39 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 

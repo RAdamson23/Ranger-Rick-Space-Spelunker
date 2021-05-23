@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Art/CavePlanetLevelBG.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/PlayerInterior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TileSets/miscellaneous.tres" type="TileSet" id=4]
+[ext_resource path="res://TileSets/miscellaneousCollision.tres" type="TileSet" id=5]
+[ext_resource path="res://TileSets/16by16NoCollision.tres" type="TileSet" id=6]
+[ext_resource path="res://TileSets/32by32TileSet.tres" type="TileSet" id=7]
+[ext_resource path="res://TileSets/16by16TileSet.tres" type="TileSet" id=8]
+[ext_resource path="res://TileSets/48by48CollisionBlock.tres" type="TileSet" id=9]
+[ext_resource path="res://TileSets/48by48NoCollisionBlocks.tres" type="TileSet" id=10]
+
+[node name="Level" type="Node"]
+
+[node name="16by16NoCollision" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="16by16" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1572870, 1610612740, 0, -1572868, 1610612740, 0, -1572866, 1610612740, 0, -1638400, 1610612740, 0, -1638398, 1610612740, 0, -1638396, 1610612740, 0, -1638394, 1610612740, 0, -1638392, 1610612740, 0, -1638390, 1610612740, 0, -1441798, 1610612742, 0, -1441796, 1610612742, 0, -1441794, 1610612742, 0, -1507328, 1610612742, 0, -1507326, 1610612742, 0, -1507324, 1610612742, 0, -1507322, 1610612742, 0, -1507320, 1610612742, 0, -1507318, 1610612742, 0, -327707, 1610612738, 0, -327705, 1610612738, 0, -327703, 1610612738, 0, -327701, 1610612738, 0, -327699, 1610612738, 0, -327697, 1610612738, 0, -327695, 1610612738, 0, -327693, 1610612738, 0, -327691, 1610612738, 0, -327689, 1610612738, 0, -327687, 1610612738, 0, -327685, 1610612738, 0, -327683, 1610612738, 0, -327681, 1610612738, 0, -393215, 1610612738, 0, -393213, 1610612738, 0, -196635, 1610612737, 0, -196633, 1610612737, 0, -196631, 1610612737, 0, -196629, 1610612737, 0, -196627, 1610612737, 0, -196625, 1610612737, 0, -196623, 1610612737, 0, -196621, 1610612737, 0, -196619, 1610612737, 0, -196617, 1610612737, 0, -196615, 1610612737, 0, -196613, 1610612737, 0, -196611, 1610612737, 0, -196609, 1610612737, 0, -262143, 1610612737, 0, -262141, 1610612737, 0 )
+
+[node name="32by32" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -917486, 1610612736, 0, -917482, 1610612736, 0, -917478, 1610612736, 0, -917474, 1610612736, 0, 524294, 1610612738, 0, 524298, 1610612738, 0, 524302, 1610612738, 0, 524306, 1610612738, 0, 524310, 1610612738, 0, 524314, 1610612738, 0, 524318, 1610612738, 0, 524322, 1610612738, 0, 1441753, 1610612737, 0, 1441757, 1610612737, 0, 1441761, 1610612737, 0, 1441765, 1610612737, 0, 1441769, 1610612737, 0, 1441773, 1610612737, 0, 1441777, 1610612737, 0, 1441781, 1610612737, 0, 1441785, 1610612737, 0, 1441789, 1610612737, 0, 1703957, 1610612740, 0, 1703961, 1610612740, 0, 1703965, 1610612740, 0, 1703969, 1610612740, 0, 1703973, 1610612740, 0, 1703977, 1610612740, 0, 1703981, 1610612740, 0, 2490361, 1610612739, 0, 2490365, 1610612739, 0, 2424833, 1610612739, 0, 2424837, 1610612739, 0, 2424841, 1610612739, 0, 2424845, 1610612739, 0 )
+
+[node name="48by48" type="TileMap" parent="."]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -327634, 1610612741, 0, -327628, 1610612741, 0, -327622, 1610612741, 0, -327616, 1610612741, 0, -327610, 1610612741, 0, 852021, 1610612740, 0, 852027, 1610612740, 0, 852033, 1610612740, 0, 852039, 1610612740, 0, 852045, 1610612740, 0, 852051, 1610612740, 0 )
+
+[node name="48by48NoCollision" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="MiscNoCollision" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1441742, 1610612744, 0, -1441738, 1610612744, 0, -1441734, 1610612744, 0, -1441730, 1610612744, 0, -1441726, 1610612744, 0 )
+
+[node name="Misc" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1441746, 1610612741, 0, -1441742, 1610612741, 0, -1441738, 1610612741, 0, -1441734, 1610612741, 0, -1441730, 1610612741, 0, -1441726, 1610612741, 0 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 1121.85, 1288.55 )
+scale = Vector2( 3.15534, 3.20583 )
+z_index = -3
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -336.739, -94.2868 )
+z_index = 4
+
+[node name="MainHUD" parent="." instance=ExtResource( 2 )]
