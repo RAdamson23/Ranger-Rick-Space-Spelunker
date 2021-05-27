@@ -247,7 +247,6 @@ shader_param/rhythm = SubResource( 6 )
 
 [node name="Fire" type="Particles2D"]
 material = SubResource( 1 )
-position = Vector2( 255.836, 291.875 )
 rotation = -1.5708
 scale = Vector2( 0.45, 0.45 )
 amount = 50
