@@ -54,5 +54,4 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
-
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]

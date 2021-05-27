@@ -1,15 +1,17 @@
-extends KinematicBody2D
+extends Node2D
 
-export (int) var speed = 5
+export (int) var speed = 10
 var velocity = Vector2.ZERO
+onready var global_vars = get_node("/root/Globals")
 
 func _ready():
-	var gravity_dir = _get_closest_planet().global_transform.origin - global_transform.origin
+	#var gravity_dir = _get_closest_planet().global_transform.origin - global_transform.origin
+	var gravity_dir = global_vars.get_current_planet().global_transform.origin - global_transform.origin
 	rotation = gravity_dir.angle() - PI/2
+	velocity.y += speed
 
 func _physics_process(delta):
-	velocity.y += speed
-	move_and_slide(velocity.rotated(rotation))
+	translate(velocity.rotated(rotation))
 
 func _on_Area2D_body_entered(body):
 	if body.name == "PlanetStaticBody2D":

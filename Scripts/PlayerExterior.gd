@@ -82,9 +82,9 @@ func _physics_process(delta):
 			is_jumping = true
 			velocity.y = jump_speed
 
-	var current_planet_index = planets.find(current_planet,0)
+	#var current_planet_index = planets.find(current_planet,0)
 	#print(current_planet_index)
-	global_vars.set_current_planet(current_planet_index)
+	global_vars.set_current_planet(current_planet)
 
 func _get_closest_planet(smallest):
 	var new_smallest = smallest
