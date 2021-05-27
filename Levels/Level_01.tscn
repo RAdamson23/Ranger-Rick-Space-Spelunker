@@ -24,17 +24,17 @@ z_index = 2
 
 [node name="Planets" type="Node2D" parent="."]
 
-[node name="Planet" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -538.234, -451.383 )
+[node name="Planet0" parent="Planets" instance=ExtResource( 1 )]
+position = Vector2( -402.469, -259.05 )
 scale = Vector2( 4, 4 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -4343.26, 538.189 )
+position = Vector2( -5530.64, -350.756 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 
-[node name="Planet3" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -1767.36, 2156.39 )
+[node name="Planet1" parent="Planets" instance=ExtResource( 1 )]
+position = Vector2( -2954.74, 1019.81 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 
@@ -43,7 +43,7 @@ texture = ExtResource( 4 )
 [node name="MainHUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Portal" type="Area2D" parent="."]
-position = Vector2( -4968.73, 2072.97 )
+position = Vector2( -6409.44, 649.877 )
 rotation = 2.16595
 script = ExtResource( 9 )
 __meta__ = {

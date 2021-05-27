@@ -35,8 +35,8 @@ func _ready():
 		current_planet = planets[0]
 		_get_closest_planet(current_planet)
 		_start_closest_planet_timer()
-		print(velocity)
-		
+
+
 func _process(delta):
 	if stamina.current_stamina < stamina.max_amount && !Input.is_action_just_released("Attack") || !Input.is_action_just_released("jump") && global_vars.isDead == false:
 		stamina.current_stamina += regen_Stamina_rate*delta
@@ -82,7 +82,9 @@ func _physics_process(delta):
 			is_jumping = true
 			velocity.y = jump_speed
 
-
+	var current_planet_index = planets.find(current_planet,0)
+	#print(current_planet_index)
+	global_vars.set_current_planet(current_planet_index)
 
 func _get_closest_planet(smallest):
 	var new_smallest = smallest
@@ -122,9 +124,11 @@ func shoot():
 		playerStates.play("Attack")
 		player.flip_h = true
 		$TurnAxis.position.x = -1
+
 	can_fire = false
 	stamina.current_stamina -= 1
 	get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
+
 	var laser_instance = laserPreload.instance()
 	laser_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
 	laser_instance.rotation = get_angle_to(get_global_mouse_position())
