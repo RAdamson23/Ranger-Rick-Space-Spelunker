@@ -183,7 +183,7 @@ shape = SubResource( 2 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2( 49.6107, 10.0291 )
+position = Vector2( 47.6107, 7.0291 )
 shape = SubResource( 3 )
 
 [node name="AttackDetector" type="Area2D" parent="." groups=[
@@ -191,11 +191,9 @@ shape = SubResource( 3 )
 ]]
 monitoring = false
 monitorable = false
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
-position = Vector2( 48.4146, 12.2151 )
+position = Vector2( 47.1646, 10.6314 )
 shape = SubResource( 4 )
 
 [node name="EnemyStates" type="AnimationPlayer" parent="."]

@@ -66,13 +66,13 @@ func damage():
 	if playerEffects != null && player != null:
 		player.motion.y = player.JUMP_HEIGHT * 0.8
 		player.get_node("Oof").play()
-		playerEffects.play("Damaged")
-		playerEffects.queue("Visible")
+		playerEffects.play("State_Damaged")
+		playerEffects.queue("State_Rest")
 		canBeDamaged = false
 		yield(get_tree().create_timer(timeInvulnerable),"timeout")
 		canBeDamaged = true
 		if playerEffects != null:
-			playerEffects.play("Rest")
+			playerEffects.play("State_Rest")
 	if get_node("/root/Level") != null:
 		player = get_node("/root/Level").get_node("Player")
 		playerEffects = get_node("/root/Level").get_node("Player").get_node("PlayerEffects")

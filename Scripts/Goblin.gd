@@ -214,7 +214,7 @@ func _on_PlayerDetector_body_entered(body):
 		attack()
 
 func _on_AttackDetector_body_entered(body):
-	if body.name == "Player":
+	if body.is_in_group("Player"):
 		playerHealth.current_health-=damage
 	pass
 

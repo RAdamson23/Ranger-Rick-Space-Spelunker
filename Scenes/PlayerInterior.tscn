@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Animation/State_Rest.tres" type="Animation" id=1]
 [ext_resource path="res://Animation/State_Damaged.tres" type="Animation" id=2]
 [ext_resource path="res://Animation/State_Visible.tres" type="Animation" id=3]
 [ext_resource path="res://Sprites/Space Cadet Sprite Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/PlayerInterior.gd" type="Script" id=5]
+[ext_resource path="res://SFX/Oof_Damage_Sound.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack"
@@ -152,3 +153,6 @@ position = Vector2( 9.26939, 9.78032 )
 anims/State_Damaged = ExtResource( 2 )
 anims/State_Rest = ExtResource( 1 )
 anims/State_Visible = ExtResource( 3 )
+
+[node name="Oof" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://Scripts/Globals.gd"
+HealthBar="*res://Scripts/Health_Bar.gd"
 
 [display]
 
