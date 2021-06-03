@@ -62,8 +62,9 @@ margin_left = 233.0
 margin_top = 208.0
 margin_right = 379.0
 margin_bottom = 224.0
-min_value = -80.0
-max_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,8 +74,9 @@ margin_left = 233.0
 margin_top = 263.953
 margin_right = 379.0
 margin_bottom = 279.953
-min_value = -10.0
-max_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,6 +102,5 @@ text = "SFX"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="value_changed" from="Pause/BlackOverlay/Panel/Music" to="Pause" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="Pause/BlackOverlay/Panel/SFX" to="Pause" method="_on_HSlider2_value_changed"]

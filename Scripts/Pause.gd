@@ -20,9 +20,9 @@ func pauseGame():
 		visible = false
 
 func _on_HSlider_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear2db(value))
 
 
 func _on_HSlider2_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(value))
 
