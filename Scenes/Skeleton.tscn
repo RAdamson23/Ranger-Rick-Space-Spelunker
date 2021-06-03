@@ -217,8 +217,6 @@ shape = SubResource( 2 )
 "Collision",
 ]]
 visible = false
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 62.8635, 1.91747 )
@@ -230,8 +228,6 @@ shape = SubResource( 3 )
 visible = false
 monitoring = false
 monitorable = false
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
 position = Vector2( 62.3091, -0.993818 )
@@ -283,6 +279,7 @@ disabled = true
 [node name="BlockCooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]

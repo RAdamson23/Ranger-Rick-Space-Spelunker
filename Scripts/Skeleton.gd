@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var playerHealth = get_node("/root/Cave/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
-onready var player = get_node("/root/Cave/Player")
+onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
+onready var player = get_node("/root/Level/Player")
 onready var global_vars = get_node("/root/Globals")
 # Declare member variables here. Examples:
 # var a = 2

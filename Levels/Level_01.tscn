@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Portal.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/Race-to-Mars.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -57,11 +57,12 @@ shape = SubResource( 1 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
-[node name="Pause" parent="." instance=ExtResource( 10 )]
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 11 )
 autoplay = true
 bus = "Music"
+
+[node name="PauseScreen" parent="." instance=ExtResource( 10 )]
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]

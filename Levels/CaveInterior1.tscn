@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/OrbitingPlatformController.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Crystal.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Skeleton.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 10 )
@@ -97,37 +99,40 @@ position = Vector2( 2151.86, 496.096 )
 [node name="Spike18" parent="Spikes" instance=ExtResource( 8 )]
 position = Vector2( 2111.48, 495.759 )
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Goblins" type="Node2D" parent="."]
 
-[node name="Goblin" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2691.04, 324.196 )
 
-[node name="Goblin2" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin2" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 504.304, 82.6382 )
 
-[node name="Goblin5" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin5" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( -148.232, 1929.25 )
 
-[node name="Goblin7" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin7" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 474.032, 1932.61 )
 
-[node name="Goblin9" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin9" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 1133.62, 2838.44 )
 
-[node name="Goblin10" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin10" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 1621.19, 2846.29 )
 
-[node name="Goblin8" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Goblin8" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2161.93, 2386.61 )
 
-[node name="Goblin6" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2478.73, 1942.7 )
+[node name="Goblin6" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 2099.72, 1413.78 )
 
-[node name="Goblin4" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 1154.66, -494.664 )
+[node name="Goblin11" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 2744.6, 1430.75 )
 
-[node name="Goblin3" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 1200.99, -170.377 )
+[node name="Goblin4" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1716.58, -484.585 )
+
+[node name="Goblin3" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 2452.24, 327.434 )
 
 [node name="OrbitingPlatformController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1250.16, 1278.16 )
@@ -135,19 +140,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 474.045, 193.456 )
+position = Vector2( -485.259, 163.304 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -37.4998, 510.625 )
+position = Vector2( -305.264, -411.045 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -497.221, 122.127 )
+position = Vector2( 296.595, -417.343 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -269.8, -435.146 )
+position = Vector2( 488.57, 153.112 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 330.476, -391.062 )
+position = Vector2( 5.35779, 511.972 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -178,5 +183,18 @@ move_to = Vector2( 512, 0 )
 position = Vector2( 360.135, 2407.99 )
 mode = "Stamina"
 
-[node name="Chest" parent="Collectables" instance=ExtResource( 13 )]
-position = Vector2( 1288.78, 2886.26 )
+[node name="Chest3" parent="Collectables" instance=ExtResource( 13 )]
+position = Vector2( -674.874, 1480.31 )
+
+[node name="Chest2" parent="Collectables" instance=ExtResource( 13 )]
+position = Vector2( 1283.16, 2889.25 )
+
+[node name="Skeletons" type="Node2D" parent="."]
+
+[node name="Skeleton" parent="Skeletons" instance=ExtResource( 14 )]
+position = Vector2( 843.193, -167.054 )
+
+[node name="Skeleton2" parent="Skeletons" instance=ExtResource( 14 )]
+position = Vector2( 2395.68, 1954.44 )
+
+[node name="PauseScreen" parent="." instance=ExtResource( 15 )]

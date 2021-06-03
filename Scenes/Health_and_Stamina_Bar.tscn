@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Stamina_Bar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Health_Bar.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Art/PermanentMarker-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/PauseButton.gd" type="Script" id=7]
+[ext_resource path="res://Art/ButtonStyleHover.tres" type="StyleBox" id=8]
+[ext_resource path="res://Art/ButtonStyle.tres" type="StyleBox" id=9]
+[ext_resource path="res://Art/ButtonStylePressed.tres" type="StyleBox" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.419608, 0.592157, 1 )
@@ -56,13 +59,13 @@ font_data = ExtResource( 5 )
 size = 37
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=7]
 size = 32
 outline_size = 3
+outline_color = Color( 0, 1, 0.905882, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "HealthBarFlash"
+[sub_resource type="Animation" id=8]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -76,25 +79,24 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "HealthBarRest"
-length = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/Health_Bar:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [sub_resource type="Animation" id=9]
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/Health_Bar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=10]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -110,7 +112,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
@@ -125,7 +127,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/Stamina_Bar:visible")
@@ -140,8 +142,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "StaminaBarRest"
+[sub_resource type="Animation" id=13]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/Stamina_Bar:visible")
@@ -156,8 +157,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "HealthBarFlash"
+[sub_resource type="Animation" id=14]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -173,8 +173,7 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "HealthBarRest"
+[sub_resource type="Animation" id=15]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/Health_Bar:visible")
@@ -189,7 +188,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -205,7 +204,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
@@ -220,7 +219,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/Stamina_Bar:visible")
@@ -235,8 +234,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "StaminaBarRest"
+[sub_resource type="Animation" id=19]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/Stamina_Bar:visible")
@@ -394,31 +392,39 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
 margin_left = 1800.13
 margin_top = 40.0001
 margin_right = 1867.13
 margin_bottom = 106.0
-custom_fonts/font = SubResource( 19 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 1, 0.905882, 1 )
+custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0.905882, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0.905882, 1 )
 text = "| |"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StaminaBar" type="AnimationPlayer" parent="."]
-anims/HealthBarFlash = SubResource( 7 )
-anims/HealthBarRest = SubResource( 8 )
-anims/PieCounterTextFlash = SubResource( 9 )
-anims/Rest = SubResource( 10 )
-anims/StaminaBarFlash = SubResource( 11 )
-anims/StaminaBarRest = SubResource( 12 )
+anims/HealthBarFlash = SubResource( 8 )
+anims/HealthBarRest = SubResource( 9 )
+anims/PieCounterTextFlash = SubResource( 10 )
+anims/Rest = SubResource( 11 )
+anims/StaminaBarFlash = SubResource( 12 )
+anims/StaminaBarRest = SubResource( 13 )
 
 [node name="HealthBar" type="AnimationPlayer" parent="."]
-anims/HealthBarFlash = SubResource( 13 )
-anims/HealthBarRest = SubResource( 14 )
-anims/PieCounterTextFlash = SubResource( 15 )
-anims/Rest = SubResource( 16 )
-anims/StaminaBarFlash = SubResource( 17 )
-anims/StaminaBarRest = SubResource( 18 )
+anims/HealthBarFlash = SubResource( 14 )
+anims/HealthBarRest = SubResource( 15 )
+anims/PieCounterTextFlash = SubResource( 16 )
+anims/Rest = SubResource( 17 )
+anims/StaminaBarFlash = SubResource( 18 )
+anims/StaminaBarRest = SubResource( 19 )
 
 [connection signal="changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_value"]
 [connection signal="max_changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_max"]

@@ -67,7 +67,7 @@ func damage():
 		player.motion.y = player.JUMP_HEIGHT * 0.8
 		player.get_node("Oof").play()
 		playerEffects.play("State_Damaged")
-		playerEffects.queue("State_Rest")
+		playerEffects.queue("State_Visible")
 		canBeDamaged = false
 		yield(get_tree().create_timer(timeInvulnerable),"timeout")
 		canBeDamaged = true
