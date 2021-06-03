@@ -28,7 +28,7 @@ font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 48
-font_data = ExtResource( 12 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
@@ -287,9 +287,9 @@ vframes = 5
 [node name="Information" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.807843 )
 margin_left = 1347.65
-margin_top = 551.016
+margin_top = 552.016
 margin_right = 1844.65
-margin_bottom = 867.016
+margin_bottom = 868.016
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
