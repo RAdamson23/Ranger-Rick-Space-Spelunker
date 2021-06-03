@@ -97,9 +97,6 @@ position = Vector2( 1295.57, 1968.32 )
 [node name="Spike26" parent="Spikes" instance=ExtResource( 8 )]
 position = Vector2( 1596.69, 1923.16 )
 
-[node name="Portal" parent="Spikes/Spike26" instance=ExtResource( 16 )]
-position = Vector2( -1105.34, 1246.35 )
-
 [node name="Spike27" parent="Spikes" instance=ExtResource( 8 )]
 position = Vector2( 1629.33, 1968.32 )
 
@@ -168,25 +165,38 @@ position = Vector2( 1716.58, -484.585 )
 [node name="Goblin3" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2583.05, 986.255 )
 
+[node name="Portal" parent="." instance=ExtResource( 16 )]
+position = Vector2( 576.78, 3168.83 )
+
 [node name="OrbitingPlatformController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1250.16, 1278.16 )
 radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 132.515, 494.554 )
+position = Vector2( 218, -463.271 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -429.4, 278.855 )
+position = Vector2( 507.963, 64.1714 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -397.898, -322.212 )
+position = Vector2( 95.9384, 502.931 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 183.485, -477.993 )
+position = Vector2( -448.669, 246.657 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 511.298, 26.7964 )
+position = Vector2( -373.231, -350.489 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -222,6 +232,7 @@ position = Vector2( 2842.81, 1150.02 )
 [node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource( 1 )]
 position = Vector2( 1063.88, 2450.89 )
 move_to = Vector2( 512, 0 )
+speed = 3.0
 
 [node name="Collectables" type="Node2D" parent="."]
 

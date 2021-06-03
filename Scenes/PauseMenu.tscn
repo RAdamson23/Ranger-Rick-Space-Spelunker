@@ -23,6 +23,7 @@ font_data = ExtResource( 3 )
 
 [node name="PauseScreen" type="Control" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 174.0
 margin_bottom = 150.0
 script = ExtResource( 2 )
@@ -174,7 +175,6 @@ text = "SFX"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="PauseScreen/Panel/Resume" to="PauseScreen" method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseScreen/Panel/Exit2Menu" to="PauseScreen" method="_on_Exit2Menu_pressed"]
 [connection signal="pressed" from="PauseScreen/Panel/Quit" to="PauseScreen" method="_on_Quit_pressed"]

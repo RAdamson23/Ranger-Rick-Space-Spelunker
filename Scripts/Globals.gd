@@ -9,6 +9,8 @@ onready var deathCount = 0
 onready var current_planet = 1 setget set_current_planet, get_current_planet
 onready var mainCollectable = 0 setget set_mainCollectable, get_mainCollectable
 var enemiesDefeated = 0
+onready var baseLevel = "CaveInterior1.tscn" setget set_baseLevel, get_baseLevel
+onready var isInsidePlanet = false
 
 func _ready():
 	health = 6
@@ -22,7 +24,7 @@ func _ready():
 signal pauseGame
 
 func onDeath():
-	get_tree().change_scene("res://Levels/CaveInterior1.tscn")
+	get_tree().change_scene(baseLevel)
 	_ready()
 	deathCount+=1
 
@@ -31,6 +33,11 @@ func _physics_process(delta):
 	#print(current_planet 	)
 	pass
 
+func set_baseLevel(value):
+	baseLevel = value
+	pass
+func get_baseLevel():
+	return baseLevel
 
 func set_mainCollectable(value):
 	mainCollectable = value

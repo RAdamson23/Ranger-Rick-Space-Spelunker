@@ -37,7 +37,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 15.9907, 15.7441 )
+extents = Vector2( 35.8292, 42.8975 )
 
 [node name="Portal" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,14 +46,13 @@ script = ExtResource( 1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 6 )
 animation = "Open"
-frame = 4
+frame = 3
 playing = true
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="PortalHB" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, 1.00113 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalHB"]
+position = Vector2( 2.12128, 10.1935 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 7 )
-
-[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_entered" from="PortalHB" to="." method="_on_PortalHB_body_entered"]

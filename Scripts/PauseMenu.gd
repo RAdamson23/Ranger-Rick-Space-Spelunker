@@ -41,7 +41,7 @@ func _on_Resume_pressed():
 
 func _on_Exit2Menu_pressed():
 	get_tree().paused = !get_tree().paused
-	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 func _on_Quit_pressed():
 	get_tree().paused = !get_tree().paused

@@ -8,21 +8,37 @@
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scripts/Portal.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/Race-to-Mars.ogg" type="AudioStream" id=11]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 103.686, 18.6005 )
+[ext_resource path="res://Scripts/Level_01.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=13]
 
 [node name="Level" type="Node2D"]
 position = Vector2( -0.906494, 0 )
+script = ExtResource( 12 )
 
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -752.419, -1749.71 )
 z_index = 2
+
+[node name="Portal_Planet2" parent="." instance=ExtResource( 13 )]
+position = Vector2( -6610.21, -1064.41 )
+rotation = -1.00706
+scale = Vector2( 1, 1 )
+nextLevel = "CaveInterior3.tscn"
+
+[node name="Portal_Planet1" parent="." instance=ExtResource( 13 )]
+position = Vector2( -3109.27, 2308.01 )
+rotation = -3.03862
+scale = Vector2( 1, 1 )
+nextLevel = "CaveInterior2.tscn"
+
+[node name="Portal_Planet0" parent="." instance=ExtResource( 13 )]
+position = Vector2( 839.178, 53.1196 )
+rotation = 1.78547
+scale = Vector2( 1, 1 )
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -44,17 +60,6 @@ texture = ExtResource( 4 )
 
 [node name="MainHUD" parent="." instance=ExtResource( 7 )]
 
-[node name="Portal" type="Area2D" parent="."]
-position = Vector2( -6409.44, 649.877 )
-rotation = 2.16595
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 1 )
-
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
@@ -64,5 +69,3 @@ autoplay = true
 bus = "Music"
 
 [node name="PauseScreen" parent="." instance=ExtResource( 10 )]
-
-[connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
