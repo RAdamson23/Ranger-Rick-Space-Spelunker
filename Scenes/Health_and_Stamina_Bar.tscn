@@ -1,10 +1,12 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Stamina_Bar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Health_Bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Lightning.png" type="Texture" id=3]
 [ext_resource path="res://Art/Heart.png" type="Texture" id=4]
 [ext_resource path="res://Art/PermanentMarker-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/PauseButton.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.419608, 0.592157, 1 )
@@ -53,6 +55,11 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=6]
 size = 37
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 32
+outline_size = 3
+font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "HealthBarFlash"
@@ -245,6 +252,7 @@ tracks/0/keys = {
 }
 
 [node name="MainHUD" type="Node"]
+script = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -385,6 +393,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 1800.13
+margin_top = 40.0001
+margin_right = 1867.13
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 19 )
+text = "| |"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StaminaBar" type="AnimationPlayer" parent="."]
 anims/HealthBarFlash = SubResource( 7 )
 anims/HealthBarRest = SubResource( 8 )
@@ -400,7 +419,9 @@ anims/PieCounterTextFlash = SubResource( 15 )
 anims/Rest = SubResource( 16 )
 anims/StaminaBarFlash = SubResource( 17 )
 anims/StaminaBarRest = SubResource( 18 )
+
 [connection signal="changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_value"]
 [connection signal="max_changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_max"]
 [connection signal="changed" from="CanvasLayer/Control/Health_Bar_Script" to="CanvasLayer/Control/Health_Bar" method="set_value"]
 [connection signal="max_changed" from="CanvasLayer/Control/Health_Bar_Script" to="CanvasLayer/Control/Health_Bar" method="set_max"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]

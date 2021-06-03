@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Pause" type="CanvasLayer"]
+layer = 100
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Pause/BlackOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -241.0
+margin_top = -331.0
+margin_right = 241.0
+margin_bottom = 331.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pause/BlackOverlay/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.2043
+margin_top = -255.003
+margin_right = 68.7957
+margin_bottom = -185.003
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE"
+
+[node name="Music" type="HSlider" parent="Pause/BlackOverlay/Panel"]
+margin_left = 233.0
+margin_top = 208.0
+margin_right = 379.0
+margin_bottom = 224.0
+min_value = -80.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="HSlider" parent="Pause/BlackOverlay/Panel"]
+margin_left = 233.0
+margin_top = 263.953
+margin_right = 379.0
+margin_bottom = 279.953
+min_value = -10.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="Pause/BlackOverlay/Panel"]
+margin_left = 106.0
+margin_top = 195.0
+margin_right = 203.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 2 )
+text = "MUSIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXLabel" type="Label" parent="Pause/BlackOverlay/Panel"]
+margin_left = 106.0
+margin_top = 246.0
+margin_right = 203.0
+margin_bottom = 283.0
+custom_fonts/font = SubResource( 2 )
+text = "SFX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="Pause/BlackOverlay/Panel/Music" to="Pause" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="Pause/BlackOverlay/Panel/SFX" to="Pause" method="_on_HSlider2_value_changed"]

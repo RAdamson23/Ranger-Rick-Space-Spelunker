@@ -8,8 +8,12 @@ onready var stamina = 5 setget set_stamina, get_stamina
 
 onready var current_planet = 1 setget set_current_planet, get_current_planet
 
+
 func _ready():
 	randomize()
+
+signal pauseGame
+
 
 func _physics_process(delta):
 	#print(current_planet 	)

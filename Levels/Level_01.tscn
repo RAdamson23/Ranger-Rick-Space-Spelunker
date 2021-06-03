@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Portal.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/Race-to-Mars.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 103.686, 18.6005 )
@@ -54,4 +56,12 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+
+[node name="Pause" parent="." instance=ExtResource( 10 )]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+bus = "Music"
+
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]

@@ -10,7 +10,7 @@ func _ready():
 	rotation = gravity_dir.angle() - PI/2
 	velocity.y += speed
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	translate(velocity.rotated(rotation))
 
 func _on_Area2D_body_entered(body):

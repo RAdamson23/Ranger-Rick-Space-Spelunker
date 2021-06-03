@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Race-to-Mars.ogg-0e2b140d565521ee93a3fd19c36a6f66.oggstr"
+
+[deps]
+
+source_file="res://Music/Race-to-Mars.ogg"
+dest_files=[ "res://.import/Race-to-Mars.ogg-0e2b140d565521ee93a3fd19c36a6f66.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

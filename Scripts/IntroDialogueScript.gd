@@ -1,6 +1,6 @@
 extends Panel
 
-var dialog = ["In the super cluster RUST9102_HRMAEP"]
+var dialog = ["In the super cluster RUST9102_HRMAEP","","Hello"]
 var dialog_index = 0
 var finished = false
 
@@ -8,9 +8,10 @@ func _ready():
 	load_dialog()
 
 func _process(delta):
-	#$grey_button04.visible = finished
-	#if Input.is_action_just_pressed("ui_accept"):
-	load_dialog()		
+	$grey_button04.visible = finished
+	if Input.is_action_just_pressed("ui_accept"):
+		load_dialog()		
+	
 		
 func load_dialog():
 	if dialog_index < dialog.size():
@@ -21,11 +22,13 @@ func load_dialog():
 			$IntroDialogueScript, "percent_visible", 0,1,1, Tween.TRANS_LINEAR,Tween.EASE_IN_OUT
 		)
 		$Tween.start()
-	#else:
-		#get_tree().change_scene("res://Scene/Level1.tscn")
+	else:
+		get_tree().change_scene("res://Scene/Level1.tscn")
 	dialog_index += 1
 
 
 
 func _on_Tween_tween_completed(object, key):
 	finished = true # Replace with function body.
+
+
