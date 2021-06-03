@@ -1,29 +1,29 @@
 extends Node2D
 
 var asteroid_scene = load("res://Scenes/asteroid_01.tscn")
-var planet
-var player
-var wizard
-
 var health = 10
-var week = false
-
-#stages
-# asterord doge
-# shot the boss
-# repeate
 
 func _ready():
-	planet = $Planets/Planet
-	player = $Player
-	wizard = $Wizard
-	wizard.visible = false
+	_on_Timer_Attack_timeout()
+	player_attack()
+	pass
+
+#Wizard attack
+func _on_Timer_Attack_timeout():
+	var i = randi() % 2
+	match i:
+		0:
+			attack_asteroids_trailing(25)
+		1:
+			attack_asteroids_random(2)
+		_:
+			attack_asteroids_random(2)
 	pass
 
 func attack_asteroids_random(left):
-	for i in range(50):
+	for i in range(100):
 		var asteroid = asteroid_scene.instance()
-		var new_position = Vector2(planet.global_transform.origin.x, planet.global_transform.origin.y )
+		var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
 		var angle = rand_range(-PI, PI)
 		new_position.x = new_position.x + (cos(angle) * 2500)
 		new_position.y = new_position.y - (sin(angle) * 2500)
@@ -33,44 +33,32 @@ func attack_asteroids_random(left):
 		yield(get_tree().create_timer(1), "timeout")
 		attack_asteroids_random(left - 1)
 
-
 func attack_asteroids_trailing(left):
 	var asteroid = asteroid_scene.instance()
-	var new_position = Vector2(planet.global_transform.origin.x, planet.global_transform.origin.y )
-	var angle = PI/2 - player.rotation
-	new_position.x = new_position.x + (cos(angle) * 2000)
-	new_position.y = new_position.y - (sin(angle) * 2000)
+	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
+	var angle = PI/2 - $Player.rotation
+	new_position.x = new_position.x + (cos(angle) * 1900)
+	new_position.y = new_position.y - (sin(angle) * 1900)
 	asteroid.position = new_position
 	add_child(asteroid)
 	if left > 1:
 		yield(get_tree().create_timer(0.1), "timeout")
 		attack_asteroids_trailing(left - 1)
 
+#Player attack
+
 func player_attack():
-	wizard.visible = true
-	week = true
-	
-	yield(get_tree().create_timer(8), "timeout")
-	week = false
-	wizard.visible = false
+	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
+	var angle = rand_range(-PI, PI)
+	new_position.x = new_position.x + (cos(angle) * 2000)
+	new_position.y = new_position.y - (sin(angle) * 2000)
+	$Wizard.position = new_position
 	pass
 
 func _on_Wizard_body_entered(body):
-	if week and "LaserBolt" in body.name:
-		print("Hit")
-		#TODO: add dammange to boss
-
-func _on_Timer_timeout():
-	match randi() % 3:
-		0:
-			attack_asteroids_trailing(90)
-		1:
-			attack_asteroids_random(9)
-		2:
-			player_attack()
-		_:
-			attack_asteroids_random(9)
-	pass
-
-
-
+	if $Wizard.visible and "LaserBolt" in body.name:
+		health -= 1
+		if health >= 0:
+			#TODO: go to next faze
+			pass
+		player_attack()

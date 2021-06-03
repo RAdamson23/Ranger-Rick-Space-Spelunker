@@ -133,8 +133,8 @@ anims/Teleport = SubResource( 6 )
 position = Vector2( 1.78584, -46.233 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
-hframes = 8
 vframes = 5
+hframes = 8
 frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -142,11 +142,11 @@ position = Vector2( 2.79596, -40.3248 )
 shape = SubResource( 7 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
-position = Vector2( 46.4011, -37.634 )
-rotation = 0.785398
+position = Vector2( -2.38076e-07, -42.5825 )
+rotation = -1.90415
 
 [node name="CastPoint" type="Position2D" parent="TurnAxis"]
-position = Vector2( 9.26939, 9.78032 )
+position = Vector2( 60, 0 )
 
 [node name="PlayerEffects" type="AnimationPlayer" parent="."]
 anims/State_Damaged = ExtResource( 5 )

@@ -31,10 +31,11 @@ var shooting = false
 var rate_of_fire = 0.7
 
 func _ready():
-		planets = get_node("/root/Level/Planets/").get_children()
-		current_planet = planets[0]
-		_get_closest_planet(current_planet)
-		_start_closest_planet_timer()
+	planets = get_node("/root/Level/Planets/").get_children()
+	current_planet = planets[0]
+	_get_closest_planet(current_planet)
+	_start_closest_planet_timer()
+	global_vars.set_current_planet(current_planet)
 
 
 func _process(delta):
@@ -116,22 +117,16 @@ func _start_closest_planet_timer():
 
 
 func shoot():
-	if get_global_mouse_position().x > player.global_position.x:
-			playerStates.play("Attack")
-			player.flip_h = false
-			$TurnAxis.position.x = 1
-	elif get_global_mouse_position().x < player.global_position.x:
-		playerStates.play("Attack")
-		player.flip_h = true
-		$TurnAxis.position.x = -1
-
+	var test = get_angle_to(get_global_mouse_position())
+	
+	playerStates.play("Attack")
 	can_fire = false
 	stamina.current_stamina -= 1
-	get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
+	get_node("TurnAxis").rotation = test
 
 	var laser_instance = laserPreload.instance()
 	laser_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
-	laser_instance.rotation = get_angle_to(get_global_mouse_position())
+	laser_instance.rotation = test + rotation
 	get_parent().add_child(laser_instance)
 	yield(get_tree().create_timer(rate_of_fire),"timeout")
 	can_fire = true
