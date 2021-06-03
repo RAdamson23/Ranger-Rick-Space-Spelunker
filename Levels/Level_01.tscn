@@ -63,4 +63,5 @@ shape = SubResource( 1 )
 stream = ExtResource( 11 )
 autoplay = true
 bus = "Music"
+
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]

@@ -117,8 +117,13 @@ func _start_closest_planet_timer():
 
 
 func shoot():
+	
 	var test = get_angle_to(get_global_mouse_position())
 	
+	if get_global_mouse_position() < player.global_position:
+		player.flip_h = true
+	else:
+		player.flip_h = false
 	playerStates.play("Attack")
 	can_fire = false
 	stamina.current_stamina -= 1
