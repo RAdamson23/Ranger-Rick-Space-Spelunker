@@ -1,17 +1,17 @@
 extends KinematicBody2D
 
 
-var laserBolt := preload("res://Scenes/LaserBolt.tscn")
+var laserPreload := preload("res://Scenes/LaserBolt.tscn")
 onready var global_vars = get_node("/root/Globals")
 onready var stamina = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Stamina_Bar_Script")
 onready var health = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 onready var player = get_node("/root/Level").get_node("Player").get_node("PlayerSprite")
 onready var HUDAnimationPlayer = get_node("/root/Level/MainHUD/StaminaBar")
-onready var player_states = $PlayerStates
+onready var playerStates = $PlayerStates
 onready var player_effects = $PlayerEffects
 
 export var can_fire = true
-var rate_of_fire = 0.7
+var rate_of_fire = 0.5
 var regen_Stamina_timeout = 0.7
 var regen_Stamina_rate = 0.6
 var shooting = false
@@ -67,14 +67,14 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("walk_right"):
 			player.flip_h = false #flip sprite to face direction
 			motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
-			player_states.play("Run")
+			playerStates.play("Run")
 		elif Input.is_action_pressed("walk_left"):
 			player.flip_h = true #flip sprite to face direction
 			motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
-			player_states.play("Run")
+			playerStates.play("Run")
 		else:
 			friction = true
-			player_states.play("Idle")
+			playerStates.play("Idle")
 			
 		if Input.is_action_just_pressed("jump"):
 			isJumping = true
@@ -106,14 +106,20 @@ func _physics_process(_delta):
 		motion = move_and_slide_with_snap(motion,snap,UP)
 
 func shoot():
-		can_fire = false
-		stamina.current_stamina -= 1
-		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		player.flip_h = spriteFlip
-		player_states.play("Attack")
-		var laserBolt_instance = laserBolt.instance()
-		laserBolt_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
-		laserBolt_instance.rotation = get_angle_to(get_global_mouse_position())
-		get_parent().add_child(laserBolt_instance)
-		yield(get_tree().create_timer(rate_of_fire),"timeout")
-		can_fire = true
+	var test = get_angle_to(get_global_mouse_position())
+	
+	if get_global_mouse_position() < player.global_position:
+		player.flip_h = true
+	else:
+		player.flip_h = false
+	playerStates.play("Attack")
+	can_fire = false
+	stamina.current_stamina -= 1
+	get_node("TurnAxis").rotation = test
+
+	var laser_instance = laserPreload.instance()
+	laser_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+	laser_instance.rotation = test + rotation
+	get_parent().add_child(laser_instance)
+	yield(get_tree().create_timer(rate_of_fire),"timeout")
+	can_fire = true

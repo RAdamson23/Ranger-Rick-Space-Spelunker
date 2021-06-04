@@ -6,7 +6,7 @@ const FLOOR = Vector2(0,-1)
 export var size_x = 40
 export var size_y = 40
 export var damage = 1.5
-#onready var playerHealth = get_node("/root/Cave/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
+onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,8 +32,8 @@ func _on_DetectionBox_body_entered(body):
 
 
 func _on_Hitbox_body_entered(body):
-	#if body.name == "Player":
-	#	playerHealth.current_health-=damage
+	if body.name == "Player":
+		playerHealth.current_health-=damage
 	if body.is_in_group("Fireball"):
 		startFalling()
 	if isFalling == true:

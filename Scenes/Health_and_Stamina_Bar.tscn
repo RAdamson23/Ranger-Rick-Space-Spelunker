@@ -100,7 +100,7 @@ tracks/0/keys = {
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/TreasureCounter:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -115,7 +115,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=11]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/TreasureCounter:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -192,7 +192,7 @@ tracks/0/keys = {
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/TreasureCounter:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -207,7 +207,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=17]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/PieCounter:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/TreasureCounter:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -330,8 +330,7 @@ __meta__ = {
 "Nodes",
 ] instance=ExtResource( 2 )]
 
-[node name="PieCounter" type="Label" parent="CanvasLayer/Control"]
-visible = false
+[node name="TreasureCounter" type="Label" parent="CanvasLayer/Control"]
 margin_left = 369.997
 margin_top = 26.0089
 margin_right = 492.997
@@ -357,7 +356,6 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="CanvasLayer/Control"]
-visible = false
 margin_left = 371.0
 margin_top = 99.0
 margin_right = 521.0

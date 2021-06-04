@@ -5,6 +5,7 @@ onready var global_vars = get_node("/root/Globals")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global_vars.baseLevel = "Level_01.tscn"
 	pass
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Art/01_Cave/Chest/chest_cave_opening_empty_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/01_Cave/Chest/chest_cave_opening_empty_02.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/01_Cave/Chest/chest_cave_opening_gold_00.png" type="Texture" id=7]
 [ext_resource path="res://Art/01_Cave/Chest/chest_cave_opening_gold_01.png" type="Texture" id=8]
 [ext_resource path="res://Art/01_Cave/Chest/chest_cave_opening_gold_02.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Chest.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,17 +27,28 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 36.3558, 23.5213 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 35.9357, 24.3621 )
+
 [node name="Chest" type="Area2D"]
+script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 113.521, -36.579 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "Full"
-frame = 8
 speed_scale = 0.6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 113.521, -33.2154 )
 shape = SubResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 114.362, -34.4768 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

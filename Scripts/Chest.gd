@@ -8,13 +8,11 @@ onready var global_vars = get_node("/root/Globals")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Vibrate")
 	pass # Replace with function body.
 
-
-
-func _on_Chips_body_entered(body):
+func _on_Hitbox_body_entered(body):
 	if body.name == "Player":
-		global_vars.mainCollectable+=1
+		global_vars.treasureCount+=1
 		$CollisionShape2D.call_deferred("set_disabled", true)
-		queue_free()
+		$Hitbox/CollisionShape2D.call_deferred("set_disabled",true)
+		$AnimatedSprite.play("Empty")

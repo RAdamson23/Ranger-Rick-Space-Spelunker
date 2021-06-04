@@ -55,4 +55,5 @@ playing = true
 position = Vector2( 2.12128, 10.1935 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 7 )
+
 [connection signal="body_entered" from="PortalHB" to="." method="_on_PortalHB_body_entered"]

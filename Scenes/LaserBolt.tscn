@@ -50,15 +50,16 @@ height = 16.7835
 [node name="LaserBolt" type="RigidBody2D" groups=[
 "Fireball",
 ]]
-position = Vector2( -0.18729, 9.17713 )
+position = Vector2( -1.18729, 9.17713 )
 collision_layer = 3
 collision_mask = 3
-mass = 0.612245
+mass = 0.408163
 continuous_cd = 2
 contacts_reported = 1
 contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
+speed = 1000
 
 [node name="Laser" type="AnimatedSprite" parent="."]
 position = Vector2( 31.043, 2.43478 )

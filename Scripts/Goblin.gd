@@ -184,7 +184,7 @@ func onHit():
 func dead():
 	$Death.play()
 	is_dead = true
-#	global_vars.enemiesDefeated+=1
+	global_vars.enemiesDefeated+=1
 	velocity = Vector2(0,0)
 	changeAnimation("DEAD")
 	$CollisionShape2D.call_deferred("set_disabled", true)

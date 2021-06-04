@@ -7,16 +7,16 @@ onready var score = 0 setget set_score, get_score
 onready var stamina = 5 setget set_stamina, get_stamina
 onready var deathCount = 0
 onready var current_planet = 1 setget set_current_planet, get_current_planet
-onready var mainCollectable = 0 setget set_mainCollectable, get_mainCollectable
+onready var treasureCount = 0 setget set_treasureCount, get_treasureCount
 var enemiesDefeated = 0
-onready var baseLevel = "CaveInterior1.tscn" setget set_baseLevel, get_baseLevel
+onready var baseLevel = "Level_01.tscn" setget set_baseLevel, get_baseLevel
 onready var isInsidePlanet = false
 
 func _ready():
 	health = 6
 	maxHealth = 6
 	stamina = 5
-	mainCollectable = 0
+	treasureCount = 0
 	enemiesDefeated = 0
 	isDead = false
 	randomize()
@@ -39,11 +39,11 @@ func set_baseLevel(value):
 func get_baseLevel():
 	return baseLevel
 
-func set_mainCollectable(value):
-	mainCollectable = value
+func set_treasureCount(value):
+	treasureCount = value
 	pass
-func get_mainCollectable():
-	return mainCollectable
+func get_treasureCount():
+	return treasureCount
 	
 
 func set_current_planet(value):

@@ -68,6 +68,7 @@ anims/Shaking = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
 [connection signal="body_entered" from="KinematicBody2D/Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="DetectionBox" to="." method="_on_DetectionBox_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
