@@ -64,7 +64,7 @@ func damage():
 	if !canBeDamaged:
 		return
 	if playerEffects != null && player != null:
-		player.motion.y = player.JUMP_HEIGHT * 0.8
+		#player.motion.y = player.JUMP_HEIGHT * 0.8
 		player.get_node("Oof").play()
 		playerEffects.play("State_Damaged")
 		playerEffects.queue("State_Visible")

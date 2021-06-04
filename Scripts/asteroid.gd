@@ -1,8 +1,10 @@
 extends Node2D
 
+var damage = 1
 export (int) var speed = 10
 var velocity = Vector2.ZERO
 onready var global_vars = get_node("/root/Globals")
+onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 
 func _ready():
 	#var gravity_dir = _get_closest_planet().global_transform.origin - global_transform.origin
@@ -17,6 +19,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == "PlanetStaticBody2D":
 		queue_free()
 	if body.name == "Player":
+		playerHealth.current_health -= damage
 		pass
 		#TODO: kill player???
 
