@@ -1,11 +1,15 @@
 extends Node2D
 
 var asteroid_scene = load("res://Scenes/asteroid_01.tscn")
-var health = 10
+var health = 5
 
 func _ready():
 	_on_Timer_Attack_timeout()
-	player_attack()
+	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
+	var angle = rand_range(-PI, PI)
+	new_position.x = new_position.x + (cos(angle) * 2000)
+	new_position.y = new_position.y - (sin(angle) * 2000)
+	$Wizard.position = new_position
 	pass
 
 #Wizard attack
@@ -21,7 +25,7 @@ func _on_Timer_Attack_timeout():
 	pass
 
 func attack_asteroids_random(left):
-	for i in range(100):
+	for i in range(75):
 		var asteroid = asteroid_scene.instance()
 		var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
 		var angle = rand_range(-PI, PI)
@@ -37,8 +41,8 @@ func attack_asteroids_trailing(left):
 	var asteroid = asteroid_scene.instance()
 	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
 	var angle = PI/2 - $Player.rotation
-	new_position.x = new_position.x + (cos(angle) * 1900)
-	new_position.y = new_position.y - (sin(angle) * 1900)
+	new_position.x = new_position.x + (cos(angle) * 2000)
+	new_position.y = new_position.y - (sin(angle) * 2000)
 	asteroid.position = new_position
 	add_child(asteroid)
 	if left > 1:
@@ -52,6 +56,10 @@ func player_attack():
 	var angle = rand_range(-PI, PI)
 	new_position.x = new_position.x + (cos(angle) * 2000)
 	new_position.y = new_position.y - (sin(angle) * 2000)
+	$Wizard/Sprite.animation = "Hit"
+	$Wizard/Sounds/Hit.play()
+	yield($Wizard/Sprite, "animation_finished")
+	$Wizard/Sprite.animation = "Idle"
 	$Wizard.position = new_position
 	pass
 

@@ -26,19 +26,16 @@ z_index = 2
 [node name="Portal_Planet2" parent="." instance=ExtResource( 13 )]
 position = Vector2( -6610.21, -1064.41 )
 rotation = -1.00706
-scale = Vector2( 1, 1 )
 nextLevel = "CaveInterior3.tscn"
 
 [node name="Portal_Planet1" parent="." instance=ExtResource( 13 )]
 position = Vector2( -3109.27, 2308.01 )
 rotation = -3.03862
-scale = Vector2( 1, 1 )
 nextLevel = "CaveInterior2.tscn"
 
 [node name="Portal_Planet0" parent="." instance=ExtResource( 13 )]
 position = Vector2( 839.178, 53.1196 )
 rotation = 1.78547
-scale = Vector2( 1, 1 )
 
 [node name="Planets" type="Node2D" parent="."]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Morrowind_ascsleeper_moan.ogg-4e81bed81aaa87b8ee661703a4fed6af.oggstr"
+
+[deps]
+
+source_file="res://SFX/Morrowind_ascsleeper_moan.ogg"
+dest_files=[ "res://.import/Morrowind_ascsleeper_moan.ogg-4e81bed81aaa87b8ee661703a4fed6af.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

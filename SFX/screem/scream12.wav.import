@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/scream12.wav-72b2d7a0280e41cadebd98f428cb0f34.sample"
+
+[deps]
+
+source_file="res://SFX/screem/scream12.wav"
+dest_files=[ "res://.import/scream12.wav-72b2d7a0280e41cadebd98f428cb0f34.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
