@@ -5,7 +5,7 @@ onready var player = get_node("/root/Level/Player")
 onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 onready var HUDAnimationPlayer = get_node("/root/Level/MainHUD/HealthBar")
 export var nextLevel = "CaveInterior1.tscn"
-
+export var levelID = 0
 
 func _ready():
 	#$AnimatedSprite.play("Closed")
@@ -14,13 +14,20 @@ func _ready():
 func _on_PortalHB_body_entered(body):
 	if body.name == "Player":
 		var filename = get_filename()
-		if global_vars.isInsidePlanet == false and global_vars.coinCount >= 10:
-			global_vars.coinCount -= 10
-			get_tree().change_scene("res://Levels/"+nextLevel)
-		elif global_vars.isInsidePlanet:
-			HUDAnimationPlayer.play("PieCounterTextFlash")
-			yield(get_tree().create_timer(1.5),"timeout")
-			HUDAnimationPlayer.play("Rest")
+		if global_vars.isInsidePlanet == false:
+			if levelID == 1 and global_vars.coinCount1 >= 2 and not global_vars.coinBeen1:
+				global_vars.coinBeen1 = true
+				get_tree().change_scene("res://Levels/"+nextLevel)
+			elif levelID == 2 and global_vars.coinCount2 >= 2 and not global_vars.coinBeen2:
+				global_vars.coinBeen2 = true
+				get_tree().change_scene("res://Levels/"+nextLevel)
+			elif levelID == 3 and global_vars.coinCount3 >= 2 and not global_vars.coinBeen3:
+				global_vars.coinBeen3 = true
+				get_tree().change_scene("res://Levels/"+nextLevel)
+			else:
+				HUDAnimationPlayer.play("PieCounterTextFlash")
+				yield(get_tree().create_timer(1.5),"timeout")
+				HUDAnimationPlayer.play("Rest")
 		elif global_vars.planetsCompleted == 2 && global_vars.treasureCount == 2:
 			get_tree().change_scene("res://Scenes/LevelComplete.tscn")
 		elif global_vars.treasureCount == 2:

@@ -14,7 +14,12 @@ onready var baseLevel = "Level_01.tscn" setget set_baseLevel, get_baseLevel
 onready var isInsidePlanet = false
 onready var next_scene
 
-onready var coinCount = 0 setget set_coinCount, get_coinCount
+onready var coinCount1 = 0
+onready var coinCount2 = 0
+onready var coinCount3 = 0
+onready var coinBeen1 = false
+onready var coinBeen2 = false
+onready var coinBeen3 = false
 
 func _ready():
 	health = 6
@@ -22,7 +27,9 @@ func _ready():
 	stamina = 5
 	treasureCount = 0
 	enemiesDefeated = 0
-	coinCount = 0
+	coinCount1 = 0
+	coinCount2 = 0
+	coinCount3 = 0
 	isDead = false
 	randomize()
 
@@ -56,13 +63,6 @@ func set_treasureCount(value):
 	pass
 func get_treasureCount():
 	return treasureCount
-
-func set_coinCount(value):
-	coinCount = value
-	pass
-func get_coinCount():
-	return coinCount
-	
 
 
 func set_current_planet(value):
