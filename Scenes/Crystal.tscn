@@ -1,18 +1,56 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Crystals.gd" type="Script" id=1]
 [ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_blue_00.png" type="Texture" id=2]
+[ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_yellow_07.png" type="Texture" id=3]
+[ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_pink_02.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.1481, 18.0284 )
+extents = Vector2( 22.3106, 18.0284 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Flash"
+[sub_resource type="Animation" id=4]
+resource_name = "Flash_Health"
 length = 0.55
 loop = true
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:visible")
+tracks/0/path = NodePath("Health:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.41, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Flash_Score"
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Score:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Flash_Stamina"
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stamina:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +66,7 @@ tracks/0/keys = {
 resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:visible")
+tracks/0/path = NodePath("Stamina:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -43,28 +81,37 @@ tracks/0/keys = {
 [node name="Crystal" type="Area2D" groups=[
 "Crystal",
 ]]
-position = Vector2( -0.840897, -3.25207 )
+position = Vector2( 34.9091, -12.0021 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5.53026, 6.17374 )
+position = Vector2( -21.4697, 3.92374 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 6.42045, 1.8409 )
+[node name="Stamina" type="Sprite" parent="."]
+position = Vector2( -21.5795, 0.3409 )
 scale = Vector2( 2.03504, 1.92993 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Flash = SubResource( 2 )
+anims/Flash_Health = SubResource( 4 )
+anims/Flash_Score = SubResource( 5 )
+anims/Flash_Stamina = SubResource( 2 )
 anims/Rest = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.65
 one_shot = true
+
+[node name="Score" type="Sprite" parent="."]
+position = Vector2( -19.25, -0.25 )
+scale = Vector2( 2.035, 1.93 )
+texture = ExtResource( 3 )
+
+[node name="Health" type="Sprite" parent="."]
+position = Vector2( -21.125, -0.25 )
+scale = Vector2( 2.035, 1.93 )
+texture = ExtResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Crystal_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -337,7 +337,7 @@ margin_right = 492.997
 margin_bottom = 62.0089
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
-text = "Treasure: 0 / 3"
+text = "Treasure: 0 / 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,5 +1,6 @@
 extends Node2D
 
+tool
 var speed = 130
 var velocity = Vector2(0,0)
 const FLOOR = Vector2(0,-1)
@@ -24,10 +25,11 @@ func startFalling():
 	$AnimationPlayer.play("Shaking")
 	yield(get_tree().create_timer(0.4),"timeout")
 	isFalling = true
+	$DetectionBox/CollisionShape2D.call_deferred("set_disabled",true)
 	$AnimationPlayer.stop()
 
 func _on_DetectionBox_body_entered(body):
-	if body.name == "Player":
+	if body.is_in_group("Player"):
 		startFalling()
 
 

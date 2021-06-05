@@ -46,7 +46,7 @@ script = ExtResource( 1 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 6 )
 animation = "Open"
-frame = 3
+frame = 4
 playing = true
 
 [node name="PortalHB" type="Area2D" parent="."]

@@ -15,7 +15,7 @@ func _on_PortalHB_body_entered(body):
 		if global_vars.isInsidePlanet == false:
 			get_tree().change_scene("res://Levels/"+nextLevel)
 		else:
-			if global_vars.treasureCount == 3:
+			if global_vars.treasureCount == 2:
 				playerHealth.canBeDamaged = false
 				player.get_node("PlayerEffects").play("State_Visible")
 				player.get_node("PlayerStates").play("Idle")

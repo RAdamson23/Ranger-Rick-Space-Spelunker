@@ -16,12 +16,12 @@ var canBeDamaged = true
 var timeInvulnerable = 1
 
 func _ready():
-	if get_node("/root/Level") != null:
+	if get_node("/root/Level/") != null:
 		global_vars = get_node("/root/Globals")
 		max_amount = global_vars.maxHealth
 		current_health = global_vars.health
-		player = get_node("/root/Level").get_node("Player")
-		playerEffects = get_node("/root/Level").get_node("Player").get_node("PlayerEffects")
+		player = get_node("/root/Level/").get_node("Player")
+		playerEffects = get_node("/root/Level/").get_node("Player").get_node("PlayerEffects")
 		HUDAnimationPlayer = get_node("/root/Level/MainHUD/HealthBar")
 	_intialize()
 	
@@ -64,7 +64,7 @@ func damage():
 	if !canBeDamaged:
 		return
 	if playerEffects != null && player != null:
-		#player.motion.y = player.JUMP_HEIGHT * 0.8
+		player.motion.y = player.JUMP_HEIGHT * 0.8
 		player.get_node("Oof").play()
 		playerEffects.play("State_Damaged")
 		playerEffects.queue("State_Visible")

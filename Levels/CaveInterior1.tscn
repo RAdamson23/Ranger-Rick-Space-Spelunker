@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/OrbitingPlatformController.tscn" type="PackedScene" id=2]
@@ -16,8 +16,7 @@
 [ext_resource path="res://Scenes/Skeleton.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_yellow_07.png" type="Texture" id=17]
-[ext_resource path="res://Art/01_Cave/Rocks___crystals/crystals/crystal_pink_02.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Flash"
@@ -72,6 +71,40 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=4]
+resource_name = "Rest"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "Flash"
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=36]
 resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
@@ -597,6 +630,74 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=37]
+resource_name = "Flash"
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "Rest"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "Flash"
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "Rest"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -763,19 +864,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 490.148, -147.982 )
+position = Vector2( -380.489, -342.596 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 292.203, 420.43 )
+position = Vector2( 208.251, -467.734 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -309.557, 407.822 )
+position = Vector2( 509.195, 53.5205 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -483.52, -168.382 )
+position = Vector2( 106.449, 500.812 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 10.7252, -511.888 )
+position = Vector2( -443.406, 255.998 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -801,7 +902,7 @@ position = Vector2( 1977.19, 1594.26 )
 position = Vector2( 2278.84, 2107.81 )
 
 [node name="FallingSpikes6" parent="FallingSpikes" instance=ExtResource( 6 )]
-position = Vector2( -630.801, 1147.63 )
+position = Vector2( -609.808, 1147.63 )
 
 [node name="FallingSpikes7" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 107.276, 1148.02 )
@@ -851,7 +952,7 @@ position = Vector2( 1546.79, 104.604 )
 mode = "Stamina"
 
 [node name="Crystal7" parent="Collectables" instance=ExtResource( 12 )]
-position = Vector2( 285.219, 362.309 )
+position = Vector2( 307.898, 362.049 )
 mode = "Stamina"
 
 [node name="Crystal8" parent="Collectables" instance=ExtResource( 12 )]
@@ -861,9 +962,6 @@ mode = "Stamina"
 [node name="Crystal10" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1703.08, -471.186 )
 
-[node name="Sprite" parent="Collectables/Crystal10" index="1"]
-texture = ExtResource( 18 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal10" index="2"]
 anims/Flash = SubResource( 1 )
 anims/Rest = SubResource( 2 )
@@ -871,18 +969,19 @@ anims/Rest = SubResource( 2 )
 [node name="Crystal13" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( -133.409, 1001.81 )
 
-[node name="Sprite" parent="Collectables/Crystal13" index="1"]
-texture = ExtResource( 18 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal13" index="2"]
 anims/Flash = SubResource( 3 )
 anims/Rest = SubResource( 4 )
 
+[node name="Crystal28" parent="Collectables" instance=ExtResource( 12 )]
+position = Vector2( -547.852, 1449.32 )
+
+[node name="AnimationPlayer" parent="Collectables/Crystal28" index="2"]
+anims/Flash = SubResource( 35 )
+anims/Rest = SubResource( 36 )
+
 [node name="Crystal18" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2789.27, 1000.85 )
-
-[node name="Sprite" parent="Collectables/Crystal18" index="1"]
-texture = ExtResource( 18 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal18" index="2"]
 anims/Flash = SubResource( 5 )
@@ -891,18 +990,12 @@ anims/Rest = SubResource( 6 )
 [node name="Crystal21" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2547.94, 1449.05 )
 
-[node name="Sprite" parent="Collectables/Crystal21" index="1"]
-texture = ExtResource( 18 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal21" index="2"]
 anims/Flash = SubResource( 7 )
 anims/Rest = SubResource( 8 )
 
 [node name="Crystal22" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2275.32, 1959.43 )
-
-[node name="Sprite" parent="Collectables/Crystal22" index="1"]
-texture = ExtResource( 18 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal22" index="2"]
 anims/Flash = SubResource( 9 )
@@ -911,9 +1004,6 @@ anims/Rest = SubResource( 10 )
 [node name="Crystal23" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2326.43, 1959.64 )
 
-[node name="Sprite" parent="Collectables/Crystal23" index="1"]
-texture = ExtResource( 18 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal23" index="2"]
 anims/Flash = SubResource( 11 )
 anims/Rest = SubResource( 12 )
@@ -921,18 +1011,12 @@ anims/Rest = SubResource( 12 )
 [node name="Crystal25" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 321.41, 2409.38 )
 
-[node name="Sprite" parent="Collectables/Crystal25" index="1"]
-texture = ExtResource( 18 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal25" index="2"]
 anims/Flash = SubResource( 13 )
 anims/Rest = SubResource( 14 )
 
 [node name="Crystal14" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1623.08, 360.814 )
-
-[node name="Sprite" parent="Collectables/Crystal14" index="1"]
-texture = ExtResource( 18 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal14" index="2"]
 anims/Flash = SubResource( 15 )
@@ -942,9 +1026,6 @@ anims/Rest = SubResource( 16 )
 position = Vector2( 691.063, -472.233 )
 mode = "Score"
 
-[node name="Sprite" parent="Collectables/Crystal9" index="1"]
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal9" index="2"]
 anims/Flash = SubResource( 17 )
 anims/Rest = SubResource( 18 )
@@ -952,9 +1033,6 @@ anims/Rest = SubResource( 18 )
 [node name="Crystal15" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1916.94, 1000.4 )
 mode = "Score"
-
-[node name="Sprite" parent="Collectables/Crystal15" index="1"]
-texture = ExtResource( 17 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal15" index="2"]
 anims/Flash = SubResource( 19 )
@@ -964,9 +1042,6 @@ anims/Rest = SubResource( 20 )
 position = Vector2( 3024.47, 999.836 )
 mode = "Score"
 
-[node name="Sprite" parent="Collectables/Crystal16" index="1"]
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal16" index="2"]
 anims/Flash = SubResource( 21 )
 anims/Rest = SubResource( 22 )
@@ -974,9 +1049,6 @@ anims/Rest = SubResource( 22 )
 [node name="Crystal17" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2873.69, 1000.73 )
 mode = "Score"
-
-[node name="Sprite" parent="Collectables/Crystal17" index="1"]
-texture = ExtResource( 17 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal17" index="2"]
 anims/Flash = SubResource( 23 )
@@ -986,9 +1058,6 @@ anims/Rest = SubResource( 24 )
 position = Vector2( 2625.89, 1448.87 )
 mode = "Score"
 
-[node name="Sprite" parent="Collectables/Crystal19" index="1"]
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal19" index="2"]
 anims/Flash = SubResource( 25 )
 anims/Rest = SubResource( 26 )
@@ -996,9 +1065,6 @@ anims/Rest = SubResource( 26 )
 [node name="Crystal20" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2475.1, 1449.77 )
 mode = "Score"
-
-[node name="Sprite" parent="Collectables/Crystal20" index="1"]
-texture = ExtResource( 17 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal20" index="2"]
 anims/Flash = SubResource( 27 )
@@ -1008,9 +1074,6 @@ anims/Rest = SubResource( 28 )
 position = Vector2( 163.652, 1960.01 )
 mode = "Score"
 
-[node name="Sprite" parent="Collectables/Crystal11" index="1"]
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal11" index="2"]
 anims/Flash = SubResource( 29 )
 anims/Rest = SubResource( 30 )
@@ -1018,9 +1081,6 @@ anims/Rest = SubResource( 30 )
 [node name="Crystal24" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1927.65, 2409.01 )
 mode = "Score"
-
-[node name="Sprite" parent="Collectables/Crystal24" index="1"]
-texture = ExtResource( 17 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal24" index="2"]
 anims/Flash = SubResource( 31 )
@@ -1030,15 +1090,25 @@ anims/Rest = SubResource( 32 )
 position = Vector2( 92.3796, 1959.57 )
 mode = "Score"
 
-[node name="Sprite" parent="Collectables/Crystal12" index="1"]
-texture = ExtResource( 17 )
-
 [node name="AnimationPlayer" parent="Collectables/Crystal12" index="2"]
 anims/Flash = SubResource( 33 )
 anims/Rest = SubResource( 34 )
 
-[node name="Chest3" parent="Collectables" instance=ExtResource( 13 )]
-position = Vector2( -722.442, 1480.31 )
+[node name="Crystal26" parent="Collectables" instance=ExtResource( 12 )]
+position = Vector2( -598.854, 1448.77 )
+mode = "Score"
+
+[node name="AnimationPlayer" parent="Collectables/Crystal26" index="2"]
+anims/Flash = SubResource( 37 )
+anims/Rest = SubResource( 38 )
+
+[node name="Crystal27" parent="Collectables" instance=ExtResource( 12 )]
+position = Vector2( -651.126, 1448.33 )
+mode = "Score"
+
+[node name="AnimationPlayer" parent="Collectables/Crystal27" index="2"]
+anims/Flash = SubResource( 39 )
+anims/Rest = SubResource( 40 )
 
 [node name="Chest4" parent="Collectables" instance=ExtResource( 13 )]
 position = Vector2( 2844.66, 1031.83 )
@@ -1061,12 +1131,15 @@ position = Vector2( 426.591, 2396.11 )
 position = Vector2( 2395.68, 1954.44 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 114.571, -119.388 )
+position = Vector2( 1770.57, 368.612 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 19 )]
 
 [node name="PauseScreen" parent="." instance=ExtResource( 15 )]
 
 [editable path="Collectables/Crystal10"]
 [editable path="Collectables/Crystal13"]
+[editable path="Collectables/Crystal28"]
 [editable path="Collectables/Crystal18"]
 [editable path="Collectables/Crystal21"]
 [editable path="Collectables/Crystal22"]
@@ -1082,3 +1155,5 @@ position = Vector2( 114.571, -119.388 )
 [editable path="Collectables/Crystal11"]
 [editable path="Collectables/Crystal24"]
 [editable path="Collectables/Crystal12"]
+[editable path="Collectables/Crystal26"]
+[editable path="Collectables/Crystal27"]

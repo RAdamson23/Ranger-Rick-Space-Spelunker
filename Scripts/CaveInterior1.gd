@@ -13,7 +13,7 @@ func _ready():
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	TreasureCounter.set_text("Treasure: " + str(global_vars.treasureCount)+" / 3")
+	TreasureCounter.set_text("Treasure: " + str(global_vars.treasureCount)+" / 2")
 	Score.set_text("Score: " + str(global_vars.score))
 	#mPos.set_text("Mouse Position: " + str(get_viewport().get_mouse_position()))
 	#eDefeated.set_text("Enemies Defeated: " + str(global_vars.enemiesDefeated))
