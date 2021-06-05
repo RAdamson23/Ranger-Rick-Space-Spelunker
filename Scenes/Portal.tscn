@@ -136,8 +136,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
-animation = "Closed"
-frame = 6
+animation = "Open"
 speed_scale = 1.6
 playing = true
 
