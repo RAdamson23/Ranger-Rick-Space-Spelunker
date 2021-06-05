@@ -19,6 +19,7 @@ func _spawn_coin():
 	var coin = coin_scenes.instance()
 	_set_coin_position(coin)
 	coin.planet = global_vars.get_current_planet().name.substr(global_vars.get_current_planet().name.length() - 1, 1).to_int() + 1
+	global_vars.Planet4HUDUpdater = coin.planet
 	add_child(coin)
 
 func _on_Coins_timeout():

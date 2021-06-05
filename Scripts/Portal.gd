@@ -15,13 +15,13 @@ func _on_PortalHB_body_entered(body):
 	if body.name == "Player":
 		var filename = get_filename()
 		if global_vars.isInsidePlanet == false:
-			if levelID == 1 and global_vars.coinCount1 >= 2 and not global_vars.coinBeen1:
+			if levelID == 1 and global_vars.coinCount1 >= 6 and not global_vars.coinBeen1:
 				global_vars.coinBeen1 = true
 				get_tree().change_scene("res://Levels/"+nextLevel)
-			elif levelID == 2 and global_vars.coinCount2 >= 2 and not global_vars.coinBeen2:
+			elif levelID == 2 and global_vars.coinCount2 >= 6 and not global_vars.coinBeen2:
 				global_vars.coinBeen2 = true
 				get_tree().change_scene("res://Levels/"+nextLevel)
-			elif levelID == 3 and global_vars.coinCount3 >= 2 and not global_vars.coinBeen3:
+			elif levelID == 3 and global_vars.coinCount3 >= 6 and not global_vars.coinBeen3:
 				global_vars.coinBeen3 = true
 				get_tree().change_scene("res://Levels/"+nextLevel)
 			else:

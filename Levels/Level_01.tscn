@@ -74,4 +74,5 @@ bus = "Music"
 [node name="Coins" type="Timer" parent="."]
 autostart = true
 script = ExtResource( 9 )
+
 [connection signal="timeout" from="Coins" to="Coins" method="_on_Coins_timeout"]

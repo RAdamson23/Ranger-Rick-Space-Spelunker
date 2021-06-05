@@ -112,6 +112,7 @@ extents = Vector2( 24.5989, 29.6712 )
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
+z_index = 2
 script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

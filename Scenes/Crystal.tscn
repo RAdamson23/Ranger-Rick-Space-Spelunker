@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.3106, 18.0284 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "Flash_Health"
 length = 0.55
 loop = true
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "Flash_Score"
 length = 0.55
 loop = true
@@ -44,8 +44,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Flash_Stamina"
+[sub_resource type="Animation" id=4]
 length = 0.55
 loop = true
 step = 0.01
@@ -62,8 +61,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Rest"
+[sub_resource type="Animation" id=5]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Stamina:visible")
@@ -94,10 +92,10 @@ scale = Vector2( 2.03504, 1.92993 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Flash_Health = SubResource( 4 )
-anims/Flash_Score = SubResource( 5 )
-anims/Flash_Stamina = SubResource( 2 )
-anims/Rest = SubResource( 3 )
+anims/Flash_Health = SubResource( 2 )
+anims/Flash_Score = SubResource( 3 )
+anims/Flash_Stamina = SubResource( 4 )
+anims/Rest = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.65

@@ -8,6 +8,7 @@ onready var stamina = 5 setget set_stamina, get_stamina
 onready var deathCount = 0
 onready var current_planet = 1 setget set_current_planet, get_current_planet
 onready var treasureCount = 0 setget set_treasureCount, get_treasureCount
+onready var Planet4HUDUpdater = 1
 var enemiesDefeated = 0
 var planetsCompleted = 0
 onready var baseLevel = "Level_01.tscn" setget set_baseLevel, get_baseLevel
@@ -26,7 +27,6 @@ func _ready():
 	maxHealth = 6
 	stamina = 5
 	treasureCount = 0
-	enemiesDefeated = 0
 	coinCount1 = 0
 	coinCount2 = 0
 	coinCount3 = 0
@@ -46,6 +46,7 @@ func onDeath():
 
 func next_level():
 	deathCount = 0
+	enemiesDefeated = 0
 	get_tree().change_scene(next_scene)
 
 func _physics_process(delta):
