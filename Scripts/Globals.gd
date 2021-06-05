@@ -39,7 +39,7 @@ func scoreCalc():
 	return scoreCalc
 
 func onDeath():
-	get_tree().change_scene(baseLevel)
+	get_tree().change_scene("res://Levels/"+baseLevel)
 	_ready()
 	deathCount+=1
 

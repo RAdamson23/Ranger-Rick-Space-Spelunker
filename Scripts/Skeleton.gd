@@ -16,7 +16,7 @@ var dir = 0
 var next_dir = 0
 var next_dir_time = 0
 var next_jump_time = -1
-
+var playerDetectorExited = true
 var health = 3
 
 const JUMP_HEIGHT = -550
@@ -75,6 +75,11 @@ func switchPos():
 func _process(delta):
 	if !is_dead && sees_player():
 		hasSeenPlayer = true
+		if !playerDetectorExited:
+			changeAnimation("ATTACK")
+			velocity.y += GRAVITY
+			velocity = move_and_slide(velocity,FLOOR)
+			return
 		if $EnemyStates.current_animation == "ATTACK" || isHit || isblocking:
 				return
 		if $EnemyStates.current_animation != "RUN":
@@ -216,6 +221,7 @@ func _on_Hitbox_body_entered(body):
 
 func _on_PlayerDetector_body_entered(body):
 	if body.name == "Player":
+		playerDetectorExited = false
 		changeAnimation("ATTACK")
 
 func _on_AttackDetector_body_entered(body):
@@ -246,4 +252,9 @@ func _on_ShieldHitbox_body_entered(body):
 	shieldHit = true
 	yield(get_tree().create_timer(0.05),"timeout")
 	shieldHit = false
+	pass # Replace with function body.
+
+
+func _on_PlayerDetector_body_exited(body):
+	playerDetectorExited=true
 	pass # Replace with function body.
