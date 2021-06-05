@@ -295,7 +295,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="Information"]
+[node name="Objective" type="Label" parent="Information"]
 margin_left = 33.0
 margin_top = 14.0
 margin_right = 476.0

@@ -22,7 +22,7 @@ var is_jumping = false
 var planets: Array
 var current_planet: Node
 var time_delta = 0
-
+var ispaused = false
 
 #Attack variables
 var laserPreload := preload("res://Scenes/LaserBolt.tscn")
@@ -51,19 +51,23 @@ func _process(delta):
 
 func get_input_exterior():
 	velocity.x = 0
-	if Input.is_action_pressed("walk_right"):
-		velocity.x += speed
-		playerStates.play("Run")
-		player.flip_h = false
-	elif Input.is_action_pressed("walk_left"):
-		velocity.x -= speed
-		playerStates.play("Run")
-		player.flip_h = true
-	elif Input.is_action_pressed("Attack") && can_fire:
-		shoot()
+	if !ispaused:
+		if Input.is_action_pressed("walk_right"):
+			velocity.x += speed
+			playerStates.play("Run")
+			player.flip_h = false
+		elif Input.is_action_pressed("walk_left"):
+			velocity.x -= speed
+			playerStates.play("Run")
+			player.flip_h = true
+		elif Input.is_action_pressed("Attack") && can_fire:
+			shoot()
+		else:
+			if !playerStates.current_animation == "Attack":
+				playerStates.play("Idle")
 	else:
-		if !playerStates.current_animation == "Attack":
-			playerStates.play("Idle")
+		velocity.x = 0
+		velocity.y = 0
 
 func _physics_process(delta):
 	get_input_exterior()

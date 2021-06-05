@@ -9,8 +9,10 @@ onready var deathCount = 0
 onready var current_planet = 1 setget set_current_planet, get_current_planet
 onready var treasureCount = 0 setget set_treasureCount, get_treasureCount
 var enemiesDefeated = 0
+var planetsCompleted = 0
 onready var baseLevel = "Level_01.tscn" setget set_baseLevel, get_baseLevel
 onready var isInsidePlanet = false
+onready var next_scene
 
 func _ready():
 	health = 6
@@ -23,11 +25,18 @@ func _ready():
 
 signal pauseGame
 
+func scoreCalc():
+	var scoreCalc = (score+(enemiesDefeated*5)+(deathCount*-20))
+	return scoreCalc
+
 func onDeath():
 	get_tree().change_scene(baseLevel)
 	_ready()
 	deathCount+=1
 
+func next_level():
+	deathCount = 0
+	get_tree().change_scene(next_scene)
 
 func _physics_process(delta):
 	#print(current_planet 	)

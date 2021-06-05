@@ -86,40 +86,6 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=35]
-resource_name = "Flash"
-length = 0.55
-loop = true
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true, false, true ]
-}
-
-[sub_resource type="Animation" id=36]
-resource_name = "Rest"
-length = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
 [sub_resource type="Animation" id=5]
 resource_name = "Flash"
 length = 0.55
@@ -155,7 +121,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -173,7 +138,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -189,7 +153,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=9]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -207,7 +170,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -223,7 +185,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -241,7 +202,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=12]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -257,7 +217,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=13]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -275,7 +234,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=14]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -291,7 +249,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=15]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -309,7 +266,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=16]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -325,7 +281,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=17]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -343,7 +298,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=18]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -359,7 +313,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=19]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -377,7 +330,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=20]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -393,7 +345,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=21]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -411,7 +362,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=22]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -427,7 +377,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=23]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -445,7 +394,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=24]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -461,7 +409,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=25]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -479,7 +426,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=26]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -495,7 +441,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=27]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -513,7 +458,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=28]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -529,7 +473,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=29]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -547,7 +490,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=30]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -563,7 +505,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=31]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -581,7 +522,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=32]
-resource_name = "Rest"
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -597,7 +537,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=33]
-resource_name = "Flash"
 length = 0.55
 loop = true
 step = 0.01
@@ -615,7 +554,38 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=34]
-resource_name = "Rest"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.55
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=36]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
@@ -864,19 +834,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -380.489, -342.596 )
+position = Vector2( 350.488, 373.232 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 208.251, -467.734 )
+position = Vector2( -246.658, 448.669 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 509.195, 53.5205 )
+position = Vector2( -502.931, -95.9393 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 106.449, 500.812 )
+position = Vector2( -64.1706, -507.963 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -443.406, 255.998 )
+position = Vector2( 463.271, -217.999 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -977,122 +947,122 @@ anims/Rest = SubResource( 4 )
 position = Vector2( -547.852, 1449.32 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal28" index="2"]
-anims/Flash = SubResource( 35 )
-anims/Rest = SubResource( 36 )
+anims/Flash = SubResource( 5 )
+anims/Rest = SubResource( 6 )
 
 [node name="Crystal18" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2789.27, 1000.85 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal18" index="2"]
-anims/Flash = SubResource( 5 )
-anims/Rest = SubResource( 6 )
+anims/Flash = SubResource( 7 )
+anims/Rest = SubResource( 8 )
 
 [node name="Crystal21" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2547.94, 1449.05 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal21" index="2"]
-anims/Flash = SubResource( 7 )
-anims/Rest = SubResource( 8 )
+anims/Flash = SubResource( 9 )
+anims/Rest = SubResource( 10 )
 
 [node name="Crystal22" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2275.32, 1959.43 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal22" index="2"]
-anims/Flash = SubResource( 9 )
-anims/Rest = SubResource( 10 )
+anims/Flash = SubResource( 11 )
+anims/Rest = SubResource( 12 )
 
 [node name="Crystal23" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2326.43, 1959.64 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal23" index="2"]
-anims/Flash = SubResource( 11 )
-anims/Rest = SubResource( 12 )
+anims/Flash = SubResource( 13 )
+anims/Rest = SubResource( 14 )
 
 [node name="Crystal25" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 321.41, 2409.38 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal25" index="2"]
-anims/Flash = SubResource( 13 )
-anims/Rest = SubResource( 14 )
+anims/Flash = SubResource( 15 )
+anims/Rest = SubResource( 16 )
 
 [node name="Crystal14" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1623.08, 360.814 )
 
 [node name="AnimationPlayer" parent="Collectables/Crystal14" index="2"]
-anims/Flash = SubResource( 15 )
-anims/Rest = SubResource( 16 )
+anims/Flash = SubResource( 17 )
+anims/Rest = SubResource( 18 )
 
 [node name="Crystal9" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 691.063, -472.233 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal9" index="2"]
-anims/Flash = SubResource( 17 )
-anims/Rest = SubResource( 18 )
+anims/Flash = SubResource( 19 )
+anims/Rest = SubResource( 20 )
 
 [node name="Crystal15" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1916.94, 1000.4 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal15" index="2"]
-anims/Flash = SubResource( 19 )
-anims/Rest = SubResource( 20 )
+anims/Flash = SubResource( 21 )
+anims/Rest = SubResource( 22 )
 
 [node name="Crystal16" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 3024.47, 999.836 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal16" index="2"]
-anims/Flash = SubResource( 21 )
-anims/Rest = SubResource( 22 )
+anims/Flash = SubResource( 23 )
+anims/Rest = SubResource( 24 )
 
 [node name="Crystal17" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2873.69, 1000.73 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal17" index="2"]
-anims/Flash = SubResource( 23 )
-anims/Rest = SubResource( 24 )
+anims/Flash = SubResource( 25 )
+anims/Rest = SubResource( 26 )
 
 [node name="Crystal19" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2625.89, 1448.87 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal19" index="2"]
-anims/Flash = SubResource( 25 )
-anims/Rest = SubResource( 26 )
+anims/Flash = SubResource( 27 )
+anims/Rest = SubResource( 28 )
 
 [node name="Crystal20" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2475.1, 1449.77 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal20" index="2"]
-anims/Flash = SubResource( 27 )
-anims/Rest = SubResource( 28 )
+anims/Flash = SubResource( 29 )
+anims/Rest = SubResource( 30 )
 
 [node name="Crystal11" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 163.652, 1960.01 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal11" index="2"]
-anims/Flash = SubResource( 29 )
-anims/Rest = SubResource( 30 )
+anims/Flash = SubResource( 31 )
+anims/Rest = SubResource( 32 )
 
 [node name="Crystal24" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1927.65, 2409.01 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal24" index="2"]
-anims/Flash = SubResource( 31 )
-anims/Rest = SubResource( 32 )
+anims/Flash = SubResource( 33 )
+anims/Rest = SubResource( 34 )
 
 [node name="Crystal12" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 92.3796, 1959.57 )
 mode = "Score"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal12" index="2"]
-anims/Flash = SubResource( 33 )
-anims/Rest = SubResource( 34 )
+anims/Flash = SubResource( 35 )
+anims/Rest = SubResource( 36 )
 
 [node name="Crystal26" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( -598.854, 1448.77 )
