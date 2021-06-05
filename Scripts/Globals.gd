@@ -33,7 +33,6 @@ func _ready():
 	isDead = false
 	randomize()
 
-signal pauseGame
 
 func scoreCalc():
 	var scoreCalc = (score+(enemiesDefeated*5)+(deathCount*-20))
@@ -48,10 +47,6 @@ func next_level():
 	deathCount = 0
 	enemiesDefeated = 0
 	get_tree().change_scene(next_scene)
-
-func _physics_process(delta):
-	#print(current_planet 	)
-	pass
 
 func set_baseLevel(value):
 	baseLevel = value
