@@ -25,5 +25,5 @@ func _process(_delta):
 		2:
 			TreasureCounter.set_text("Planet 2 Coins: " + str(global_vars.coinCount2)+" / 6")
 		3:
-			TreasureCounter.set_text("Planet 2 Coins: " + str(global_vars.coinCount3)+" / 6")
+			TreasureCounter.set_text("Planet 3 Coins: " + str(global_vars.coinCount3)+" / 6")
 	Score.set_text("Score: " + str(global_vars.score))
