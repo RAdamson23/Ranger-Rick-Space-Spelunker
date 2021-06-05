@@ -134,8 +134,8 @@ anims/Teleport = SubResource( 6 )
 position = Vector2( 1.78584, -46.233 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
-hframes = 8
 vframes = 5
+hframes = 8
 frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

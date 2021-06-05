@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/coinGenerator.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/Race-to-Mars.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scripts/Level_01.gd" type="Script" id=12]
@@ -20,7 +21,7 @@ script = ExtResource( 12 )
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -752.419, -1749.71 )
+position = Vector2( -612.726, -1468.44 )
 z_index = 2
 
 [node name="Portal_Planet2" parent="." instance=ExtResource( 13 )]
@@ -66,3 +67,8 @@ autoplay = true
 bus = "Music"
 
 [node name="PauseScreen" parent="." instance=ExtResource( 10 )]
+
+[node name="Coins" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 9 )
+[connection signal="timeout" from="Coins" to="Coins" method="_on_Coins_timeout"]
