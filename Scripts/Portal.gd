@@ -14,8 +14,13 @@ func _ready():
 func _on_PortalHB_body_entered(body):
 	if body.name == "Player":
 		var filename = get_filename()
-		if global_vars.isInsidePlanet == false:
+		if global_vars.isInsidePlanet == false and global_vars.coinCount >= 10:
+			global_vars.coinCount -= 10
 			get_tree().change_scene("res://Levels/"+nextLevel)
+		elif global_vars.isInsidePlanet:
+			HUDAnimationPlayer.play("PieCounterTextFlash")
+			yield(get_tree().create_timer(1.5),"timeout")
+			HUDAnimationPlayer.play("Rest")
 		elif global_vars.planetsCompleted == 2 && global_vars.treasureCount == 2:
 			get_tree().change_scene("res://Scenes/LevelComplete.tscn")
 		elif global_vars.treasureCount == 2:
