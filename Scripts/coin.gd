@@ -16,4 +16,3 @@ func _on_Coin_body_entered(body):
 			3:
 				global_vars.coinCount3 += 1
 		queue_free()
-		

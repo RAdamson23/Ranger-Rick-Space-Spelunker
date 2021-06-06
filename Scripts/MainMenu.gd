@@ -13,12 +13,10 @@ func _process(delta):
 	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
 	pass
 
-
 func _on_Start_pressed():
 	global_vars._ready()
 	get_tree().change_scene("res://Scenes/CutScene.tscn")
 	pass 
-
 
 func _on_Exit_pressed():
 	get_tree().quit()

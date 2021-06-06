@@ -3,9 +3,6 @@ extends KinematicBody2D
 onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 onready var player = get_node("/root/Level/Player")
 onready var global_vars = get_node("/root/Globals")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 var velocity = Vector2(0,0)
 const GRAVITY = 20
@@ -36,22 +33,22 @@ var ANIMATIONS = {"IDLE": "Idle","RUN": "Run","ATTACK": "Attack","HIT": "Hit","D
 func _ready():
 	changeAnimation("IDLE")
 	pass # Replace with function body.
-	
+
 func sees_player():
 	var eye_center = get_global_position()
 	var eye_top = eye_center + Vector2(0,-eye_reach)
 	var eye_left = eye_center + Vector2(-eye_reach,0)
 	var eye_right = eye_center + Vector2(eye_reach,0)
-	
+
 	var player_pos = player.get_global_position()
 	var player_extents = player.get_node("CollisionShape2D").shape.extents - Vector2(1,1)
 	var top_left = player_pos + Vector2(-player_extents.x, -player_extents.y)
 	var top_right = player_pos + Vector2(player_extents.x, -player_extents.y)
 	var bottom_left = player_pos + Vector2(-player_extents.x, player_extents.y)
 	var bottom_right = player_pos + Vector2(player_extents.x, player_extents.y)
-	
+
 	var space_state = get_world_2d().direct_space_state
-	
+
 	for eye in [eye_center,eye_top,eye_left,eye_right]:
 		for corner in [top_left,top_right,bottom_left,bottom_right]:
 			if (corner-eye).length() > vision:
@@ -60,7 +57,7 @@ func sees_player():
 			if collision and collision.collider.name == "Player":
 				return true
 	return false
-	
+
 func switchPos():
 	$RayCast2D.position.x *= -1
 	$PlayerDetector/CollisionShape2D.position.x *= -1
@@ -142,13 +139,13 @@ func movecharacter():
 		velocity.x = SPEED * direction
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity,FLOOR)
-			
+
 func hit():
 	$AttackDetector.monitoring = true
-	
+
 func end_of_hit():
 	$AttackDetector.monitoring = false
-	
+
 func start_run():
 	changeAnimation("RUN")
 
@@ -181,6 +178,7 @@ func onHit():
 	changeAnimation("HIT")
 	yield(get_tree().create_timer(0.25),"timeout")
 	isHit = false
+
 func dead():
 	$Death.play()
 	is_dead = true
