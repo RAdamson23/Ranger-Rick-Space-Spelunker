@@ -86,11 +86,13 @@ func _process(delta):
 			currentAnimation = "run"
 			if direction != -1:
 				switchPos()
+				$AnimatedSprite.flip_h = true
 				direction *= -1
 		elif player.position.x > position.x:
 			set_dir(1)
 			if is_moving_left == true:
 				is_moving_left = false
+				$AnimatedSprite.flip_h = false
 			$AnimatedSprite.play("run")
 			currentAnimation = "run"
 			if direction != 1:

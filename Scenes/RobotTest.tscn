@@ -50,7 +50,7 @@ extents = Vector2( 30.0908, 32.2679 )
 extents = Vector2( 24.1489, 36.282 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19.8315, 29.1015 )
+extents = Vector2( 41.5871, 29.1015 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20.3602, 25.6082 )
@@ -72,14 +72,14 @@ animations = [ {
 "name": "die",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "runShoot",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 32 ), ExtResource( 41 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 42 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "runShoot",
 "speed": 5.0
 } ]
 
@@ -111,7 +111,7 @@ shape = SubResource( 2 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2( 47.6107, 7.0291 )
+position = Vector2( 46.6064, 5.76918 )
 shape = SubResource( 3 )
 
 [node name="AttackDetector" type="Area2D" parent="." groups=[
@@ -148,7 +148,7 @@ stream = ExtResource( 3 )
 bus = "SFX"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 3.07473, -0.314987 )
+position = Vector2( 5.85268, -3.88664 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 5 )
 animation = "idle"
