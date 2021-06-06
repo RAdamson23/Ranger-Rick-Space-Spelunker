@@ -1,0 +1,159 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://SFX/Goblin_hit.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/RobotTest.gd" type="Script" id=2]
+[ext_resource path="res://SFX/Goblin_onDeath.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/Robot sprites/Dead (1).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Robot sprites/Shoot (2).png" type="Texture" id=5]
+[ext_resource path="res://SFX/Goblin_attack.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (6).png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Robot sprites/Dead (5).png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (7).png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (8).png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (5).png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (3).png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Robot sprites/Shoot (1).png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Robot sprites/Dead (3).png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Robot sprites/Run (3).png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Robot sprites/Dead (10).png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Robot sprites/Idle (5).png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Robot sprites/Dead (8).png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Robot sprites/Run (6).png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Robot sprites/Run (4).png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Robot sprites/Run (5).png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Robot sprites/Dead (9).png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Robot sprites/Idle (10).png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Robot sprites/Shoot (3).png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Robot sprites/Dead (4).png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Robot sprites/Dead (2).png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Robot sprites/Dead (6).png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Robot sprites/Idle (2).png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Robot sprites/Dead (7).png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Robot sprites/Idle (9).png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Robot sprites/Idle (1).png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Robot sprites/Run (1).png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (2).png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (4).png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Robot sprites/RunShoot (1).png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Robot sprites/Idle (3).png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Robot sprites/Idle (8).png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Robot sprites/Shoot (4).png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Robot sprites/Idle (4).png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Robot sprites/Idle (6).png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Robot sprites/Run (2).png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Robot sprites/Run (7).png" type="Texture" id=42]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.0908, 32.2679 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.1489, 36.282 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.8315, 29.1015 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20.3602, 25.6082 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 28 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 8 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "die",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "runShoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 41 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 42 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[node name="Robot" type="KinematicBody2D" groups=[
+"Enemies",
+]]
+collision_layer = 2147483651
+collision_mask = 2147483651
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=[
+"Collision",
+]]
+collision_layer = 2147483655
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0.237547, 7.21143 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Collision",
+]]
+position = Vector2( 0.727119, 2.29228 )
+shape = SubResource( 2 )
+
+[node name="PlayerDetector" type="Area2D" parent="." groups=[
+"Collision",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2( 47.6107, 7.0291 )
+shape = SubResource( 3 )
+
+[node name="AttackDetector" type="Area2D" parent="." groups=[
+"Collision",
+]]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
+position = Vector2( 47.1646, 10.6314 )
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 26.0422, 12.5658 )
+enabled = true
+cast_to = Vector2( 0, 28 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -2.0
+bus = "SFX"
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -2.0
+bus = "SFX"
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3.07473, -0.314987 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 5 )
+animation = "idle"
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

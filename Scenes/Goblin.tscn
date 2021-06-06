@@ -225,7 +225,6 @@ bus = "SFX"
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 bus = "SFX"
-
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]

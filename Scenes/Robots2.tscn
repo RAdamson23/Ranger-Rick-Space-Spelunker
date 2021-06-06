@@ -40,21 +40,11 @@
 [ext_resource path="res://Sprites/Robot sprites/Run (7).png" type="Texture" id=38]
 [ext_resource path="res://Scripts/Robots2.gd" type="Script" id=39]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 24 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 20 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "runShoot",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "run",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 16 ) ],
@@ -66,12 +56,22 @@ animations = [ {
 "loop": true,
 "name": "die",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 20 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "runShoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 130.443, 247.04 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 2140.05, 56.0368 )
 
 [node name="Robots" type="KinematicBody2D"]
@@ -80,12 +80,12 @@ script = ExtResource( 39 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -9.52448, 0 )
-frames = SubResource( 1 )
+frames = SubResource( 5 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -17.4614, 12.6992 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="Position2D" type="Position2D" parent="."]
 
@@ -96,7 +96,7 @@ cast_to = Vector2( 0, 400 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="PlayerDetector" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
 

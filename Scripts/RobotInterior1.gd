@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 onready var global_vars = get_node("/root/Globals")
 onready var Score = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Score")
