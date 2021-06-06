@@ -49,6 +49,9 @@ func attack_asteroids_trailing(left):
 		yield(get_tree().create_timer(0.1), "timeout")
 		attack_asteroids_trailing(left - 1)
 
+func attack_fire():
+	pass
+
 #Player attack
 
 func player_attack():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/asteroid.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Meteor/Meteor1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Meteor/Meteor2.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Meteor/Meteor3.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SFX/Fireball.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,6 +24,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1.49219, 1.49219 )
 frames = SubResource( 1 )
 animation = "Default"
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -33,4 +35,10 @@ shape = SubResource( 2 )
 
 [node name="Fire" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -20 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -35.34
+autoplay = true
+bus = "SFX"
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

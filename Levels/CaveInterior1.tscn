@@ -826,7 +826,7 @@ position = Vector2( 1730.85, -165.878 )
 position = Vector2( 2583.05, 986.255 )
 
 [node name="Portal" parent="." instance=ExtResource( 16 )]
-position = Vector2( 422.765, -218.627 )
+position = Vector2( 602.359, 3166.72 )
 
 [node name="OrbitingPlatformController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1250.16, 1278.16 )
@@ -834,27 +834,27 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 265.23, 437.947 )
+position = Vector2( -503.908, 90.666 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -334.551, 387.581 )
+position = Vector2( -241.945, -451.228 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -471.994, -198.408 )
+position = Vector2( 354.378, -369.54 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 42.8431, -510.204 )
+position = Vector2( 460.963, 222.84 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 498.472, -116.916 )
+position = Vector2( -69.4878, 507.263 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
@@ -1140,10 +1140,10 @@ anims/Flash = SubResource( 39 )
 anims/Rest = SubResource( 40 )
 
 [node name="Chest4" parent="Collectables" instance=ExtResource( 13 )]
-position = Vector2( 118.326, -121.677 )
+position = Vector2( 2813.29, 1032.93 )
 
 [node name="Chest2" parent="Collectables" instance=ExtResource( 13 )]
-position = Vector2( -47.307, -111.717 )
+position = Vector2( 1274.98, 2888.51 )
 
 [node name="Skeletons" type="Node2D" parent="."]
 
