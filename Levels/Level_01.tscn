@@ -44,7 +44,7 @@ levelID = 1
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Planet0" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -402.469, -259.05 )
+position = Vector2( -393.993, -267.526 )
 scale = Vector2( 4, 4 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
