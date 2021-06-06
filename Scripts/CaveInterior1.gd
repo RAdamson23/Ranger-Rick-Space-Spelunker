@@ -6,7 +6,7 @@ onready var TreasureCounter = get_node("/root/Level/MainHUD").get_node("CanvasLa
 onready var eDefeated = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/EnemiesDefeated")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global_vars._ready()
+	#global_vars._ready()
 	global_vars.isInsidePlanet = true
 	get_node("/root/Level/MainHUD/CanvasLayer/Control").visible = true
 	#global_vars.current_scene = "res://Scenes/CaveLevel2.tscn"

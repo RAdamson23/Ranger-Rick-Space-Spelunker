@@ -18,9 +18,9 @@ onready var next_scene
 onready var coinCount1 = 0
 onready var coinCount2 = 0
 onready var coinCount3 = 0
-onready var coinBeen1 = false
-onready var coinBeen2 = false
-onready var coinBeen3 = false
+onready var coinBeen1 = false setget set_coinBeen1, get_coinBeen1
+onready var coinBeen2 = false setget set_coinBeen2, get_coinBeen2
+onready var coinBeen3 = false setget set_coinBeen3, get_coinBeen3
 
 func _ready():
 	health = 6
@@ -28,8 +28,11 @@ func _ready():
 	stamina = 5
 	treasureCount = 0
 	coinCount1 = 0
+	coinBeen1 = false
 	coinCount2 = 0
+	coinBeen2 = false
 	coinCount3 = 0
+	coinBeen3 = false
 	isDead = false
 	randomize()
 
@@ -86,3 +89,23 @@ func set_stamina(value):
 	pass
 func get_stamina():
 	return stamina
+	
+	
+	
+func set_coinBeen1(value):
+	coinBeen1 = value
+	pass
+func get_coinBeen1():
+	return coinBeen1
+func set_coinBeen2(value):
+	coinBeen2 = value
+	pass
+func get_coinBeen2():
+	return coinBeen2
+func set_coinBeen3(value):
+	coinBeen3 = value
+	pass
+func get_coinBeen3():
+	return coinBeen3
+	
+	
