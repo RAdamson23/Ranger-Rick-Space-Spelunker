@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://TileSets/48by48CollisionBlock.tres" type="TileSet" id=1]
 [ext_resource path="res://TileSets/16by16TileSet.tres" type="TileSet" id=2]
@@ -10,8 +10,12 @@
 [ext_resource path="res://TileSets/miscellaneousCollision.tres" type="TileSet" id=8]
 [ext_resource path="res://Art/circle-cropped.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/PlayerInterior.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/RobotInterior3.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=13]
 
 [node name="Level" type="Node"]
+script = ExtResource( 11 )
 
 [node name="MainHUD" parent="." instance=ExtResource( 6 )]
 
@@ -63,3 +67,7 @@ self_modulate = Color( 0.352941, 0.203922, 0.203922, 1 )
 position = Vector2( 0.665894, 1.6225 )
 scale = Vector2( 2.75959, 2.76766 )
 texture = ExtResource( 9 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 13 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 12 )]

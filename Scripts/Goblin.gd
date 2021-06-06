@@ -64,7 +64,7 @@ func switchPos():
 	$AttackDetector/CollisionShape2D.position.x *= -1
 	$Hitbox/CollisionShape2D.position.x *= -1
 
-func _process(delta):
+func _process(_delta):
 	if !is_dead && sees_player():
 		hasSeenPlayer = true
 		if !playerDetectorExited:
