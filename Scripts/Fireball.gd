@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-
-
 export var speed = 800
 func _ready():
 	$Whoosh.play()
@@ -11,7 +9,6 @@ func Explode():
 	$Timer.start()
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$Laser.play("Explode")
-	
 
 func _on_VisibilityNotifier2D_screen_exited():
 	$Timer.start(1)

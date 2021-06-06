@@ -63,7 +63,6 @@ func set_treasureCount(value):
 func get_treasureCount():
 	return treasureCount
 
-
 func set_current_planet(value):
 	current_planet = value
 	pass

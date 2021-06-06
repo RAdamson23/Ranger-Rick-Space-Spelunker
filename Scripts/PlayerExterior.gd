@@ -111,7 +111,6 @@ func _get_closest_planet(smallest):
 
 	current_planet = new_smallest
 
-
 func _start_closest_planet_timer():
 	var timer = Timer.new()
 	timer.wait_time = 0.1
@@ -119,9 +118,7 @@ func _start_closest_planet_timer():
 	add_child(timer)
 	timer.start()
 
-
 func shoot():
-	
 	var test = get_angle_to(get_global_mouse_position())
 	
 	if get_global_mouse_position() < player.global_position:

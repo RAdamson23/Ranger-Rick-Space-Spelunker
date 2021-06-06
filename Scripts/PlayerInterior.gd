@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var laserPreload := preload("res://Scenes/LaserBolt.tscn")
 onready var global_vars = get_node("/root/Globals")
 onready var stamina = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Stamina_Bar_Script")
@@ -18,8 +17,6 @@ var shooting = false
 var max_num_dub_jumps = 1
 var dub_jumps = 0
 var can_jump = false
-
-
 
 const UP = Vector2(0, -1)
 
@@ -50,7 +47,6 @@ func _process(delta):
 			shoot()
 		else:
 			HUDAnimationPlayer.play("StaminaBarFlash")
-	
 
 func isDead():
 	global_vars.isDead = true

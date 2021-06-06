@@ -23,14 +23,13 @@ func _ready():
 		player = get_node("/root/Level/").get_node("Player")
 		playerEffects = get_node("/root/Level/").get_node("Player").get_node("PlayerEffects")
 		HUDAnimationPlayer = get_node("/root/Level/MainHUD/HealthBar")
-	_intialize()
-	
+	_intialize()	
 
 func set_max(new_max):
 	max_amount = new_max
 	max_amount = max(1,new_max)
 	emit_signal("max_changed",max_amount)
-	
+
 func set_current_health(new_value):	
 	if new_value >= current_health:
 		current_health = new_value
@@ -52,9 +51,6 @@ func set_current_health(new_value):
 		HUDAnimationPlayer.play("HealthBarFlash")
 	else:
 		HUDAnimationPlayer.play("HealthBarRest")
-		
-	
-	
 
 func _intialize():
 	emit_signal("max_changed",max_amount)

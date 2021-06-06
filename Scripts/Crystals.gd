@@ -21,7 +21,7 @@ func _ready():
 			$Score.visible = false
 			$Health.visible = false
 	pass 
-	
+
 func _on_Crystal_body_entered(body):
 	if body.is_in_group("Player") || body.is_in_group("Fireball"):
 		match mode:
@@ -36,8 +36,6 @@ func _on_Crystal_body_entered(body):
 				$AnimationPlayer.play("Flash_Score")
 		$CollisionShape2D.call_deferred("set_disabled", true)
 		$Timer.start()
-		
-
 
 func _on_Timer_timeout():
 	queue_free()
