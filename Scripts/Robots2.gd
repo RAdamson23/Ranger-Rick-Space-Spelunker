@@ -9,6 +9,9 @@ var bulletCount = 0
 var timer = 0
 var eye_reach = 90
 var vision = 600
+var movementCancelled = false
+var playerKillTime = false
+var rate_of_fire = 0.5
 
 export var direction = 1 #left
 export var detectsCliffs = true
@@ -22,7 +25,6 @@ func _ready():
 
 	$FloorChecker.position.x = $CollisionShape2D.shape.get_extents().x * direction
 	$FloorChecker.enabled = detectsCliffs
-
 
 func sees_player():
 	var eye_center = get_global_position()
@@ -48,42 +50,54 @@ func sees_player():
 				return true
 	return false
 
-
 func _physics_process(delta):
 	if is_on_wall() or not $FloorChecker.is_colliding() and detectsCliffs and is_on_floor():
 		direction = direction * -1
 		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
 		$FloorChecker.position.x = $CollisionShape2D.shape.get_extents().x * direction
 
-	
-	if sees_player():
+	if sees_player() and movementCancelled == false:
 		$AnimatedSprite.play("run")
-		var playersXPos = player.position.x	
-		var enemyXPos = position.x
-		var distanceBetweenEnemyAndPlayer = 1000
+		velocity.y += 20
+		velocity.x = speed * direction
+		velocity = move_and_slide(velocity, Vector2.UP)
 		
-		if (enemyXPos - playersXPos) < distanceBetweenEnemyAndPlayer:
-			velocity.y += 20
-			velocity.x = speed * direction
-			velocity = move_and_slide(velocity, Vector2.UP)
-			timer += 1
-			distanceBetweenEnemyAndPlayer = (enemyXPos - playersXPos)
-			if player.position.x < position.x:
-				$AnimatedSprite.flip_h = true
-	
+		if player.position.x < position.x:
+			$AnimatedSprite.flip_h = true
+
+	if playerKillTime == true:
+		
+		timer += 1
+		if timer > 50:
+			timer = 0
+			bulletCount = 0
+
+		if timer < 50 and bulletCount < 1:
+			#var bullets = bullet.instance()
+			#get_parent().add_child(bullets)
+			shoot()
+			#bullets.position = $Position2D.global_position
+			bulletCount += 1
+
 	if !sees_player():
 		$AnimatedSprite.play("idle")
 
-	if timer > 50:
-		timer = 0
-		bulletCount = 0
+func shoot():
+	var test = get_angle_to(get_global_mouse_position())
+	
+	if get_global_mouse_position() < player.global_position:
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
+	$AnimatedSprite.play("shoot")
+	get_node("TurnAxis").rotation = test
 
-	if timer < 50 and bulletCount < 1:
-		var bullets = bullet.instance()
-		get_parent().add_child(bullets)
-
-		bullets.position = $Position2D.global_position
-		bulletCount += 1
+	var bullets = bullet.instance()
+	bullets.position = get_node("TurnAxis/CastPoint").get_global_position()
+	bullets.rotation = test + rotation
+	get_parent().add_child(bullets)
+	yield(get_tree().create_timer(rate_of_fire),"timeout")
+	#can_fire = true
 
 func die() -> void:
 	speed = 0
@@ -102,8 +116,17 @@ func die() -> void:
 
 	t.queue_free()
 
-
-
 func _on_Timer_timeout():
 	queue_free()
 	pass
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		$AnimatedSprite.play("shoot")
+		movementCancelled = true
+		playerKillTime = true
+
+func _on_Area2D_body_exited(body):
+	$AnimatedSprite.play("run")
+	playerKillTime = false
+	movementCancelled = false

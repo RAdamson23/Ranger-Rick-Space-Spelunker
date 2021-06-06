@@ -29,7 +29,7 @@ shape = SubResource( 1 )
 position = Vector2( -11, 1 )
 frames = SubResource( 2 )
 animation = "fireball"
-frame = 2
+frame = 3
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

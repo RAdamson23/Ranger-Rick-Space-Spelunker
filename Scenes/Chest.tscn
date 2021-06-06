@@ -38,7 +38,7 @@ position = Vector2( 113.521, -36.579 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "Full"
-frame = 7
+frame = 4
 speed_scale = 0.6
 playing = true
 
@@ -51,4 +51,5 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 114.362, -34.4768 )
 shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
