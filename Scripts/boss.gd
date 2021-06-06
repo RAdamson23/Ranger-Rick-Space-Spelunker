@@ -1,15 +1,32 @@
 extends Node2D
 
+#https://ttstool.com/
+#voice from here
+
+onready var global_vars = get_node("/root/Globals")
+
 var asteroid_scene = load("res://Scenes/asteroid_01.tscn")
 var health = 5
+var state = "start"
+
 
 func _ready():
+	$MainHUD/CanvasLayer/Control/TreasureCounter.text = "Boss health: " + str(health)
+	$Wizard/Sounds/Intro.play()
+	yield($Wizard/Sounds/Intro, "finished")
+	yield(get_tree().create_timer(1), "timeout")
+	
+	state = "combat"
+	
 	_on_Timer_Attack_timeout()
 	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
 	var angle = rand_range(-PI, PI)
 	new_position.x = new_position.x + (cos(angle) * 2000)
 	new_position.y = new_position.y - (sin(angle) * 2000)
 	$Wizard.position = new_position
+	
+	$TimerAttack.start()
+	$TimerTaunt.start()
 	pass
 
 #Wizard attack
@@ -55,21 +72,68 @@ func attack_fire():
 #Player attack
 
 func player_attack():
+	if state == "dead":
+		return
+	elif state == "start":
+		health = 10
+		$MainHUD/CanvasLayer/Control/TreasureCounter.text = "Boss health: " + str(health)
+		$Wizard/Sounds/Intro.stop()
+		$Wizard/Sounds/Intro_skip.play()
+	else:
+		$Wizard/Sounds/Pain.play()
+	
 	var new_position = Vector2($Planets/Planet.global_transform.origin.x, $Planets/Planet.global_transform.origin.y )
 	var angle = rand_range(-PI, PI)
 	new_position.x = new_position.x + (cos(angle) * 2000)
 	new_position.y = new_position.y - (sin(angle) * 2000)
 	$Wizard/Sprite.animation = "Hit"
-	$Wizard/Sounds/Hit.play()
 	yield($Wizard/Sprite, "animation_finished")
 	$Wizard/Sprite.animation = "Idle"
 	$Wizard.position = new_position
 	pass
 
 func _on_Wizard_body_entered(body):
+	if state == "dead":
+		return
 	if $Wizard.visible and "LaserBolt" in body.name:
 		health -= 1
-		if health >= 0:
-			#TODO: go to next faze
+		$MainHUD/CanvasLayer/Control/TreasureCounter.text = "Boss health: " + str(health)
+		if health <= 0:
+			state = "dead"
+			$TimerAttack.stop()
+			$TimerTaunt.stop()
+			
+			#broken IDK why
+			#global_vars.set_health(6)
+			#for child in get_tree().get_root().get_children():
+			#	if ("Asteroid" in child.name):
+			#		child.queue_free()
+			
+			$Wizard/Sprite.animation = "Death"
+			yield(get_tree().create_timer(2), "timeout")
+			$Wizard/Sounds/Loss.play()
+			yield($Wizard/Sounds/Loss, "finished")
+			yield(get_tree().create_timer(2), "timeout")
+			#TODO: end screen
 			pass
 		player_attack()
+
+
+func _on_TimerTaunt_timeout():
+	var i = randi() % 8
+	match i:
+		0:
+			$Wizard/Sounds/Taunt_01.play()
+		1:
+			$Wizard/Sounds/Taunt_02.play()
+		2:
+			$Wizard/Sounds/Taunt_03.play()
+		3:
+			$Wizard/Sounds/Taunt_04.play()
+		4:
+			$Wizard/Sounds/Taunt_05.play()
+		5:
+			$Wizard/Sounds/Taunt_06.play()
+		6:
+			$Wizard/Sounds/Taunt_07.play()
+	pass

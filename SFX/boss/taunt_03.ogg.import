@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/taunt_03.ogg-a9893e0c5d29a692ccda1df7dbb1ab29.oggstr"
+
+[deps]
+
+source_file="res://SFX/boss/taunt_03.ogg"
+dest_files=[ "res://.import/taunt_03.ogg-a9893e0c5d29a692ccda1df7dbb1ab29.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
