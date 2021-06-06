@@ -8,22 +8,22 @@ export var nextLevel = "CaveInterior1.tscn"
 export var levelID = 0
 
 func _ready():
-	#$AnimatedSprite.play("Closed")
 	pass # Replace with function body.
 
 func _on_PortalHB_body_entered(body):
 	print(global_vars.coinBeen1)
 	if body.name == "Player":
+		
 		if global_vars.isInsidePlanet == false:
 			if levelID == 1 and global_vars.coinCount1 >= 6 and not global_vars.coinBeen1:
 				global_vars.set_coinBeen1(true)
 				get_tree().change_scene("res://Levels/"+nextLevel)
 			elif levelID == 2 and global_vars.coinCount2 >= 6 and not global_vars.coinBeen2:
 				global_vars.coinBeen2 = true
-				#get_tree().change_scene("res://Levels/"+nextLevel)
+				get_tree().change_scene("res://Levels/"+nextLevel)
 			elif levelID == 3 and global_vars.coinCount3 >= 6 and not global_vars.coinBeen3:
 				global_vars.coinBeen3 = true
-				#get_tree().change_scene("res://Levels/"+nextLevel)
+				get_tree().change_scene("res://Levels/"+nextLevel)
 			else:
 				HUDAnimationPlayer.play("PieCounterTextFlash")
 				yield(get_tree().create_timer(1.5),"timeout")

@@ -47,16 +47,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "shoot",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "die",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 20 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "runShoot",
@@ -66,6 +56,16 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "die",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -101,6 +101,5 @@ shape = SubResource( 3 )
 [node name="TurnAxis" type="Position2D" parent="."]
 
 [node name="CastPoint" type="Position2D" parent="TurnAxis"]
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

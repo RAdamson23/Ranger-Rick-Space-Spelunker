@@ -5,7 +5,7 @@ onready var Score = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Contro
 onready var TreasureCounter = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/TreasureCounter")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global_vars.respawnLevel = "CaveInterior1.tscn"
+	global_vars.respawnLevel = "CaveInterior2.tscn"
 	global_vars.isInsidePlanet = true
 	get_node("/root/Level/MainHUD/CanvasLayer/Control").visible = true
 	pass # Replace with function body.

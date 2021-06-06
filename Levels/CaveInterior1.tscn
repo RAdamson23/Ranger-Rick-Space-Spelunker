@@ -827,6 +827,7 @@ position = Vector2( 2583.05, 986.255 )
 
 [node name="Portal" parent="." instance=ExtResource( 16 )]
 position = Vector2( 602.359, 3166.72 )
+nextLevel = "Level_01.tscn"
 
 [node name="OrbitingPlatformController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1250.16, 1278.16 )
@@ -834,27 +835,27 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -503.908, 90.666 )
+position = Vector2( -508.607, 58.8467 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -241.945, -451.228 )
+position = Vector2( -213.135, -465.529 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 354.378, -369.54 )
+position = Vector2( 376.882, -346.56 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 460.963, 222.84 )
+position = Vector2( 446.061, 251.344 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -69.4878, 507.263 )
+position = Vector2( -101.202, 501.899 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
@@ -862,81 +863,42 @@ speed = 3.0
 
 [node name="FallingSpikes" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( -341.587, -2.18729 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes2" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 165.628, 2108.38 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes5" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 528.896, 2108.59 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes3" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 1988.41, 2108.59 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes13" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 10.6322, 1597.26 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes12" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 1977.19, 1594.26 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes4" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 2278.84, 2107.81 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes6" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( -609.808, 1147.63 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes7" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 107.276, 1148.02 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes8" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 2104.73, 1148.63 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes11" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 2516.77, 1148.99 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes10" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 2407.39, 636.205 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="FallingSpikes9" parent="FallingSpikes" instance=ExtResource( 6 )]
 position = Vector2( 2842.81, 1149.02 )
-size_x = 40
-size_y = 40
-damage = 1.5
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
@@ -981,7 +943,6 @@ mode = "Stamina"
 
 [node name="Crystal10" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1703.08, -471.186 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal10" index="2"]
 anims/Flash = SubResource( 1 )
@@ -989,7 +950,6 @@ anims/Rest = SubResource( 2 )
 
 [node name="Crystal13" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( -133.409, 1001.81 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal13" index="2"]
 anims/Flash = SubResource( 3 )
@@ -997,7 +957,6 @@ anims/Rest = SubResource( 4 )
 
 [node name="Crystal28" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( -547.852, 1449.32 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal28" index="2"]
 anims/Flash = SubResource( 5 )
@@ -1005,7 +964,6 @@ anims/Rest = SubResource( 6 )
 
 [node name="Crystal18" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2789.27, 1000.85 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal18" index="2"]
 anims/Flash = SubResource( 7 )
@@ -1013,7 +971,6 @@ anims/Rest = SubResource( 8 )
 
 [node name="Crystal21" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2547.94, 1449.05 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal21" index="2"]
 anims/Flash = SubResource( 9 )
@@ -1021,7 +978,6 @@ anims/Rest = SubResource( 10 )
 
 [node name="Crystal22" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2275.32, 1959.43 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal22" index="2"]
 anims/Flash = SubResource( 11 )
@@ -1029,7 +985,6 @@ anims/Rest = SubResource( 12 )
 
 [node name="Crystal23" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 2326.43, 1959.64 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal23" index="2"]
 anims/Flash = SubResource( 13 )
@@ -1037,7 +992,6 @@ anims/Rest = SubResource( 14 )
 
 [node name="Crystal25" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 321.41, 2409.38 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal25" index="2"]
 anims/Flash = SubResource( 15 )
@@ -1045,7 +999,6 @@ anims/Rest = SubResource( 16 )
 
 [node name="Crystal14" parent="Collectables" instance=ExtResource( 12 )]
 position = Vector2( 1623.08, 360.814 )
-mode = "Health"
 
 [node name="AnimationPlayer" parent="Collectables/Crystal14" index="2"]
 anims/Flash = SubResource( 17 )

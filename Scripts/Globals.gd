@@ -12,6 +12,7 @@ onready var Planet4HUDUpdater = 1
 var enemiesDefeated = 0
 var planetsCompleted = 0
 onready var baseLevel = "Level_01.tscn" setget set_baseLevel, get_baseLevel
+onready var respawnLevel = "CaveInterior1.tscn"
 onready var isInsidePlanet = false
 onready var next_scene
 
@@ -42,7 +43,10 @@ func scoreCalc():
 	return scoreCalc
 
 func onDeath():
-	get_tree().change_scene("res://Levels/"+baseLevel)
+	if !isInsidePlanet:
+		get_tree().change_scene("res://Levels/"+baseLevel)
+	else:
+		get_tree().change_scene("res://Levels/"+respawnLevel)
 	_ready()
 	deathCount+=1
 

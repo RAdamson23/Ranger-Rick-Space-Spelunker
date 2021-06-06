@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/OrbitingPlatformController.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/CaveInterior1.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/CaveInterior2.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/FallingSpikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=7]
@@ -544,42 +544,56 @@ radius = Vector2( 350, 350 )
 rotation_duration = 6.0
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 342.352, 72.7691 )
+position = Vector2( -293.535, 190.623 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -72.7691, 342.352 )
+position = Vector2( -190.623, -293.535 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -342.352, -72.7691 )
+position = Vector2( 293.535, -190.623 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 72.7691, -342.352 )
+position = Vector2( 190.623, 293.535 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
 [node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( 772.47, 1802.22 )
 move_to = Vector2( 1100, 0 )
+speed = 3.0
 
 [node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( 2249.63, 2462.23 )
 move_to = Vector2( 0, 400 )
+speed = 3.0
 
 [node name="MovingPlatform7" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( 2463.22, 2443.4 )
 move_to = Vector2( 150, -200 )
+speed = 3.0
 
 [node name="MovingPlatform5" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( 2255.64, 909.89 )
 move_to = Vector2( 0, 400 )
+speed = 3.0
 
 [node name="MovingPlatform6" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( -558.513, 919.89 )
 move_to = Vector2( 0, 400 )
+speed = 3.0
 
 [node name="MovingPlatform4" parent="MovingPlatforms" instance=ExtResource( 2 )]
 position = Vector2( 3047.13, 1426.33 )
 move_to = Vector2( 0, 300 )
+speed = 3.0
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1894.27, 3167.33 )
