@@ -15,7 +15,7 @@ func _ready():
 
 var isFalling = false
 
-func _process(delta):
+func _process(_delta):
 	if isFalling:
 		velocity.x = 0
 		velocity.y += speed

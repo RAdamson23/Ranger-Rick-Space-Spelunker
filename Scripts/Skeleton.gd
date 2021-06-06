@@ -248,13 +248,13 @@ func _on_FireballDetector_body_entered(body):
 				block()
 
 
-func _on_ShieldHitbox_body_entered(body):
+func _on_ShieldHitbox_body_entered(_body):
 	shieldHit = true
 	yield(get_tree().create_timer(0.05),"timeout")
 	shieldHit = false
 	pass # Replace with function body.
 
 
-func _on_PlayerDetector_body_exited(body):
+func _on_PlayerDetector_body_exited(_body):
 	playerDetectorExited=true
 	pass # Replace with function body.

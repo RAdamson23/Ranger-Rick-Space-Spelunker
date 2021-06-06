@@ -4,6 +4,8 @@ const SPEED = 50
 var direction = Vector2()
 var velocity = 1
 
+func _ready():
+	$AudioStreamPlayer.play()
 
 func _physics_process(delta):
 	direction.x -= SPEED * delta - velocity
