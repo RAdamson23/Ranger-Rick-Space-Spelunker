@@ -11,6 +11,8 @@ var state = "start"
 
 
 func _ready():
+	global_vars.respawnLevel = "boss.tscn"
+	global_vars.baseLevel = "boss.tscn"
 	$MainHUD/CanvasLayer/Control/TreasureCounter.text = "Boss health: " + str(health)
 	$Wizard/Sounds/Intro.play()
 	yield($Wizard/Sounds/Intro, "finished")
