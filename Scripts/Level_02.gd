@@ -5,10 +5,10 @@ onready var Score = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Contro
 onready var TreasureCounter = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/TreasureCounter")
 
 func _ready():
-	global_vars.respawnLevel = "Level_01.tscn"
+	global_vars.respawnLevel = "Level_02.tscn"
 	TreasureCounter.set_text("Planet 1 Coins: " + str(global_vars.coinCount1)+" / 10")
-	global_vars.next_scene = "Level_02.tscn"
-	global_vars.baseLevel = "Level_01.tscn"
+	global_vars.next_scene = "boss.tscn"
+	global_vars.baseLevel = "Level_02.tscn"
 	global_vars.isInsidePlanet = false
 	pass # Replace with function body.
 

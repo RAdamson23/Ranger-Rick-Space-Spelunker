@@ -1,13 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Music/Please stand by sound effect.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Art/MainMenuBackground.PNG" type="Texture" id=2]
-[ext_resource path="res://Music/Curb Your Enthusiasm Theme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-ring-planet.png" type="Texture" id=1]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-far-planets.png" type="Texture" id=2]
+[ext_resource path="res://Art/ParalaxBackground/preview.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/DeathScene.gd" type="Script" id=4]
 [ext_resource path="res://Art/PermanentMarker-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Art/ButtonStylePressed.tres" type="StyleBox" id=6]
 [ext_resource path="res://Art/ButtonStyle.tres" type="StyleBox" id=7]
 [ext_resource path="res://Art/ButtonStyleHover.tres" type="StyleBox" id=8]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-stars.png" type="Texture" id=9]
+[ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-big-planet.png" type="Texture" id=10]
+[ext_resource path="res://Music/Please stand by sound effect.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Music/Curb Your Enthusiasm Theme.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -41,14 +45,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="TextureRect" parent="."]
-margin_right = 1919.0
-margin_bottom = 1082.0
+[node name="MovingBG" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="MovingBG"]
+follow_viewport_scale = 0.001
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="MovingBG/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="MovingBG/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 66.8258, 132.897 )
+scale = Vector2( 5, 5 )
+z_index = -2
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MovingBG/ParallaxBackground"]
+scale = Vector2( 15, 15 )
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="MovingBG/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0.201088, -0.231035 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MovingBG/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="MovingBG/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1301.34, 194.968 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MovingBG/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="MovingBG/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 205.055, 155.045 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_lock_": true
-}
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="MovingBG/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Sprite" type="Sprite" parent="MovingBG/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 620.813, 457.006 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+centered = false
 
 [node name="Title" type="Label" parent="."]
 margin_top = 56.6324
@@ -69,16 +120,16 @@ modulate = Color( 1, 1, 1, 0.807843 )
 margin_left = 591.0
 margin_top = 242.0
 margin_right = 1305.0
-margin_bottom = 881.0
+margin_bottom = 797.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Deaths" type="Label" parent="Information"]
-margin_left = 76.3739
-margin_top = 393.549
-margin_right = 310.374
-margin_bottom = 452.549
+margin_left = 88.3739
+margin_top = 303.549
+margin_right = 322.374
+margin_bottom = 362.549
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
 text = "Death Count:"
@@ -131,10 +182,10 @@ __meta__ = {
 }
 
 [node name="EnemiesDefeated" type="Label" parent="Information"]
-margin_left = 61.9405
-margin_top = 200.762
-margin_right = 269.94
-margin_bottom = 273.762
+margin_left = 71.9405
+margin_top = 202.762
+margin_right = 279.94
+margin_bottom = 275.762
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
 text = "Enemies Defeated:"
@@ -158,39 +209,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BonusesCollected" type="Label" parent="Information"]
-margin_left = 109.995
-margin_top = 316.706
-margin_right = 343.995
-margin_bottom = 375.706
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
-text = "Bonuses Collected:"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BonusesCollectedCount" type="Label" parent="Information/BonusesCollected"]
-margin_left = 273.0
-margin_top = 6.0
-margin_right = 526.0
-margin_bottom = 50.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
-text = "0 / 2"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TotalScore" type="Label" parent="Information"]
-margin_left = 111.348
-margin_top = 494.474
-margin_right = 345.347
-margin_bottom = 553.474
+margin_left = 114.348
+margin_top = 411.474
+margin_right = 348.347
+margin_bottom = 470.474
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
 text = "Total Score:"
@@ -229,10 +252,10 @@ __meta__ = {
 }
 
 [node name="Restart" type="Button" parent="."]
-margin_left = 774.525
-margin_top = 927.441
-margin_right = 1109.53
-margin_bottom = 1023.44
+margin_left = 773.525
+margin_top = 845.441
+margin_right = 1108.53
+margin_bottom = 941.44
 custom_styles/hover = ExtResource( 8 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 7 )
@@ -246,8 +269,8 @@ __meta__ = {
 }
 
 [node name="PleaseStandBy" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 11 )
 
 [node name="CurbYourEnthusiasm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 12 )
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]

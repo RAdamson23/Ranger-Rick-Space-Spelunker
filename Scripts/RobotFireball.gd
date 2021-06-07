@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 onready var playerHealth = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
-export var speed = 800
+export var speed = 600
 func _ready():
 	$Whoosh.play()
 	apply_impulse(Vector2(),Vector2(speed,0).rotated(rotation))

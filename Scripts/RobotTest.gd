@@ -27,7 +27,7 @@ var is_moving_left = false
 var firstrun = true
 var playerDetectorExited = true
 var hasSeenPlayer = false
-var rateOfFire = 0.6
+var rateOfFire = 1.0
 var can_fire = true
 var stop = false
 

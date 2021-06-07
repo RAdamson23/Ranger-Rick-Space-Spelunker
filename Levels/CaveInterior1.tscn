@@ -881,27 +881,27 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -476.045, -188.48 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
-
-[node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 32.1493, -510.99 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
-
-[node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 495.915, -127.329 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
-
-[node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
 position = Vector2( 274.343, 432.296 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 
+[node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
+position = Vector2( -326.361, 394.502 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
+
+[node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
+position = Vector2( -476.045, -188.48 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
+
+[node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
+position = Vector2( 32.1493, -510.99 )
+move_to = Vector2( 0, 0 )
+speed = 3.0
+
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -326.362, 394.502 )
+position = Vector2( 495.915, -127.329 )
 move_to = Vector2( 0, 0 )
 speed = 3.0
 

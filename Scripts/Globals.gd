@@ -44,17 +44,14 @@ func resetHealthStaminaAndTreasureCount():
 	coinCount1 = 0
 	coinCount2 = 0
 	coinCount3 = 0
+	deathCount = 0
 
 func scoreCalc():
 	var scoreCalc = (score+(enemiesDefeated*5)+(deathCount*-20))
 	return scoreCalc
 
 func onDeath():
-	if !isInsidePlanet:
-		get_tree().change_scene("res://Levels/"+baseLevel)
-	else:
-		get_tree().change_scene("res://Levels/"+respawnLevel)
-	resetHealthStaminaAndTreasureCount()
+	get_tree().change_scene("res://Scenes/DeathScene.tscn")
 	deathCount+=1
 
 func next_level():

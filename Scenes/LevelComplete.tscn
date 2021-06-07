@@ -265,5 +265,4 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
-
 [connection signal="pressed" from="Next Level" to="." method="_on_Next_Level_pressed"]

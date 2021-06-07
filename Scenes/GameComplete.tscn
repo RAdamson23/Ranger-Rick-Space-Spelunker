@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-big-planet.png" type="Texture" id=1]
 [ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-far-planets.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/LevelComplete.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameComplete.gd" type="Script" id=3]
 [ext_resource path="res://Art/ButtonStyleHover.tres" type="StyleBox" id=4]
 [ext_resource path="res://Art/ButtonStylePressed.tres" type="StyleBox" id=5]
 [ext_resource path="res://Art/ButtonStyle.tres" type="StyleBox" id=6]
@@ -32,7 +32,7 @@ font_data = ExtResource( 7 )
 size = 48
 font_data = ExtResource( 11 )
 
-[node name="LevelComplete" type="Control"]
+[node name="GameComplete" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )

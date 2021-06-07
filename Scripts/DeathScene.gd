@@ -17,18 +17,25 @@ func _ready():
 		$CurbYourEnthusiasm.play()
 	$Information/Score/ScoreCount.set_text(str(global_vars.score))
 	$Information/EnemiesDefeated/EnemiesDefeatedCount.set_text(str(global_vars.enemiesDefeated)+" x 5 points each")
-	$Information/BonusesCollected/BonusesCollectedCount.set_text(str(global_vars.mainCollectable)+" x 50 points each")
+	#$Information/BonusesCollected/BonusesCollectedCount.set_text(str(global_vars.mainCollectable)+" x 50 points each")
 	$Information/Deaths/DeathCount.set_text(str(global_vars.deathCount)+" x -20 points each")
 	$Information/TotalScore/TotalScoreCount.set_text(str(global_vars.scoreCalc()))
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass	
+func _process(delta):
+	$MovingBG/ParallaxBackground/ParallaxLayer.motion_offset.x += 0.1
+	$MovingBG/ParallaxBackground/ParallaxLayer2.motion_offset.x += 0.2
+	$MovingBG/ParallaxBackground/ParallaxLayer3.motion_offset.x += 0.6
+	$MovingBG/ParallaxBackground/ParallaxLayer4.motion_offset.x += 0.8
+	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
 
 
 func _on_Restart_pressed():
-	get_tree().change_scene(global_vars.current_scene)
-	global_vars._ready()
+	if !global_vars.isInsidePlanet:
+		get_tree().change_scene("res://Levels/"+global_vars.baseLevel)
+	else:
+		get_tree().change_scene("res://Levels/"+global_vars.respawnLevel)
+	global_vars.resetHealthStaminaAndTreasureCount()
 
