@@ -1,33 +1,33 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/Fireball.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/RobotFireball.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/blasterbolt.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Fireball/Explosion.png" type="Texture" id=5]
-[ext_resource path="res://SFX/Fireball.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/Fireball/Explosion.png" type="Texture" id=3]
+[ext_resource path="res://SFX/Fireball.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 33, 33 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 33, 0, 33, 33 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 66, 0, 33, 33 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 99, 0, 33, 33 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 132, 0, 33, 33 )
 
 [sub_resource type="SpriteFrames" id=6]
@@ -48,7 +48,7 @@ radius = 6.12627
 height = 16.7835
 
 [node name="LaserBolt" type="RigidBody2D" groups=[
-"Fireball",
+"RobotLaser",
 ]]
 position = Vector2( -1.18729, 9.17713 )
 collision_layer = 3
@@ -59,7 +59,6 @@ contacts_reported = 1
 contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
-speed = 1000
 
 [node name="Laser" type="AnimatedSprite" parent="."]
 position = Vector2( 31.043, 2.43478 )
@@ -79,7 +78,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="Whoosh" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 4 )
 volume_db = -13.765
 bus = "SFX"
 [connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]

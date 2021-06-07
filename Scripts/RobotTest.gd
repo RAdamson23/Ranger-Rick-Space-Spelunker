@@ -27,8 +27,9 @@ var is_moving_left = false
 var firstrun = true
 var playerDetectorExited = true
 var hasSeenPlayer = false
-var ANIMATIONS = {"IDLE": "Idle","RUN": "Run","ATTACK": "Attack","HIT": "Hit","DEAD": "Dead"}
-
+var rateOfFire = 0.6
+var can_fire = true
+var stop = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -60,21 +61,18 @@ func sees_player():
 	return false
 
 func switchPos():
+	$TurnAxis/CastPoint.position.x *= -1
 	$RayCast2D.position.x *= -1
 	$PlayerDetector/CollisionShape2D.position.x *= -1
-	$AttackDetector/CollisionShape2D.position.x *= -1
 	$Hitbox/CollisionShape2D.position.x *= -1
+	$Stop/CollisionShape2D.position.x *= -1
 
 func _process(delta):
-	if !is_dead && sees_player():
+	if !is_dead && sees_player() && !stop:
 		hasSeenPlayer = true
-		if !playerDetectorExited:
-			attack()
-			velocity.y += GRAVITY
-			velocity = move_and_slide(velocity,FLOOR)
+		attack()
+		if isHit:
 			return
-		if currentAnimation == "attack" || isHit:
-				return
 		if currentAnimation == "run":
 			$AnimatedSprite.play("run")
 			currentAnimation = "run"
@@ -112,6 +110,12 @@ func _process(delta):
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity,FLOOR)
 		pass
+	elif stop && !is_dead:
+		velocity.x = 0
+		velocity.y += GRAVITY
+		velocity = move_and_slide(velocity,FLOOR)
+		$AnimatedSprite.play("shoot")
+		attack()
 	elif !is_dead && hasSeenPlayer:
 		movecharacter()
 	elif !is_dead:
@@ -174,6 +178,7 @@ func onHit():
 	health-=1
 	velocity.x = 0
 	velocity = move_and_slide(velocity,Vector2.UP)
+	$AnimatedSprite.play("run")
 	yield(get_tree().create_timer(0.25),"timeout")
 	isHit = false
 
@@ -186,7 +191,6 @@ func dead():
 	currentAnimation = "die"
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$PlayerDetector/CollisionShape2D.call_deferred("set_disabled", true)
-	$AttackDetector/CollisionShape2D.call_deferred("set_disabled", true)
 	$Hitbox/CollisionShape2D.call_deferred("set_disabled", true)
 	velocity.x = 0
 	while !is_on_floor():
@@ -202,11 +206,13 @@ func _on_Hitbox_body_entered(body):
 			dead()
 func attack():
 	velocity.x = 0
-	$Attack.play()
-	$AnimatedSprite.play("shoot")
+	#$Attack.play()
+	if can_fire:
+		
+		shoot()
 
 func _on_PlayerDetector_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && sees_player():
 		playerDetectorExited = false
 		attack()
 
@@ -218,4 +224,35 @@ func _on_AttackDetector_body_entered(body):
 
 func _on_PlayerDetector_body_exited(body):
 	playerDetectorExited=true
+	pass # Replace with function body.
+	
+func shoot():
+	var test = get_angle_to(player.global_position)
+	if stop:
+		$AnimatedSprite.play("shoot")
+	else:
+		$AnimatedSprite.play("runShoot")
+	can_fire = false
+	var m_rotation = test#your function to get rot
+	m_rotation = clamp(m_rotation, 260, 90) #-45° to 45°
+	get_node("TurnAxis").rotation = m_rotation
+	var laserPreload := preload("res://Scenes/RobotLaser.tscn")
+	var laser_instance = laserPreload.instance()
+	laser_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+	laser_instance.rotation = test+rotation
+	
+	get_parent().add_child(laser_instance)
+	yield(get_tree().create_timer(rateOfFire),"timeout")
+	can_fire = true
+
+
+func _on_Stop_body_entered(body):
+	if body.is_in_group("Player"):
+		stop = true
+	pass # Replace with function body.
+
+
+func _on_Stop_body_exited(body):
+	if body.is_in_group("Player"):
+		stop = false
 	pass # Replace with function body.

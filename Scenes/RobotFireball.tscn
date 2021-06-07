@@ -30,7 +30,7 @@ shape = SubResource( 1 )
 position = Vector2( -11, 1 )
 frames = SubResource( 2 )
 animation = "fireball"
-frame = 1
+frame = 4
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
@@ -38,5 +38,4 @@ playing = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 bus = "SFX"
-
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

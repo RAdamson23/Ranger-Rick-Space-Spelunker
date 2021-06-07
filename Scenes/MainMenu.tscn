@@ -281,8 +281,8 @@ __meta__ = {
 position = Vector2( 951.741, 336.38 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 16 )
-hframes = 8
 vframes = 5
+hframes = 8
 
 [node name="Information" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.807843 )
@@ -310,6 +310,5 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
