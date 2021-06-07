@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/OrbitingPlatformController.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/Skeleton.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/RobotTest.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Signpost.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
@@ -669,6 +669,51 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=41]
+resource_name = "Rest"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "reverse"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=43]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -785,9 +830,6 @@ position = Vector2( 2151.86, 496.096 )
 [node name="Spike18" parent="Spikes" instance=ExtResource( 8 )]
 position = Vector2( 2111.48, 495.759 )
 
-[node name="Robot" parent="." instance=ExtResource( 17 )]
-position = Vector2( 816.011, -249.516 )
-
 [node name="Goblins" type="Node2D" parent="."]
 
 [node name="Goblin" parent="Goblins" instance=ExtResource( 7 )]
@@ -818,13 +860,13 @@ position = Vector2( 1621.19, 2846.29 )
 position = Vector2( 2161.93, 2386.61 )
 
 [node name="Goblin6" parent="Goblins" instance=ExtResource( 7 )]
-position = Vector2( 2426.97, 303.315 )
+position = Vector2( 1001.44, -179.344 )
 
 [node name="Goblin11" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2744.6, 1430.75 )
 
 [node name="Goblin4" parent="Goblins" instance=ExtResource( 7 )]
-position = Vector2( 2563.59, 260.026 )
+position = Vector2( 1218.88, -505.493 )
 
 [node name="Goblin3" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2583.05, 986.255 )
@@ -839,29 +881,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 241.931, 451.236 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 300.942, 414.219 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -354.39, 369.529 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( -300.95, 414.214 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -460.956, -222.854 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( -486.939, -158.221 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 69.5037, -507.261 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 0.00472298, -512 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 503.911, -90.6502 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 486.942, -158.212 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -909,7 +941,6 @@ position = Vector2( 2842.81, 1149.02 )
 [node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource( 1 )]
 position = Vector2( 1063.88, 2450.89 )
 move_to = Vector2( 512, 0 )
-speed = 3.0
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -1123,42 +1154,37 @@ position = Vector2( -63.1874, -145.125 )
 
 [node name="PauseScreen" parent="." instance=ExtResource( 15 )]
 
+[node name="Signpost" parent="." instance=ExtResource( 17 )]
+position = Vector2( 139.137, -177.192 )
+text = "Goblins store their entire wealth in these caves, loot them dry"
+
+[node name="Signpost2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 841.023, 3213.25 )
+text = "Good Job! Now loot the rest of the planets in the cluster"
+
+[node name="AnimationPlayer" parent="Signpost2" index="0"]
+anims/Rest = SubResource( 41 )
+anims/reverse = SubResource( 42 )
+anims/typewriter = SubResource( 43 )
+
 [editable path="Collectables/Crystal10"]
-
 [editable path="Collectables/Crystal13"]
-
 [editable path="Collectables/Crystal28"]
-
 [editable path="Collectables/Crystal18"]
-
 [editable path="Collectables/Crystal21"]
-
 [editable path="Collectables/Crystal22"]
-
 [editable path="Collectables/Crystal23"]
-
 [editable path="Collectables/Crystal25"]
-
 [editable path="Collectables/Crystal14"]
-
 [editable path="Collectables/Crystal9"]
-
 [editable path="Collectables/Crystal15"]
-
 [editable path="Collectables/Crystal16"]
-
 [editable path="Collectables/Crystal17"]
-
 [editable path="Collectables/Crystal19"]
-
 [editable path="Collectables/Crystal20"]
-
 [editable path="Collectables/Crystal11"]
-
 [editable path="Collectables/Crystal24"]
-
 [editable path="Collectables/Crystal12"]
-
 [editable path="Collectables/Crystal26"]
-
 [editable path="Collectables/Crystal27"]
+[editable path="Signpost2"]

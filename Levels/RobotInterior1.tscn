@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSets/miscellaneous.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/RobotInterior1.gd" type="Script" id=16]
 [ext_resource path="res://Music/Anubis.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/Crystal.tscn" type="PackedScene" id=18]
 
 [node name="Level" type="Node"]
 script = ExtResource( 16 )
@@ -88,6 +89,7 @@ stream = ExtResource( 17 )
 volume_db = -1.0
 
 [node name="Robot" parent="." instance=ExtResource( 11 )]
+position = Vector2( 367.897, 19.929 )
 
 [node name="Robot2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2408.97, 2746.63 )
@@ -139,3 +141,125 @@ position = Vector2( 717.344, -857.038 )
 
 [node name="Robot14" parent="." instance=ExtResource( 11 )]
 position = Vector2( 284, -412 )
+
+[node name="Crystal" parent="." instance=ExtResource( 18 )]
+position = Vector2( 482.313, -374.187 )
+
+[node name="Crystal2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2783.41, 2089.49 )
+
+[node name="Crystal10" parent="." instance=ExtResource( 18 )]
+position = Vector2( 718.071, 554.746 )
+
+[node name="Crystal11" parent="." instance=ExtResource( 18 )]
+position = Vector2( 66.8258, 973.039 )
+
+[node name="Crystal12" parent="." instance=ExtResource( 18 )]
+position = Vector2( 320, 1401.58 )
+
+[node name="Crystal3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1088.02, 2410.43 )
+
+[node name="Crystal13" parent="." instance=ExtResource( 18 )]
+position = Vector2( -163.145, 2841.72 )
+
+[node name="Crystal14" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2704, 1320 )
+
+[node name="Crystal15" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2131.85, 3098.55 )
+
+[node name="Crystal4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2336.64, -180.877 )
+
+[node name="Crystal5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 851.354, 203.209 )
+mode = "Stamina"
+
+[node name="Crystal16" parent="." instance=ExtResource( 18 )]
+position = Vector2( 163.98, 969.863 )
+mode = "Stamina"
+
+[node name="Crystal17" parent="." instance=ExtResource( 18 )]
+position = Vector2( -442.017, 1096.73 )
+mode = "Stamina"
+
+[node name="Crystal18" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1677.27, 1577.82 )
+mode = "Stamina"
+
+[node name="Crystal19" parent="." instance=ExtResource( 18 )]
+position = Vector2( -676.474, 2201.46 )
+mode = "Stamina"
+
+[node name="Crystal20" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2597.78, 2777.83 )
+mode = "Stamina"
+
+[node name="Crystal21" parent="." instance=ExtResource( 18 )]
+position = Vector2( 925.872, 3034.24 )
+mode = "Stamina"
+
+[node name="Crystal6" parent="." instance=ExtResource( 18 )]
+position = Vector2( 460.844, 203.209 )
+mode = "Score"
+
+[node name="Crystal7" parent="." instance=ExtResource( 18 )]
+position = Vector2( 578.719, 203.209 )
+mode = "Score"
+
+[node name="Crystal22" parent="." instance=ExtResource( 18 )]
+position = Vector2( -194.408, 1959.23 )
+mode = "Score"
+
+[node name="Crystal23" parent="." instance=ExtResource( 18 )]
+position = Vector2( -617.765, 1098.24 )
+mode = "Score"
+
+[node name="Crystal24" parent="." instance=ExtResource( 18 )]
+position = Vector2( -24.466, 2776.43 )
+mode = "Score"
+
+[node name="Crystal25" parent="." instance=ExtResource( 18 )]
+position = Vector2( 735.745, 3098.89 )
+mode = "Score"
+
+[node name="Crystal26" parent="." instance=ExtResource( 18 )]
+position = Vector2( 778.954, 3098.45 )
+mode = "Score"
+
+[node name="Crystal27" parent="." instance=ExtResource( 18 )]
+position = Vector2( 823.499, 3098.45 )
+mode = "Score"
+
+[node name="Crystal28" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1548.35, 2731.82 )
+mode = "Score"
+
+[node name="Crystal29" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1550.13, 2537.6 )
+mode = "Score"
+
+[node name="Crystal30" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1814.43, 2153.17 )
+mode = "Score"
+
+[node name="Crystal31" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1867.4, 1129.73 )
+mode = "Score"
+
+[node name="Crystal32" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2059.62, 681.221 )
+mode = "Score"
+
+[node name="Crystal33" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1967.34, -533.517 )
+mode = "Score"
+
+[node name="Crystal8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 515.554, 203.209 )
+mode = "Score"
+
+[node name="Crystal9" parent="." instance=ExtResource( 18 )]
+position = Vector2( 393.939, 203.209 )
+mode = "Score"

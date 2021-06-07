@@ -8,7 +8,7 @@ export var nextLevel = "CaveInterior1.tscn"
 export var levelID = 0
 
 func _ready():
-	pass # Replace with function body.
+	global_vars.resetHealthStaminaAndTreasureCount()
 
 func _on_PortalHB_body_entered(body):
 	print(global_vars.coinBeen1)

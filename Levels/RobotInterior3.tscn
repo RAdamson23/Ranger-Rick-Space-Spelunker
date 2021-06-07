@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://TileSets/48by48CollisionBlock.tres" type="TileSet" id=1]
 [ext_resource path="res://TileSets/16by16TileSet.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Music/Anubis.ogg" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/RobotTest.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Crystal.tscn" type="PackedScene" id=16]
 
 [node name="Level" type="Node"]
 script = ExtResource( 11 )
@@ -46,12 +47,6 @@ tile_data = PoolIntArray( 2490387, 6, 0, 2490391, 6, 0, 2555923, 1, 0, 2555927, 
 [node name="Portal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512.525, 3183.93 )
 
-[node name="Chest" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1771.29, 1257.87 )
-
-[node name="Chest2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -257.737, 2712.55 )
-
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( -106.787, -353.733 )
 
@@ -69,6 +64,9 @@ self_modulate = Color( 0.352941, 0.203922, 0.203922, 1 )
 position = Vector2( 0.665894, 1.6225 )
 scale = Vector2( 2.75959, 2.76766 )
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PauseMenu" parent="." instance=ExtResource( 13 )]
 
@@ -77,61 +75,177 @@ texture = ExtResource( 9 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 
-[node name="Robot" parent="." instance=ExtResource( 15 )]
+[node name="Robots" type="Node" parent="."]
 
-[node name="Robot2" parent="." instance=ExtResource( 15 )]
+[node name="Robot" parent="Robots" instance=ExtResource( 15 )]
+
+[node name="Robot2" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( -240.271, 2157.1 )
 
-[node name="Robot11" parent="." instance=ExtResource( 15 )]
+[node name="Robot11" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1158.64, 2712.4 )
 
-[node name="Robot12" parent="." instance=ExtResource( 15 )]
+[node name="Robot12" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1377.55, 2103.71 )
 
-[node name="Robot13" parent="." instance=ExtResource( 15 )]
+[node name="Robot13" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1313.48, 1580.45 )
 
-[node name="Robot14" parent="." instance=ExtResource( 15 )]
+[node name="Robot14" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2322.62, 1991.58 )
 
-[node name="Robot15" parent="." instance=ExtResource( 15 )]
+[node name="Robot15" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1025.16, 752.85 )
 
-[node name="Robot16" parent="." instance=ExtResource( 15 )]
+[node name="Robot16" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2664.34, 902.352 )
 
-[node name="Robot17" parent="." instance=ExtResource( 15 )]
+[node name="Robot17" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2071.67, 907.691 )
 
-[node name="Robot18" parent="." instance=ExtResource( 15 )]
+[node name="Robot18" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2632.3, 1329.5 )
 
-[node name="Robot19" parent="." instance=ExtResource( 15 )]
+[node name="Robot19" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2279.91, 1457.65 )
 
-[node name="Robot20" parent="." instance=ExtResource( 15 )]
+[node name="Robot20" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2066.33, 2253.21 )
 
-[node name="Robot3" parent="." instance=ExtResource( 15 )]
+[node name="Robot3" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1217.37, 3481.26 )
 
-[node name="Robot4" parent="." instance=ExtResource( 15 )]
+[node name="Robot4" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1212.03, 3198.28 )
 
-[node name="Robot5" parent="." instance=ExtResource( 15 )]
+[node name="Robot5" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 347.058, -299.004 )
 
-[node name="Robot6" parent="." instance=ExtResource( 15 )]
+[node name="Robot6" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1890.13, -571.311 )
 
-[node name="Robot7" parent="." instance=ExtResource( 15 )]
+[node name="Robot7" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 1430.95, 299.004 )
 
-[node name="Robot8" parent="." instance=ExtResource( 15 )]
+[node name="Robot8" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( 2717.73, 517.918 )
 
-[node name="Robot9" parent="." instance=ExtResource( 15 )]
+[node name="Robot9" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( -619.366, 1740.63 )
 
-[node name="Robot10" parent="." instance=ExtResource( 15 )]
+[node name="Robot10" parent="Robots" instance=ExtResource( 15 )]
 position = Vector2( -443.167, 512.579 )
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="Chest" parent="Chests" instance=ExtResource( 5 )]
+position = Vector2( 1771.29, 1257.87 )
+
+[node name="Chest2" parent="Chests" instance=ExtResource( 5 )]
+position = Vector2( -257.737, 2712.55 )
+
+[node name="Crystals" type="Node" parent="."]
+
+[node name="Crystal" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1783.58, -710.06 )
+mode = "Score"
+
+[node name="Crystal2" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1586.52, -502.405 )
+mode = "Score"
+
+[node name="Crystal3" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1586.52, -502.405 )
+mode = "Score"
+
+[node name="Crystal4" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1391.58, -564.913 )
+mode = "Score"
+
+[node name="Crystal5" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 992.183, -549.794 )
+mode = "Score"
+
+[node name="Crystal6" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 668.914, -358.975 )
+mode = "Score"
+
+[node name="Crystal7" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 674.905, 202.253 )
+mode = "Score"
+
+[node name="Crystal8" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 687.378, 617.412 )
+mode = "Score"
+
+[node name="Crystal9" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 291.819, 423.196 )
+mode = "Score"
+
+[node name="Crystal10" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( -299.738, 40.1094 )
+mode = "Score"
+
+[node name="Crystal11" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( -296.175, 1002.28 )
+mode = "Score"
+
+[node name="Crystal12" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 69.0939, 873.99 )
+mode = "Score"
+
+[node name="Crystal13" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 13.5484, 1305.97 )
+mode = "Score"
+
+[node name="Crystal14" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 144.728, 1864.33 )
+mode = "Score"
+
+[node name="Crystal15" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 479.405, 2473.14 )
+mode = "Score"
+
+[node name="Crystal16" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 662.72, 2937.31 )
+mode = "Score"
+
+[node name="Crystal17" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1133.11, 2536.41 )
+mode = "Score"
+
+[node name="Crystal18" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1478.78, 2826.84 )
+mode = "Score"
+
+[node name="Crystal20" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1787.03, 2347.54 )
+mode = "Score"
+
+[node name="Crystal21" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 2828.07, 1626.47 )
+mode = "Score"
+
+[node name="Crystal22" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( -614.397, 874.001 )
+mode = "Score"
+
+[node name="Crystal23" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( -972.134, 1771.01 )
+mode = "Score"
+
+[node name="Crystal24" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 435.312, 1354.37 )
+mode = "Score"
+
+[node name="Crystal25" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 751.032, 1803.58 )
+mode = "Score"
+
+[node name="Crystal26" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 852.741, 2170.15 )
+mode = "Score"
+
+[node name="Crystal19" parent="Crystals" instance=ExtResource( 16 )]
+position = Vector2( 1877.91, 2905.24 )
+mode = "Score"

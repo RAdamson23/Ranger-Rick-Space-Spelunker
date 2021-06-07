@@ -24,8 +24,8 @@ onready var coinBeen2 = false setget set_coinBeen2, get_coinBeen2
 onready var coinBeen3 = false setget set_coinBeen3, get_coinBeen3
 
 func _ready():
-	health = 6
-	maxHealth = 6
+	health = 80
+	maxHealth = 80
 	stamina = 5
 	treasureCount = 0
 	coinCount1 = 0
@@ -37,6 +37,10 @@ func _ready():
 	isDead = false
 	randomize()
 
+func resetHealthStaminaAndTreasureCount():
+	health = 80
+	stamina = 5
+	treasureCount = 0
 
 func scoreCalc():
 	var scoreCalc = (score+(enemiesDefeated*5)+(deathCount*-20))
