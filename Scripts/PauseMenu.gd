@@ -3,7 +3,7 @@ extends Control
 onready var global_vars = get_node("/root/Globals")
 
 func _ready():
-	Globals.connect("pauseGame", self, "pauseGame")
+	#Globals.connect("pauseGame", self, "pauseGame")
 	$Panel/Resume.grab_focus()
 	pass
 

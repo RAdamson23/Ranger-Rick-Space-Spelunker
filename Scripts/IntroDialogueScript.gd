@@ -1,8 +1,9 @@
 extends Panel
 
 var dialog = ["In the super cluster RUST9102_HRMAEP","There lived an ambitious space cadet",
-"His name was Pete", "Pete set out to loot the entire planet cluster",
- "Help him in his treasure hunt","--------------------   RANGER RICK: SPACE SPLUNKER   --------------------"]
+"His name was Ranger Rick", "Rick set out to loot the entire planet cluster", 
+"He wanted to be the richest person in the whole universe",
+"Help him in his treasure hunt","--------------------   RANGER RICK: SPACE SPLUNKER   --------------------"]
 var dialog_index = 0
 var finished = false
 

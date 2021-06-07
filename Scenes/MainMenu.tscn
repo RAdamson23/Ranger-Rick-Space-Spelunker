@@ -304,7 +304,7 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 1, 0.905882, 1 )
 text = "Objective: 
 
-Help Pete find and steal all the treasure from each planet. You'll need to run, jump and shoot your way to a profitable finish! "
+Help Rick find and steal all the treasure from each planet. You'll need to run, jump and shoot your way to a profitable finish! "
 align = 1
 autowrap = true
 __meta__ = {

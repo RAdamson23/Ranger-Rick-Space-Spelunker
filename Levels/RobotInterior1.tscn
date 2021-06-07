@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSets/miscellaneous.tres" type="TileSet" id=2]
@@ -10,12 +10,13 @@
 [ext_resource path="res://TileSets/48by48NoCollisionBlocks.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/PlayerInterior.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Robots2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/RobotTest.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Art/circle-cropped.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/RobotInterior1.gd" type="Script" id=16]
+[ext_resource path="res://Music/Anubis.ogg" type="AudioStream" id=17]
 
 [node name="Level" type="Node"]
 script = ExtResource( 16 )
@@ -75,41 +76,66 @@ position = Vector2( 681.659, 1158.51 )
 [node name="Chest2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2983.97, 2247.69 )
 
-[node name="Robot" type="Node" parent="."]
-
-[node name="Robots" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 501.661, -406.063 )
-
-[node name="Robots2" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 1081.22, 2367.9 )
-
-[node name="Robots3" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 1388.65, 3113.77 )
-
-[node name="Robots4" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 436.145, 2871.87 )
-
-[node name="Robots5" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 1736.38, 54.6823 )
-
-[node name="Robots6" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 2517.78, 2710.84 )
-
-[node name="Robots7" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 731.966, 1793.39 )
-
-[node name="Robots8" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( -680.069, 1064.72 )
-
-[node name="Robots9" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( 1634.31, 1087.38 )
-
-[node name="Robots10" parent="Robot" instance=ExtResource( 11 )]
-position = Vector2( -109.97, 1563.09 )
-
 [node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
 
 [node name="PauseMenu" parent="." instance=ExtResource( 15 )]
 
 [node name="Portal" parent="." instance=ExtResource( 14 )]
 position = Vector2( -879.572, 1872.99 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -1.0
+
+[node name="Robot" parent="." instance=ExtResource( 11 )]
+
+[node name="Robot2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2408.97, 2746.63 )
+
+[node name="Robot15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1174.25, -191.508 )
+
+[node name="Robot16" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1673.18, 65.5156 )
+
+[node name="Robot17" parent="." instance=ExtResource( 11 )]
+position = Vector2( 3104.45, 1390.95 )
+
+[node name="Robot18" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2272.9, 1713.49 )
+
+[node name="Robot3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1406.07, 3104.45 )
+
+[node name="Robot4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 367.897, 2857.5 )
+
+[node name="Robot5" parent="." instance=ExtResource( 11 )]
+position = Vector2( -337.659, 1935.24 )
+
+[node name="Robot6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 650.119, 1784.05 )
+
+[node name="Robot7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2310.6, 1136.42 )
+
+[node name="Robot8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1578.16, 1087.34 )
+
+[node name="Robot9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 577.651, 1106.22 )
+
+[node name="Robot10" parent="." instance=ExtResource( 11 )]
+position = Vector2( -298.264, 1589.48 )
+
+[node name="Robot11" parent="." instance=ExtResource( 11 )]
+position = Vector2( -807.956, 1060.91 )
+
+[node name="Robot12" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1117.55, -509.692 )
+
+[node name="Robot13" parent="." instance=ExtResource( 11 )]
+position = Vector2( 717.344, -857.038 )
+
+[node name="Robot14" parent="." instance=ExtResource( 11 )]
+position = Vector2( 284, -412 )
