@@ -203,7 +203,9 @@ func _on_Hitbox_body_entered(body):
 			dead()
 func attack():
 	velocity.x = 0
-	$Attack.play()
+	if !$Attack.is_playing() and $SoundTimer.is_stopped():
+		$Attack.play()
+		$SoundTimer.start(2)
 	changeAnimation("ATTACK")
 
 func _on_PlayerDetector_body_entered(body):
