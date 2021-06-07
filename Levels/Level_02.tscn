@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -18,8 +18,11 @@
 flags = 4
 load_path = "res://.import/planet1.png-5290751bbb9eae92c66e4b94b371a732.stex"
 
+[sub_resource type="CircleShape2D" id=3]
+radius = 900.097
+
 [sub_resource type="CircleShape2D" id=2]
-radius = 920.141
+radius = 311.501
 
 [node name="Level" type="Node2D"]
 position = Vector2( -0.906494, 0 )
@@ -57,7 +60,7 @@ scale = Vector2( 1.35497, 1.35497 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="Planets/Planet0/PlanetStaticBody2D" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
 position = Vector2( -2081.41, 1945.17 )
@@ -68,6 +71,10 @@ texture = ExtResource( 5 )
 position = Vector2( 101.806, 144.799 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="Planets/Planet1/PlanetStaticBody2D" index="0"]
+position = Vector2( -1.90735e-05, 7.55091 )
+shape = SubResource( 2 )
 
 [node name="AsteroidSpawner" parent="." instance=ExtResource( 3 )]
 
@@ -86,7 +93,10 @@ bus = "Music"
 [node name="Coins" type="Timer" parent="."]
 autostart = true
 script = ExtResource( 9 )
-
 [connection signal="timeout" from="Coins" to="Coins" method="_on_Coins_timeout"]
 
 [editable path="Planets/Planet0"]
+
+[editable path="Planets/Planet2"]
+
+[editable path="Planets/Planet1"]

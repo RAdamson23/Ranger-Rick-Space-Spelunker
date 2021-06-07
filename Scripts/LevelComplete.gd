@@ -19,4 +19,4 @@ func _process(delta):
 	$MovingBG/ParallaxBackground/ParallaxLayer4.motion_offset.x += 0.8
 	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
 func _on_Next_Level_pressed():
-	global_vars.next_level()
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")

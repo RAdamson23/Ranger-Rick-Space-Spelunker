@@ -31,6 +31,7 @@ var shooting = false
 var rate_of_fire = 0.7
 
 func _ready():
+	
 	planets = get_node("/root/Level/Planets/").get_children()
 	current_planet = planets[0]
 	_get_closest_planet(current_planet)

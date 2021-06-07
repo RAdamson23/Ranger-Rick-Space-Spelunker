@@ -24,8 +24,8 @@ onready var coinBeen2 = false setget set_coinBeen2, get_coinBeen2
 onready var coinBeen3 = false setget set_coinBeen3, get_coinBeen3
 
 func _ready():
-	health = 80
-	maxHealth = 80
+	health = 8
+	maxHealth = 8
 	stamina = 5
 	treasureCount = 0
 	coinCount1 = 0
@@ -38,9 +38,12 @@ func _ready():
 	randomize()
 
 func resetHealthStaminaAndTreasureCount():
-	health = 80
+	health = 8
 	stamina = 5
 	treasureCount = 0
+	coinCount1 = 0
+	coinCount2 = 0
+	coinCount3 = 0
 
 func scoreCalc():
 	var scoreCalc = (score+(enemiesDefeated*5)+(deathCount*-20))
@@ -51,7 +54,7 @@ func onDeath():
 		get_tree().change_scene("res://Levels/"+baseLevel)
 	else:
 		get_tree().change_scene("res://Levels/"+respawnLevel)
-	_ready()
+	resetHealthStaminaAndTreasureCount()
 	deathCount+=1
 
 func next_level():

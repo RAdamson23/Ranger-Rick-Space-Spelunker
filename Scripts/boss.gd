@@ -116,8 +116,7 @@ func _on_Wizard_body_entered(body):
 			$Wizard/Sounds/Loss.play()
 			yield($Wizard/Sounds/Loss, "finished")
 			yield(get_tree().create_timer(2), "timeout")
-			#TODO: end screen
-			pass
+			get_tree().change_scene("res://Scenes/GameComplete.tscn")
 		player_attack()
 
 
