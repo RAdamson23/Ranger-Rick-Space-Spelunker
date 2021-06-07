@@ -18,6 +18,8 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Fireball_body_entered(body):
+	if body.is_in_group("RobotLaser"):
+		return
 	if body.name != "Player":
 		Explode()
 

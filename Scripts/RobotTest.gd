@@ -233,8 +233,8 @@ func shoot():
 	else:
 		$AnimatedSprite.play("runShoot")
 	can_fire = false
-	var m_rotation = test#your function to get rot
-	m_rotation = clamp(m_rotation, 260, 90) #-45° to 45°
+	var m_rotation = test
+	m_rotation = clamp(m_rotation, 260, 90)
 	get_node("TurnAxis").rotation = m_rotation
 	var laserPreload := preload("res://Scenes/RobotLaser.tscn")
 	var laser_instance = laserPreload.instance()

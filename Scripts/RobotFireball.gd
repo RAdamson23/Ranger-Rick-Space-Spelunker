@@ -19,6 +19,8 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Fireball_body_entered(body):
+	if body.is_in_group("Fireball"):
+		return
 	if body.is_in_group("Player"):
 		playerHealth.current_health -= 0.7
 		Explode()

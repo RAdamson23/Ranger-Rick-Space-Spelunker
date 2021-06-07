@@ -11,6 +11,12 @@ func _ready():
 	$Information/TotalScore/TotalScoreCount.set_text(str(totalscore))
 
 	global_vars.score = totalscore
-	
+
+func _process(delta):
+	$MovingBG/ParallaxBackground/ParallaxLayer.motion_offset.x += 0.1
+	$MovingBG/ParallaxBackground/ParallaxLayer2.motion_offset.x += 0.2
+	$MovingBG/ParallaxBackground/ParallaxLayer3.motion_offset.x += 0.6
+	$MovingBG/ParallaxBackground/ParallaxLayer4.motion_offset.x += 0.8
+	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
 func _on_Next_Level_pressed():
 	global_vars.next_level()

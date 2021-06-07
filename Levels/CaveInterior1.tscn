@@ -860,7 +860,7 @@ position = Vector2( 1621.19, 2846.29 )
 position = Vector2( 2161.93, 2386.61 )
 
 [node name="Goblin6" parent="Goblins" instance=ExtResource( 7 )]
-position = Vector2( 1001.44, -179.344 )
+position = Vector2( 1248.93, -169.444 )
 
 [node name="Goblin11" parent="Goblins" instance=ExtResource( 7 )]
 position = Vector2( 2744.6, 1430.75 )
@@ -881,19 +881,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 300.942, 414.219 )
+position = Vector2( 511.972, -5.36122 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -300.95, 414.214 )
+position = Vector2( 163.307, 485.258 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -486.939, -158.221 )
+position = Vector2( -411.043, 305.267 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 0.00472298, -512 )
+position = Vector2( -417.345, -296.592 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 486.942, -158.212 )
+position = Vector2( 153.109, -488.571 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
