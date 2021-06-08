@@ -9,7 +9,9 @@ func _ready():
 	TreasureCounter.set_text("Planet 1 Coins: " + str(global_vars.coinCount1)+" / 10")
 	global_vars.next_scene = "Level_02.tscn"
 	global_vars.baseLevel = "Level_01.tscn"
-	global_vars.isInsidePlanet = false
+	if global_vars.isInsidePlanet:
+		$PlanetEnterOverlay/AnimationPlayer.play("MoveUp")
+		global_vars.isInsidePlanet = false
 	pass # Replace with function body.
 
 func _process(_delta):

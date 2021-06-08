@@ -7,10 +7,10 @@ onready var global_vars = get_node("/root/Globals")
 export var move_to = Vector2.RIGHT * 0
 export var speed = 2.0
 var IDLE_DURATION = 2
-onready var tween = get_node("Tween")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ColorRect/Label.text = "-------Entering Planet " + str(global_vars.Planet4HUDUpdater) +"-------"
+	$TopText/Label.text = "-------Entering Planet " + str(global_vars.Planet4HUDUpdater) +"-------"
+	$BOTTOMTEXT/Label.text = "Planet "+ str(global_vars.Planet4HUDUpdater) +" completed! " + "\nEnemies Defeated: " + str(global_vars.enemiesDefeated) + "\nScore: " + str(global_vars.score) + "\nDeath Count: " + str(global_vars.deathCount)
 	#_init_tween()
 	pass # Replace with function body.
 

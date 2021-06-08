@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scripts/Level_01.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Signpost.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/HUDOverlay.tscn" type="PackedScene" id=15]
 
 [node name="Level" type="Node2D"]
 position = Vector2( -0.906494, 0 )
@@ -41,6 +42,8 @@ levelID = 2
 position = Vector2( 839.178, 53.1196 )
 rotation = 1.78547
 levelID = 1
+
+[node name="PlanetEnterOverlay" parent="." instance=ExtResource( 15 )]
 
 [node name="Planets" type="Node2D" parent="."]
 
