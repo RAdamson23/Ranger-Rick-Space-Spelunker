@@ -174,6 +174,8 @@ func onHit():
 			hasSeenPlayer = true
 			firstrun = false
 	$Hit.play()
+	$AnimationPlayer.play("Flash")
+	$AnimationPlayer.queue("Rest")
 	isHit = true
 	health-=1
 	velocity.x = 0

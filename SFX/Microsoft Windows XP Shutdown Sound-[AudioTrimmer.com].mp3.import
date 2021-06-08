@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Microsoft Windows XP Shutdown Sound-[AudioTrimmer.com].mp3-2aae446cbf9569a1b7e2c646f00667ee.mp3str"
+
+[deps]
+
+source_file="res://SFX/Microsoft Windows XP Shutdown Sound-[AudioTrimmer.com].mp3"
+dest_files=[ "res://.import/Microsoft Windows XP Shutdown Sound-[AudioTrimmer.com].mp3-2aae446cbf9569a1b7e2c646f00667ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

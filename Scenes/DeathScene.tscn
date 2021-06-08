@@ -273,4 +273,5 @@ stream = ExtResource( 11 )
 
 [node name="CurbYourEnthusiasm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
