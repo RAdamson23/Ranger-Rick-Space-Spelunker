@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Spike.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/HUDOverlay.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Art/01_Cave/Cave_tileset/cave_tileset.png" type="Texture" id=12]
+[ext_resource path="res://Music/07 Underground Encounters.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=17]
@@ -671,16 +672,16 @@ radius = Vector2( 300, 300 )
 rotation_duration = 6.0
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 248.712, -167.757 )
+position = Vector2( 46.9298, 296.307 )
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 167.757, 248.712 )
+position = Vector2( -296.307, 46.9298 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -248.712, 167.757 )
+position = Vector2( -46.9298, -296.307 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -167.757, -248.712 )
+position = Vector2( 296.307, -46.9298 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -1001,3 +1002,8 @@ position = Vector2( 1048.82, 1903.76 )
 
 [node name="Spike17" parent="Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1262.68, 1903.25 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+bus = "Music"

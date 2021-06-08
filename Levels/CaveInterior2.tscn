@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Art/01_Cave/Cave_tileset/cave_tileset.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/HUDOverlay.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Music/07 Underground Encounters.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/PlayerInterior.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=25]
@@ -510,6 +511,11 @@ resource_name = "CaveTiles"
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+bus = "Music"
+
 [node name="MainHUD" parent="." instance=ExtResource( 17 )]
 
 [node name="BG" type="Sprite" parent="."]
@@ -547,16 +553,16 @@ radius = Vector2( 350, 350 )
 rotation_duration = 6.0
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 349.52, 18.3177 )
+position = Vector2( -147.917, 317.207 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -18.3177, 349.52 )
+position = Vector2( -317.207, -147.917 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( -349.52, -18.3177 )
+position = Vector2( 147.917, -317.207 )
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 2 )]
-position = Vector2( 18.3177, -349.52 )
+position = Vector2( 317.207, 147.917 )
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
