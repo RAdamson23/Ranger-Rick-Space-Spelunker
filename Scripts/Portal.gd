@@ -13,7 +13,6 @@ func _ready():
 func _on_PortalHB_body_entered(body):
 	print(global_vars.coinBeen1)
 	if body.name == "Player":
-		
 		if global_vars.isInsidePlanet == false:
 			if levelID == 1 and global_vars.coinCount1 >= 6 and not global_vars.coinBeen1:
 				global_vars.set_coinBeen1(true)
@@ -46,4 +45,3 @@ func _on_PortalHB_body_entered(body):
 			HUDAnimationPlayer.play("PieCounterTextFlash")
 			yield(get_tree().create_timer(1.5),"timeout")
 			HUDAnimationPlayer.play("Rest")
-	pass # Replace with function body.

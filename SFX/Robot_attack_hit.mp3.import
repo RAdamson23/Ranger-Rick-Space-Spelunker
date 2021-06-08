@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Robot_attack_hit.mp3-cf0099d5cde6db80babe4585eaae9e53.mp3str"
+
+[deps]
+
+source_file="res://SFX/Robot_attack_hit.mp3"
+dest_files=[ "res://.import/Robot_attack_hit.mp3-cf0099d5cde6db80babe4585eaae9e53.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

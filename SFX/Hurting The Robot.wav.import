@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hurting The Robot.wav-7206c02e26574cc624b0ceaab0203617.sample"
+
+[deps]
+
+source_file="res://SFX/Hurting The Robot.wav"
+dest_files=[ "res://.import/Hurting The Robot.wav-7206c02e26574cc624b0ceaab0203617.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
