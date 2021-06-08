@@ -8,7 +8,32 @@ export var nextLevel = "CaveInterior1.tscn"
 export var levelID = 0
 
 func _ready():
+
+		
 	global_vars.resetHealthStaminaAndTreasureCount()
+
+func _process(delta):
+	var new_play = ""
+	if !global_vars.isInsidePlanet:
+		new_play = "Closed"
+		match levelID:
+			1:
+				if !global_vars.coinBeen1 and global_vars.coinCount1 >= 6:
+					new_play = "Open"
+			2:
+				if !global_vars.coinBeen2 and global_vars.coinCount2 >= 6:
+					new_play = "Open"
+			3:
+				if !global_vars.coinBeen3 and global_vars.coinCount3 >= 6:
+					new_play = "Open"
+	else:
+		if global_vars.treasureCount == 2:
+			new_play = "Open"
+		else:
+			new_play = "Closed"
+	if $AnimatedSprite.animation != new_play:
+		$AnimatedSprite.play(new_play)
+
 
 func _on_PortalHB_body_entered(body):
 	print(global_vars.coinBeen1)

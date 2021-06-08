@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerExterior.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/AsteroidSpawner.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Art/Heliotropos_norings.png" type="Texture" id=4]
-[ext_resource path="res://Art/Hellion_norings.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/planet2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/planet3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Cave_Tilemap2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Health_and_Stamina_Bar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=8]
@@ -20,10 +20,13 @@ flags = 4
 load_path = "res://.import/planet1.png-5290751bbb9eae92c66e4b94b371a732.stex"
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 900.097
+radius = 915.817
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 303.323
+radius = 447.926
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 421.697
 
 [node name="Level" type="Node2D"]
 position = Vector2( -0.906494, 0 )
@@ -63,21 +66,26 @@ scale = Vector2( 1.35497, 1.35497 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="Planets/Planet0/PlanetStaticBody2D" index="0"]
+position = Vector2( 0.000366211, 0 )
 shape = SubResource( 2 )
 
 [node name="Planet2" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( -2081.41, 1945.17 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 5 )
-
-[node name="Planet1" parent="Planets" instance=ExtResource( 1 )]
-position = Vector2( 101.806, 144.799 )
-scale = Vector2( 4, 4 )
+position = Vector2( -2030.22, 1927.7 )
+scale = Vector2( 2.76584, 2.76584 )
 texture = ExtResource( 4 )
 
-[node name="CollisionShape2D" parent="Planets/Planet1/PlanetStaticBody2D" index="0"]
-position = Vector2( -1.12243, -1.4288 )
+[node name="CollisionShape2D" parent="Planets/Planet2/PlanetStaticBody2D" index="0"]
+position = Vector2( 0.432739, -0.74585 )
 shape = SubResource( 3 )
+
+[node name="Planet1" parent="Planets" instance=ExtResource( 1 )]
+position = Vector2( 55.5694, 112.834 )
+scale = Vector2( 2.93328, 2.93328 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" parent="Planets/Planet1/PlanetStaticBody2D" index="0"]
+position = Vector2( 0.181665, 2.2494 )
+shape = SubResource( 4 )
 
 [node name="AsteroidSpawner" parent="." instance=ExtResource( 3 )]
 

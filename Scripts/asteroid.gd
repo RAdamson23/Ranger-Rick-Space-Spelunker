@@ -1,6 +1,6 @@
 extends Node2D
 
-var damage = 1
+var damage = 2
 export (int) var speed = 10
 var velocity = Vector2.ZERO
 onready var global_vars = get_node("/root/Globals")

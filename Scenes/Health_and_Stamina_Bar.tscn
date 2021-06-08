@@ -423,6 +423,7 @@ anims/PieCounterTextFlash = SubResource( 16 )
 anims/Rest = SubResource( 17 )
 anims/StaminaBarFlash = SubResource( 18 )
 anims/StaminaBarRest = SubResource( 19 )
+
 [connection signal="changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_value"]
 [connection signal="max_changed" from="CanvasLayer/Control/Stamina_Bar_Script" to="CanvasLayer/Control/Stamina_Bar" method="set_max"]
 [connection signal="changed" from="CanvasLayer/Control/Health_Bar_Script" to="CanvasLayer/Control/Health_Bar" method="set_value"]

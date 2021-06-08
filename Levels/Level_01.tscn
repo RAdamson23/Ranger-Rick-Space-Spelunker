@@ -76,16 +76,17 @@ bus = "Music"
 [node name="PauseScreen" parent="." instance=ExtResource( 10 )]
 
 [node name="Coins" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 script = ExtResource( 9 )
 
 [node name="Signpost" parent="." instance=ExtResource( 14 )]
-position = Vector2( -451.052, -1508.13 )
+position = Vector2( -443.052, -1508.13 )
 text = "Dodge the asteroids"
 
 [node name="Signpost2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 331.387, -1280.94 )
 rotation = 0.626573
-text = "6 RARE GOLD COINS ARE NEEDED TO OPEN A PORTAL"
+text = "6 RARE BATTERIES ARE NEEDED TO OPEN A PORTAL"
 
 [connection signal="timeout" from="Coins" to="Coins" method="_on_Coins_timeout"]

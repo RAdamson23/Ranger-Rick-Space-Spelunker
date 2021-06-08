@@ -4,6 +4,10 @@ onready var global_vars = get_node("/root/Globals")
 onready var health = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/Health_Bar_Script")
 var planet
 
+func _ready():
+	pass
+	#$Coin.play("FillUp")
+
 func _on_Coin_body_entered(body):
 	print(global_vars.coinCount1)
 	print(global_vars.coinCount2)
