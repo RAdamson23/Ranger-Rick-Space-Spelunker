@@ -82,7 +82,7 @@ one_shot = true
 "RobotLaser",
 ]]
 stream = ExtResource( 4 )
-volume_db = -13.765
+volume_db = -15.0
 bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]

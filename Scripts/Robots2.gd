@@ -11,7 +11,7 @@ var eye_reach = 90
 var vision = 600
 var movementCancelled = false
 var playerKillTime = false
-var rate_of_fire = 0.5
+var rate_of_fire = 0.3
 
 export var direction = 1 #left
 export var detectsCliffs = true

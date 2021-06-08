@@ -86,7 +86,8 @@ position = Vector2( -879.572, 1872.99 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -1.0
+volume_db = -10.0
+autoplay = true
 
 [node name="Robot" parent="." instance=ExtResource( 11 )]
 position = Vector2( 367.897, 19.929 )

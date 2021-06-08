@@ -74,6 +74,8 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
+volume_db = -10.0
+autoplay = true
 
 [node name="Robots" type="Node" parent="."]
 
