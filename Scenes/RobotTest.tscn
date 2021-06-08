@@ -59,16 +59,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "runShoot",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 41 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 42 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "shoot",
@@ -78,6 +68,16 @@ animations = [ {
 "loop": false,
 "name": "die",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "runShoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 41 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 42 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]

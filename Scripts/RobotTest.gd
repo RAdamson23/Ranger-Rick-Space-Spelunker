@@ -6,7 +6,7 @@ onready var global_vars = get_node("/root/Globals")
 
 var velocity = Vector2(0,0)
 const GRAVITY = 20
-const SPEED = 280
+const SPEED = 150
 const FLOOR = Vector2(0,-1)
 var react_time = 200
 var dir = 0

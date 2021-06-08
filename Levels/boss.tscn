@@ -41,6 +41,7 @@ wait_time = 5.0
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -4.30762, -1524.68 )
+
 [connection signal="body_entered" from="Wizard" to="." method="_on_Wizard_body_entered"]
 [connection signal="timeout" from="TimerAttack" to="." method="_on_Timer_Attack_timeout"]
 [connection signal="timeout" from="TimerTaunt" to="." method="_on_TimerTaunt_timeout"]
