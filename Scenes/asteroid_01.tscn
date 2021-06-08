@@ -24,7 +24,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1.49219, 1.49219 )
 frames = SubResource( 1 )
 animation = "Default"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -40,4 +40,5 @@ position = Vector2( 0, -20 )
 stream = ExtResource( 6 )
 volume_db = -50.0
 bus = "SFX"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

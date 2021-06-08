@@ -6,7 +6,7 @@ onready var TreasureCounter = get_node("/root/Level/MainHUD").get_node("CanvasLa
 
 func _ready():
 	global_vars.respawnLevel = "Level_01.tscn"
-	TreasureCounter.set_text("Planet 1 Coins: " + str(global_vars.coinCount1)+" / 10")
+	TreasureCounter.set_text("Planet 1 Batteries: " + str(global_vars.coinCount1)+" / 10")
 	global_vars.next_scene = "Level_02.tscn"
 	global_vars.baseLevel = "Level_01.tscn"
 	if global_vars.isInsidePlanet:
@@ -17,9 +17,9 @@ func _ready():
 func _process(_delta):
 	match global_vars.Planet4HUDUpdater:
 		1:
-			TreasureCounter.set_text("Planet 1 Coins: " + str(global_vars.coinCount1)+" / 6")
+			TreasureCounter.set_text("Planet 1 Batteries: " + str(global_vars.coinCount1)+" / 6")
 		2:
-			TreasureCounter.set_text("Planet 2 Coins: " + str(global_vars.coinCount2)+" / 6")
+			TreasureCounter.set_text("Planet 2 Batteries: " + str(global_vars.coinCount2)+" / 6")
 		3:
-			TreasureCounter.set_text("Planet 3 Coins: " + str(global_vars.coinCount3)+" / 6")
+			TreasureCounter.set_text("Planet 3 Batteries: " + str(global_vars.coinCount3)+" / 6")
 	Score.set_text("Score: " + str(global_vars.score))

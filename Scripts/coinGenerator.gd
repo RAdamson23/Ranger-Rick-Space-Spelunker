@@ -13,6 +13,7 @@ func _set_coin_position(asteroid):
 	new_position.x = new_position.x + (cos(angle) * offset)
 	new_position.y = new_position.y - (sin(angle) * offset)
 	
+	asteroid.rotation = rand_range(-PI, PI)
 	asteroid.position = new_position
 
 func _spawn_coin():
