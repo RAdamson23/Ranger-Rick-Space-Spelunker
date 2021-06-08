@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/OrbitingPlatformController.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Signpost.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/HUDOverlay.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
@@ -881,29 +882,19 @@ radius = Vector2( 512, 512 )
 rotation_duration = 10.0
 
 [node name="MovingPlatform3" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 274.343, 432.296 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( -369.541, -354.377 )
 
 [node name="MovingPlatform" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -326.361, 394.502 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 222.838, -460.963 )
 
 [node name="MovingPlatform2" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( -476.045, -188.48 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 507.263, 69.4865 )
 
 [node name="MovingPlatform4" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 32.1493, -510.99 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( 90.6673, 503.908 )
 
 [node name="MovingPlatform5" parent="OrbitingPlatformController" instance=ExtResource( 1 )]
-position = Vector2( 495.915, -127.329 )
-move_to = Vector2( 0, 0 )
-speed = 3.0
+position = Vector2( -451.227, 241.946 )
 
 [node name="FallingSpikes" type="Node2D" parent="."]
 
@@ -951,7 +942,6 @@ position = Vector2( 2842.81, 1149.02 )
 [node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource( 1 )]
 position = Vector2( 1063.88, 2450.89 )
 move_to = Vector2( 512, 0 )
-speed = 3.0
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -1165,6 +1155,8 @@ position = Vector2( -63.1874, -145.125 )
 
 [node name="PauseScreen" parent="." instance=ExtResource( 15 )]
 
+[node name="CanvasLayer" parent="." instance=ExtResource( 18 )]
+
 [node name="Signpost" parent="." instance=ExtResource( 17 )]
 position = Vector2( 139.137, -177.192 )
 text = "Goblins store their entire wealth in these caves, loot them dry"
@@ -1179,43 +1171,23 @@ anims/reverse = SubResource( 42 )
 anims/typewriter = SubResource( 43 )
 
 [editable path="Collectables/Crystal10"]
-
 [editable path="Collectables/Crystal13"]
-
 [editable path="Collectables/Crystal28"]
-
 [editable path="Collectables/Crystal18"]
-
 [editable path="Collectables/Crystal21"]
-
 [editable path="Collectables/Crystal22"]
-
 [editable path="Collectables/Crystal23"]
-
 [editable path="Collectables/Crystal25"]
-
 [editable path="Collectables/Crystal14"]
-
 [editable path="Collectables/Crystal9"]
-
 [editable path="Collectables/Crystal15"]
-
 [editable path="Collectables/Crystal16"]
-
 [editable path="Collectables/Crystal17"]
-
 [editable path="Collectables/Crystal19"]
-
 [editable path="Collectables/Crystal20"]
-
 [editable path="Collectables/Crystal11"]
-
 [editable path="Collectables/Crystal24"]
-
 [editable path="Collectables/Crystal12"]
-
 [editable path="Collectables/Crystal26"]
-
 [editable path="Collectables/Crystal27"]
-
 [editable path="Signpost2"]

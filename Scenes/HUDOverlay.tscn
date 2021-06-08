@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/EnterPlanet.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=2]
@@ -8,7 +8,22 @@ size = 78
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "Rest"
+resource_name = "MoveDown"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 2.9, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -425.631 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -446 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/Label:percent_visible")
@@ -23,8 +38,7 @@ tracks/0/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "reverse"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/Label:percent_visible")
 tracks/0/interp = 1
@@ -38,7 +52,7 @@ tracks/0/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/Label:percent_visible")
 tracks/0/interp = 1
@@ -52,24 +66,25 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="PlanetEnterOverlay" type="CanvasLayer"]
 script = ExtResource( 1 )
 move_to = Vector2( 0, 100 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-margin_right = 1918.0
-margin_bottom = 332.0
+margin_top = -446.721
+margin_right = 1920.0
+margin_bottom = -20.721
 color = Color( 1, 1, 1, 0.305882 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="ColorRect"]
-margin_left = 356.359
-margin_top = 112.253
-margin_right = 1608.36
-margin_bottom = 201.253
+margin_left = 347.45
+margin_top = 158.58
+margin_right = 1599.45
+margin_bottom = 247.58
 custom_fonts/font = SubResource( 1 )
 text = "-------Entering Planet 2-------"
 __meta__ = {
@@ -78,8 +93,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.4
-anims/Rest = SubResource( 2 )
-anims/reverse = SubResource( 3 )
-anims/typewriter = SubResource( 4 )
+anims/MoveDown = SubResource( 2 )
+anims/Rest = SubResource( 3 )
+anims/reverse = SubResource( 4 )
+anims/typewriter = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]

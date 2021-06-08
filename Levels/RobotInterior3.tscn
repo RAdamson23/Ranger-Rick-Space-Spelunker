@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://TileSets/48by48CollisionBlock.tres" type="TileSet" id=1]
 [ext_resource path="res://TileSets/16by16TileSet.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Music/Anubis.ogg" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/RobotTest.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Crystal.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/HUDOverlay.tscn" type="PackedScene" id=17]
 
 [node name="Level" type="Node"]
 script = ExtResource( 11 )
@@ -46,6 +47,8 @@ tile_data = PoolIntArray( 2490387, 6, 0, 2490391, 6, 0, 2555923, 1, 0, 2555927, 
 
 [node name="Portal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512.525, 3183.93 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 17 )]
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( -106.787, -353.733 )
