@@ -23,7 +23,6 @@ font_data = ExtResource( 3 )
 
 [node name="PauseScreen" type="Control" parent="."]
 pause_mode = 2
-visible = false
 margin_right = 174.0
 margin_bottom = 150.0
 script = ExtResource( 2 )

@@ -8,6 +8,8 @@ func _ready():
 	global_vars.respawnLevel = "CaveInterior2.tscn"
 	global_vars.isInsidePlanet = true
 	get_node("/root/Level/MainHUD/CanvasLayer/Control").visible = true
+	yield(get_tree().create_timer(1),"timeout")
+	
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/EnterPlanet.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 78
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Rest"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "reverse"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+move_to = Vector2( 0, 100 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1918.0
+margin_bottom = 332.0
+color = Color( 1, 1, 1, 0.305882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 356.359
+margin_top = 112.253
+margin_right = 1608.36
+margin_bottom = 201.253
+custom_fonts/font = SubResource( 1 )
+text = "-------Entering Planet 2-------"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.4
+anims/Rest = SubResource( 2 )
+anims/reverse = SubResource( 3 )
+anims/typewriter = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
