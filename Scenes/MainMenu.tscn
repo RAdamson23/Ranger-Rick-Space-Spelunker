@@ -17,7 +17,7 @@
 [ext_resource path="res://Art/ButtonStylePressed.tres" type="StyleBox" id=15]
 [ext_resource path="res://Sprites/Space Cadet Sprite Sheet.png" type="Texture" id=16]
 [ext_resource path="res://Art/Controls/icons8-esc-mac-50.png" type="Texture" id=17]
-[ext_resource path="res://Music/May I Stand Unshaken - High Honor Version (RDR2).mp3" type="AudioStream" id=18]
+[ext_resource path="res://Music/Race-to-Mars.ogg" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80

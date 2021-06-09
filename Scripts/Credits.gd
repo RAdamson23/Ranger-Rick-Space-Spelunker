@@ -3,7 +3,7 @@ extends Panel
 var dialog = ["Ranger Rick set out to be the richest man in the world, but was he satisfied?","He could find everything but did he find peace?","Directed by - Robert, AJ, Manesh and Ben",
 "Created by - Robert, AJ, Manesh and Ben", "Coded by - Robert, AJ, Manesh and Ben", 
 "Voice Acting by - AJ",
-"We would like to thank us and ourselves","We would also like to thank you, the player","--------------------RANGER RICK: SPACE SPLUNKER--------------------"]
+"We would like to thank us, ourselves and you, the player","We would also like to thank the various artists for their work creating the assets we've used.","--------------------RANGER RICK: SPACE SPLUNKER--------------------"]
 var dialog_index = 0
 var finished = false
 

@@ -3,7 +3,7 @@ extends Control
 onready var global_vars = get_node("/root/Globals")
 
 func _ready():
-	global_vars.next_scene = "CutScene.tscn"
+	global_vars.next_scene = "Credits.tscn"
 	$Information/Score/ScoreCount.set_text(str(global_vars.score))
 	$Information/EnemiesDefeated/EnemiesDefeatedCount.set_text(str(global_vars.enemiesDefeated)+" x 5 points each")
 	$Information/Deaths/DeathCount.set_text(str(global_vars.deathCount)+" x -20 points each")
