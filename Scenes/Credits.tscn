@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Art/CutSceneArtWork/grey_button04.png" type="Texture" id=2]
+[ext_resource path="res://Art/CutSceneArtWork/stary_background.jpg" type="Texture" id=3]
+[ext_resource path="res://Fonts/SpaceQuest-yOY3.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Art/PermanentMarker-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Music/Red Dead Redemption 2 Official Soundtrack - Cruel, Cruel World (ending music) HD (With Visuali.mp3" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=3]
+resource_name = "credits"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("stary_background:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 5 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 11.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.0 ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[node name="Node" type="Node"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "credits"
+anims/credits = SubResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 64.0
+margin_top = 760.0
+margin_right = 1827.0
+margin_bottom = 1003.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="IntroDialogueScript" type="RichTextLabel" parent="Panel"]
+margin_left = 57.4388
+margin_top = -33.6222
+margin_right = 1731.44
+margin_bottom = 126.378
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Panel"]
+
+[node name="Tween" type="Tween" parent="Panel"]
+
+[node name="grey_button04" type="Sprite" parent="Panel"]
+visible = false
+position = Vector2( 1557.8, 138.245 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Panel/grey_button04"]
+margin_left = -48.7904
+margin_top = -12.0208
+margin_right = 56.2096
+margin_bottom = 11.9792
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PRESS ENTER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stary_background" type="Sprite" parent="."]
+position = Vector2( 972.622, 530.787 )
+scale = Vector2( 3.275, 3.275 )
+z_index = -7
+texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = true
+
+[connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_Timer_timeout"]
+[connection signal="tween_completed" from="Panel/Tween" to="Panel" method="_on_Tween_tween_completed"]

@@ -102,6 +102,7 @@ bus = "Music"
 [node name="PauseScreen" parent="." instance=ExtResource( 10 )]
 
 [node name="Coins" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 script = ExtResource( 9 )
 

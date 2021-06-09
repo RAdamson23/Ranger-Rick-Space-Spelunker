@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Microsoft Windows XP Shutdown Sound-[AudioTrimmer.co
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

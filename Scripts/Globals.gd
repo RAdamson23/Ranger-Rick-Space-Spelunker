@@ -22,6 +22,7 @@ onready var coinCount3 = 0
 onready var coinBeen1 = false setget set_coinBeen1, get_coinBeen1
 onready var coinBeen2 = false setget set_coinBeen2, get_coinBeen2
 onready var coinBeen3 = false setget set_coinBeen3, get_coinBeen3
+
 func _ready():
 	health = 8
 	maxHealth = 8

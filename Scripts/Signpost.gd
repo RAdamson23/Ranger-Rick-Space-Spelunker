@@ -1,6 +1,6 @@
 extends Node2D
 
-export var text = "Collect 6 coins to open the portal"
+export var text = "Collect 6 batteries to open the portal"
 
 
 func _on_Hitbox_body_entered(body):

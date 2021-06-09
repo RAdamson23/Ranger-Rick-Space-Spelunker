@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Art/ParalaxBackground/Parallax Backround 2/parallax-space-stars.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Art/ButtonStylePressed.tres" type="StyleBox" id=15]
 [ext_resource path="res://Sprites/Space Cadet Sprite Sheet.png" type="Texture" id=16]
 [ext_resource path="res://Art/Controls/icons8-esc-mac-50.png" type="Texture" id=17]
+[ext_resource path="res://Music/May I Stand Unshaken - High Honor Version (RDR2).mp3" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -281,8 +282,8 @@ __meta__ = {
 position = Vector2( 951.741, 336.38 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 16 )
-vframes = 5
 hframes = 8
+vframes = 5
 
 [node name="Information" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.807843 )
@@ -310,5 +311,11 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = 5.0
+autoplay = true
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

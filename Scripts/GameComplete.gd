@@ -3,7 +3,7 @@ extends Control
 onready var global_vars = get_node("/root/Globals")
 
 func _ready():
-
+	global_vars.next_scene = "CutScene.tscn"
 	$Information/Score/ScoreCount.set_text(str(global_vars.score))
 	$Information/EnemiesDefeated/EnemiesDefeatedCount.set_text(str(global_vars.enemiesDefeated)+" x 5 points each")
 	$Information/Deaths/DeathCount.set_text(str(global_vars.deathCount)+" x -20 points each")
@@ -19,4 +19,4 @@ func _process(delta):
 	$MovingBG/ParallaxBackground/ParallaxLayer4.motion_offset.x += 0.8
 	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
 func _on_Next_Level_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/"+global_vars.next_scene)

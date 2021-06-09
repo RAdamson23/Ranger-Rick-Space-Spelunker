@@ -5,14 +5,6 @@ onready var Score = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Contro
 onready var TreasureCounter = get_node("/root/Level/MainHUD").get_node("CanvasLayer/Control/TreasureCounter")
 
 func _ready():
-	global_vars.coinBeen1 = false
-	global_vars.coinCount1 = 0
-	global_vars.coinBeen2 = false
-	global_vars.coinCount2 = 0
-	global_vars.coinBeen3 = false
-	global_vars.coinCount3 = 0
-	global_vars.planetsCompleted = 0
-	
 	global_vars.respawnLevel = "Level_02.tscn"
 	TreasureCounter.set_text("Planet 1 Batteries: " + str(global_vars.coinCount1)+" / 10")
 	global_vars.next_scene = "boss.tscn"

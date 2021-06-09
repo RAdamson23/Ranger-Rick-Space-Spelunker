@@ -18,5 +18,14 @@ func _process(delta):
 	$MovingBG/ParallaxBackground/ParallaxLayer3.motion_offset.x += 0.6
 	$MovingBG/ParallaxBackground/ParallaxLayer4.motion_offset.x += 0.8
 	$MovingBG/ParallaxBackground/ParallaxLayer5.motion_offset.x += 1
+
 func _on_Next_Level_pressed():
+	global_vars.coinBeen1 = false
+	global_vars.coinCount1 = 0
+	global_vars.coinBeen2 = false
+	global_vars.coinCount2 = 0
+	global_vars.coinBeen3 = false
+	global_vars.coinCount3 = 0
+	global_vars.planetsCompleted = 0
 	get_tree().change_scene("res://Levels/"+global_vars.next_scene)
+	

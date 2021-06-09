@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Red Dead Redemption 2 Official Soundtrack - Cruel, Cruel World (ending music) HD (With Visuali.mp3-a32037dc524a19862b8105fd7041bb75.mp3str"
+
+[deps]
+
+source_file="res://Music/Red Dead Redemption 2 Official Soundtrack - Cruel, Cruel World (ending music) HD (With Visuali.mp3"
+dest_files=[ "res://.import/Red Dead Redemption 2 Official Soundtrack - Cruel, Cruel World (ending music) HD (With Visuali.mp3-a32037dc524a19862b8105fd7041bb75.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
